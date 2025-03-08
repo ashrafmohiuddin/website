@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Professional Side - My Portfolio</title>
   <style>
     :root {
@@ -20,9 +20,9 @@
       --black: #212529;
       
       /* 60-30-10 rule */
-      --main-color: var(--white); /* 60% */
-      --secondary-color: var(--off-white); /* 30% */
-      --accent-color: var(--primary-color); /* 10% */
+      --main-color: var(--white);
+      --secondary-color: var(--off-white);
+      --accent-color: var(--primary-color);
       
       --text-primary: var(--black);
       --text-secondary: var(--dark-gray);
@@ -152,6 +152,7 @@
     
     section {
       padding: 60px 0;
+      scroll-margin-top: 80px;
     }
     
     .section-title {
@@ -432,18 +433,7 @@
       gap: 20px;
     }
     
-    .color-picker-password {
-      margin-bottom: 20px;
-    }
-    
-    .password-hint {
-      color: var(--medium-gray);
-      font-size: 12px;
-      text-align: center;
-      margin-top: 10px;
-    }
-    
-    /* Page Transition Animation */
+    /* Beach Wave Page Transition */
     .page-transition {
       position: fixed;
       top: 0;
@@ -452,26 +442,23 @@
       height: 100%;
       background-color: var(--accent-color);
       z-index: 9999;
-      transform: translateX(-100%);
       pointer-events: none;
+      clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
     }
     
     .page-transition.active {
-      animation: pageTransition 1.2s ease-in-out forwards;
+      animation: beachWave 1s ease-in-out forwards;
     }
     
-    @keyframes pageTransition {
+    @keyframes beachWave {
       0% {
-        transform: translateX(-100%);
-        border-radius: 0%;
+        clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
       }
       50% {
-        transform: translateX(0%);
-        border-radius: 0%;
+        clip-path: polygon(0 0, 100% 10%, 100% 90%, 0 100%);
       }
       100% {
-        transform: translateX(100%);
-        border-radius: 0 0 50% 50%;
+        clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
       }
     }
     
@@ -507,7 +494,7 @@
 <body>
   <!-- Page Transition Element -->
   <div class="page-transition"></div>
-
+  
   <!-- Hidden Color Picker Tab -->
   <div class="color-picker-tab" id="colorPickerTab">
     <div class="tab-button" id="tabButton">
@@ -530,7 +517,7 @@
       <button class="button button-outline" id="resetColorBtn" style="width: 100%;">Reset to Default</button>
     </div>
   </div>
-
+  
   <!-- Header -->
   <header>
     <div class="container">
@@ -545,7 +532,7 @@
       </div>
     </div>
   </header>
-
+  
   <!-- Hero Section -->
   <section class="hero">
     <div class="container">
@@ -554,7 +541,7 @@
       <a href="#contact" class="button">Get in Touch</a>
     </div>
   </section>
-
+  
   <!-- About Section -->
   <section id="about">
     <div class="container">
@@ -578,7 +565,7 @@
       </div>
     </div>
   </section>
-
+  
   <!-- Portfolio Section -->
   <section id="portfolio">
     <div class="container">
@@ -623,7 +610,7 @@
       </div>
     </div>
   </section>
-
+  
   <!-- Contact Section -->
   <section id="contact">
     <div class="container">
@@ -672,7 +659,7 @@
       </div>
     </div>
   </section>
-
+  
   <!-- Footer -->
   <footer>
     <div class="container">
@@ -685,32 +672,41 @@
       </div>
     </div>
   </footer>
-
+  
   <script>
-    // Default password for color picker access
-    const DEFAULT_PASSWORD = "0000";
-    const DEFAULT_COLOR = "#4361ee";
+    // Page Transition Animation
+    const pageTransition = document.querySelector('.page-transition');
+    const pageLinks = document.querySelectorAll('.page-link');
+    pageLinks.forEach(link => {
+      link.addEventListener('click', function(e) {
+        e.preventDefault();
+        const href = this.getAttribute('href');
+        pageTransition.classList.add('active');
+        setTimeout(() => {
+          window.location.href = href;
+        }, 1000);
+      });
+    });
     
-    // DOM Elements
+    // Toggle Theme Customizer Icon
+    const DEFAULT_PASSWORD = "0000";
     const tabButton = document.getElementById('tabButton');
     const colorPickerTab = document.getElementById('colorPickerTab');
     const passwordSection = document.getElementById('passwordSection');
     const accessPassword = document.getElementById('accessPassword');
     const submitPassword = document.getElementById('submitPassword');
     const colorPickerControls = document.getElementById('colorPickerControls');
-    const colorPicker = document.getElementById('colorPicker');
-    const applyColorBtn = document.getElementById('applyColorBtn');
-    const resetColorBtn = document.getElementById('resetColorBtn');
-    const pageTransition = document.querySelector('.page-transition');
-    const pageLinks = document.querySelectorAll('.page-link');
     
-    // Tab Toggle
-    tabButton.addEventListener('click', function() {
+    tabButton.addEventListener('click', () => {
       colorPickerTab.classList.toggle('visible');
+      if(colorPickerTab.classList.contains('visible')) {
+        tabButton.innerHTML = '<i class="fas fa-times"></i>';
+      } else {
+        tabButton.innerHTML = '<span>🎨</span>';
+      }
     });
     
-    // Password Validation
-    submitPassword.addEventListener('click', function() {
+    submitPassword.addEventListener('click', () => {
       if (accessPassword.value === DEFAULT_PASSWORD) {
         passwordSection.style.display = 'none';
         colorPickerControls.style.display = 'block';
@@ -725,58 +721,50 @@
       }
     });
     
-    // Apply Selected Color
-    applyColorBtn.addEventListener('click', function() {
-      applyColor(colorPicker.value);
+    // Update Colors based on Selection
+    document.getElementById('colorPicker').addEventListener('input', function(e) {
+      applyColor(e.target.value);
     });
     
-    // Reset to Default Color
-    resetColorBtn.addEventListener('click', function() {
-      colorPicker.value = DEFAULT_COLOR;
+    document.getElementById('applyColorBtn').addEventListener('click', function() {
+      applyColor(document.getElementById('colorPicker').value);
+    });
+    
+    document.getElementById('resetColorBtn').addEventListener('click', function() {
+      const DEFAULT_COLOR = "#4361ee";
+      document.getElementById('colorPicker').value = DEFAULT_COLOR;
       applyColor(DEFAULT_COLOR);
     });
     
-    // Function to apply selected color
     function applyColor(selectedColor) {
-      // Update CSS variables
       document.documentElement.style.setProperty('--primary-color', selectedColor);
-      
-      // Generate lighter and darker shades
       const lighterShade = lightenColor(selectedColor, 40);
       const darkerShade = darkenColor(selectedColor, 20);
-      
       document.documentElement.style.setProperty('--primary-light', lighterShade);
       document.documentElement.style.setProperty('--primary-dark', darkerShade);
       document.documentElement.style.setProperty('--accent-color', selectedColor);
-      
-      // Save to localStorage for persistence
       localStorage.setItem('portfolio-primary-color', selectedColor);
     }
     
-    // Function to lighten a color
     function lightenColor(hex, amount) {
       return adjustColor(hex, amount);
     }
     
-    // Function to darken a color
     function darkenColor(hex, amount) {
       return adjustColor(hex, -amount);
     }
     
-    // Helper function to adjust color
     function adjustColor(hex, amount) {
       let r = parseInt(hex.slice(1, 3), 16);
       let g = parseInt(hex.slice(3, 5), 16);
       let b = parseInt(hex.slice(5, 7), 16);
-      
       r = Math.max(0, Math.min(255, r + amount));
       g = Math.max(0, Math.min(255, g + amount));
       b = Math.max(0, Math.min(255, b + amount));
-      
       return `#${r.toString(16).padStart(2, '0')}${g.toString(16).padStart(2, '0')}${b.toString(16).padStart(2, '0')}`;
     }
     
-    // Highlight active navigation item
+    // Navigation active highlight
     document.addEventListener('DOMContentLoaded', function() {
       const navItems = document.querySelectorAll('.nav-item');
       navItems.forEach(item => {
@@ -787,30 +775,8 @@
           }
         });
       });
-      
-      // Load saved color theme if exists
-      const savedColor = localStorage.getItem('portfolio-primary-color');
-      if (savedColor) {
-        colorPicker.value = savedColor;
-        applyColor(savedColor);
-      }
-    });
-    
-    // Page Transition Animation
-    pageLinks.forEach(link => {
-      link.addEventListener('click', function(e) {
-        e.preventDefault();
-        const href = this.getAttribute('href');
-        
-        // Activate transition
-        pageTransition.classList.add('active');
-        
-        // Navigate to new page after animation
-        setTimeout(() => {
-          window.location.href = href;
-        }, 600); // Half of the animation duration
-      });
     });
   </script>
 </body>
 </html>
+
