@@ -257,6 +257,88 @@
       grid-row: span 2;
       height: auto;
     }
+    /* Enhanced Gallery Styling */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.gallery-item {
+  position: relative;
+  height: 250px;
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  background-color: var(--secondary-color);
+  transition: var(--transition);
+}
+
+.gallery-item.featured {
+  grid-column: span 2;
+  grid-row: span 2;
+  height: auto;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Maintains aspect ratio while covering the container */
+  transition: transform 0.5s ease;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.05); /* Subtle zoom effect on hover */
+}
+
+/* Loading animation for gallery */
+.gallery-item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.1) 50%,
+    transparent 100%
+  );
+  animation: loadingShimmer 1.5s infinite;
+  z-index: 1;
+  opacity: 0.5;
+}
+
+.gallery-item.loaded::before {
+  animation: none;
+  opacity: 0;
+}
+
+@keyframes loadingShimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .gallery-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  
+  .gallery-item.featured {
+    grid-column: span 2;
+  }
+}
+
+@media (max-width: 576px) {
+  .gallery-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .gallery-item.featured {
+    grid-column: auto;
+  }
+}
     
     /* Fun Facts Section Styling */
     .fun-fact {
@@ -529,6 +611,8 @@
         display: none;
       }
     }
+
+    
   </style>
   <!-- Font Awesome for icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
@@ -594,7 +678,7 @@
         </div>
       </div>
     </section>
-  
+<!--   
     <section id="gallery" class="animate-fade delay-2">
       <h2 class="section-title">Photo Gallery</h2>
       <div class="gallery-intro">
@@ -626,8 +710,16 @@
           <div class="gallery-title">Costume party - I was a taco</div>
         </div>
       </div>
+    </section> -->
+    <section id="gallery" class="animate-fade delay-2">
+      <h2 class="section-title">Photo Gallery</h2>
+      <div class="gallery-intro">
+        <p>A glimpse into my adventures, creative projects, and special moments captured through the lens. Each photo tells a story of exploration and joy.</p>
+      </div>
+      <div class="gallery-grid" id="dynamicGallery">
+        <!-- Gallery items will be loaded here dynamically -->
+      </div>
     </section>
-  
     <section id="fun-facts" class="animate-fade delay-3">
       <h2 class="section-title">Fun Facts About Me</h2>
       <div class="fun-fact">
@@ -811,6 +903,143 @@
     
     window.addEventListener('scroll', animateOnScroll);
     window.addEventListener('load', animateOnScroll);
+
+    // Dynamic Gallery Implementation
+document.addEventListener('DOMContentLoaded', function() {
+  loadGalleryImages();
+});
+
+// Function to load images from the images folder
+async function loadGalleryImages() {
+  const galleryContainer = document.getElementById('dynamicGallery');
+  
+  try {
+    // In a real implementation, you would use a server-side solution
+    // to get the list of images. For this demo, we'll simulate it with
+    // a few known images and placeholders
+    
+    const imageFiles = [
+      // Known images from your code
+      { path: './images/20211212_180203.jpg', title: 'Summer beach day at Goa', featured: true },
+      { path: './images/ASH02346.jpg', title: 'White Bengal Tiger', featured: false },
+      { path: './images/ASH02373.jpg', title: 'White Bengal Tiger and Bengal Tiger', featured: false },
+      
+      // Placeholders (in a real implementation, these would be actual image paths)
+      { path: '/api/placeholder/400/300', title: 'Board game night championship', featured: false },
+      { path: '/api/placeholder/400/300', title: 'My cat judging my life choices', featured: false },
+      { path: '/api/placeholder/400/300', title: 'Costume party - I was a taco', featured: false }
+    ];
+    
+    // Clear any existing content
+    galleryContainer.innerHTML = '';
+    
+    // Create gallery items for each image
+    imageFiles.forEach((file, index) => {
+      createGalleryItem(galleryContainer, file.path, file.title, file.featured);
+    });
+    
+    // For real implementation: Dynamic image loading
+    // In a real server environment, you would replace the above code with:
+    // const response = await fetch('/api/get-images');
+    // const imageFiles = await response.json();
+    // ...rest of the code remains the same
+    
+  } catch (error) {
+    console.error('Error loading gallery images:', error);
+    galleryContainer.innerHTML = '<p>Error loading gallery images. Please try again later.</p>';
+  }
+}
+
+// Function to create a gallery item
+function createGalleryItem(container, imagePath, title, featured = false) {
+  const galleryItem = document.createElement('div');
+  galleryItem.className = `gallery-item${featured ? ' featured' : ''}`;
+  
+  // Create image element with lazy loading
+  const img = document.createElement('img');
+  img.alt = title || 'Gallery Image';
+  img.dataset.src = imagePath; // Use data-src for lazy loading
+  img.style.opacity = '0';
+  img.style.transition = 'opacity 0.3s ease';
+  
+  // Add title
+  const titleDiv = document.createElement('div');
+  titleDiv.className = 'gallery-title';
+  titleDiv.textContent = title || '';
+  
+  // Add elements to gallery item
+  galleryItem.appendChild(img);
+  galleryItem.appendChild(titleDiv);
+  
+  // Add gallery item to container
+  container.appendChild(galleryItem);
+  
+  // Lazy load the image
+  lazyLoadImage(img, imagePath);
+}
+
+// Function to lazy load images
+function lazyLoadImage(imgElement, src) {
+  // Create a temporary image to check if it loads properly
+  const tempImg = new Image();
+  
+  tempImg.onload = function() {
+    // Image loaded successfully
+    imgElement.src = src;
+    imgElement.style.opacity = '1';
+    
+    // Set aspect ratio preserving sizing
+    imgElement.style.width = '100%';
+    imgElement.style.height = '100%';
+    imgElement.style.objectFit = 'cover';
+  };
+  
+  tempImg.onerror = function() {
+    // Image failed to load, use placeholder
+    imgElement.src = '/api/placeholder/400/300';
+    imgElement.style.opacity = '1';
+    console.error(`Failed to load image: ${src}`);
+  };
+  
+  // Start loading the image
+  tempImg.src = src;
+}
+
+// Function to check when images come into viewport for lazy loading
+function setupIntersectionObserver() {
+  if ('IntersectionObserver' in window) {
+    const options = {
+      root: null,
+      rootMargin: '0px',
+      threshold: 0.1
+    };
+    
+    const observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const img = entry.target;
+          const src = img.dataset.src;
+          
+          if (src) {
+            img.src = src;
+            img.removeAttribute('data-src');
+            observer.unobserve(img);
+          }
+        }
+      });
+    }, options);
+    
+    document.querySelectorAll('img[data-src]').forEach(img => {
+      observer.observe(img);
+    });
+  } else {
+    // Fallback for browsers that don't support IntersectionObserver
+    document.querySelectorAll('img[data-src]').forEach(img => {
+      img.src = img.dataset.src;
+      img.removeAttribute('data-src');
+    });
+  }
+}
   </script>
 </body>
 </html>
