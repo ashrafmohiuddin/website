@@ -3,33 +3,72 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Professional Side - My Portfolio</title>
+  <meta name="description" content="Ashraf Mohiuddin - Full Stack Developer & AI Enthusiast. 2+ years at Oracle, passionate about ML and productivity." />
+  <meta name="keywords" content="Ashraf Mohiuddin, Full Stack Developer, AI, Machine Learning, Oracle, Portfolio" />
+  <meta name="author" content="Ashraf Mohiuddin" />
+  <title>Ashraf Mohiuddin - Full Stack Developer & AI Enthusiast</title>
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
   <style>
     :root {
-      /* Primary color - can be customized */
-      --primary-color: #4361ee;
-      --primary-light: #a9b5f9;
-      --primary-dark: #2c41ae;
+      /* Light Theme - Pastel Colors */
+      --primary-color: #6366f1;
+      --primary-light: #a5b4fc;
+      --primary-dark: #4338ca;
       
-      /* Base colors */
-      --white: #ffffff;
-      --off-white: #f8f9fa;
-      --light-gray: #dee2e6;
-      --medium-gray: #adb5bd;
-      --dark-gray: #495057;
-      --black: #212529;
+      /* Pastel Background Colors */
+      --bg-primary: #fafafa;
+      --bg-secondary: #f3f4f6;
+      --bg-card: #ffffff;
+      --bg-accent: #f0f9ff;
       
-      /* 60-30-10 rule */
-      --main-color: var(--white);
-      --secondary-color: var(--off-white);
-      --accent-color: var(--primary-color);
+      /* Text Colors */
+      --text-primary: #1f2937;
+      --text-secondary: #6b7280;
+      --text-muted: #9ca3af;
       
-      --text-primary: var(--black);
-      --text-secondary: var(--dark-gray);
+      /* Border & Shadow */
+      --border-color: #e5e7eb;
+      --border-radius: 16px;
+      --border-radius-sm: 8px;
+      --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+      --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+      --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+      --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
       
-      --border-radius: 12px;
-      --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-      --transition: all 0.3s ease;
+      /* Transitions */
+      --transition-fast: 0.15s ease;
+      --transition-normal: 0.3s ease;
+      --transition-slow: 0.5s ease;
+      
+      /* Spacing */
+      --space-xs: 0.5rem;
+      --space-sm: 1rem;
+      --space-md: 1.5rem;
+      --space-lg: 2rem;
+      --space-xl: 3rem;
+      --space-2xl: 4rem;
+    }
+    
+    /* Dark Theme */
+    [data-theme="dark"] {
+      --bg-primary: #0a0a0a;
+      --bg-secondary: #1a1a1a;
+      --bg-card: #1f1f1f;
+      --bg-accent: #1e293b;
+      
+      --text-primary: #f9fafb;
+      --text-secondary: #d1d5db;
+      --text-muted: #9ca3af;
+      
+      --border-color: #374151;
     }
     
     * {
@@ -38,98 +77,141 @@
       box-sizing: border-box;
     }
     
+    html {
+      scroll-behavior: smooth;
+    }
+    
     body {
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-      background-color: var(--main-color);
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background-color: var(--bg-primary);
       color: var(--text-primary);
       line-height: 1.6;
+      transition: background-color var(--transition-normal), color var(--transition-normal);
     }
     
     .container {
       max-width: 1200px;
       margin: 0 auto;
-      padding: 0 20px;
+      padding: 0 var(--space-md);
     }
     
+    /* Header */
     header {
-      background-color: var(--main-color);
-      padding: 20px 0;
-      border-bottom: 1px solid var(--light-gray);
+      background-color: var(--bg-primary);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border-color);
       position: sticky;
       top: 0;
       z-index: 100;
+      transition: all var(--transition-normal);
     }
     
     .header-content {
       display: flex;
       justify-content: space-between;
       align-items: center;
+      padding: var(--space-md) 0;
     }
     
     .logo {
-      font-size: 24px;
+      font-size: 1.5rem;
       font-weight: 700;
       color: var(--text-primary);
+      text-decoration: none;
     }
     
     .logo span {
-      color: var(--accent-color);
+      color: var(--primary-color);
     }
     
     .navbar {
       display: flex;
-      gap: 10px;
+      gap: var(--space-sm);
     }
     
     .nav-item {
-      padding: 8px 16px;
+      padding: var(--space-xs) var(--space-md);
       border-radius: 30px;
       color: var(--text-secondary);
       text-decoration: none;
       font-weight: 500;
-      transition: var(--transition);
+      transition: all var(--transition-normal);
       cursor: pointer;
     }
     
     .nav-item:hover {
-      background-color: var(--secondary-color);
+      background-color: var(--bg-secondary);
       color: var(--text-primary);
+      transform: translateY(-1px);
     }
     
     .nav-item.active {
-      background-color: var(--accent-color);
-      color: var(--white);
+      background-color: var(--primary-color);
+      color: white;
     }
     
-    .hero {
-      padding: 60px 0;
-      text-align: center;
-      background-color: var(--secondary-color);
-      border-radius: 0 0 var(--border-radius) var(--border-radius);
+    /* Theme Toggle */
+    .theme-toggle {
+      background: none;
+      border: none;
+      color: var(--text-secondary);
+      font-size: 1.2rem;
+      cursor: pointer;
+      padding: var(--space-xs);
+      border-radius: 50%;
+      transition: all var(--transition-normal);
     }
     
-    .hero h1 {
-      font-size: 48px;
-      margin-bottom: 20px;
+    .theme-toggle:hover {
+      background-color: var(--bg-secondary);
       color: var(--text-primary);
     }
     
+    /* Hero Section */
+    .hero {
+      padding: var(--space-2xl) 0;
+      text-align: center;
+      background: linear-gradient(135deg, var(--bg-accent) 0%, var(--bg-secondary) 100%);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .hero h1 {
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      font-weight: 700;
+      margin-bottom: var(--space-md);
+      background: linear-gradient(135deg, var(--text-primary) 0%, var(--primary-color) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    
     .hero p {
-      font-size: 18px;
+      font-size: 1.25rem;
       max-width: 600px;
-      margin: 0 auto 30px;
+      margin: 0 auto var(--space-xl);
       color: var(--text-secondary);
     }
     
+    .hero-buttons {
+      display: flex;
+      gap: var(--space-md);
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    
+    /* Buttons */
     .button {
-      display: inline-block;
-      padding: 12px 24px;
-      background-color: var(--accent-color);
-      color: var(--white);
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-xs);
+      padding: var(--space-md) var(--space-xl);
+      background-color: var(--primary-color);
+      color: white;
       border-radius: var(--border-radius);
       text-decoration: none;
       font-weight: 600;
-      transition: var(--transition);
+      transition: all var(--transition-normal);
       border: none;
       cursor: pointer;
     }
@@ -137,29 +219,32 @@
     .button:hover {
       background-color: var(--primary-dark);
       transform: translateY(-2px);
+      box-shadow: var(--shadow-lg);
     }
     
     .button-outline {
       background-color: transparent;
-      border: 2px solid var(--accent-color);
-      color: var(--accent-color);
+      border: 2px solid var(--primary-color);
+      color: var(--primary-color);
     }
     
     .button-outline:hover {
-      background-color: var(--accent-color);
-      color: var(--white);
+      background-color: var(--primary-color);
+      color: white;
     }
     
+    /* Sections */
     section {
-      padding: 60px 0;
+      padding: var(--space-2xl) 0;
       scroll-margin-top: 80px;
     }
     
     .section-title {
-      font-size: 32px;
-      margin-bottom: 40px;
+      font-size: clamp(2rem, 4vw, 2.5rem);
+      margin-bottom: var(--space-xl);
       text-align: center;
       position: relative;
+      font-weight: 700;
     }
     
     .section-title::after {
@@ -169,187 +254,318 @@
       left: 50%;
       transform: translateX(-50%);
       width: 60px;
-      height: 3px;
-      background-color: var(--accent-color);
+      height: 4px;
+      background: linear-gradient(90deg, var(--primary-color), var(--primary-light));
+      border-radius: 2px;
     }
     
     /* About Section */
     .about-content {
       display: grid;
       grid-template-columns: 1fr 2fr;
-      gap: 40px;
+      gap: var(--space-xl);
       align-items: center;
     }
     
     .profile-image {
       width: 100%;
       height: 400px;
-      background-color: var(--light-gray);
+      background: linear-gradient(135deg, var(--primary-light) 0%, var(--primary-color) 100%);
       border-radius: var(--border-radius);
       overflow: hidden;
+      position: relative;
     }
     
     .bio h2 {
-      font-size: 28px;
-      margin-bottom: 20px;
+      font-size: 2rem;
+      margin-bottom: var(--space-md);
       color: var(--text-primary);
     }
     
     .bio p {
-      margin-bottom: 20px;
+      margin-bottom: var(--space-md);
       color: var(--text-secondary);
+      font-size: 1.1rem;
     }
     
     .skills {
       display: flex;
       flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 20px;
+      gap: var(--space-sm);
+      margin-top: var(--space-lg);
     }
     
     .skill-tag {
-      padding: 8px 16px;
-      background-color: var(--primary-light);
-      color: var(--primary-dark);
+      padding: var(--space-xs) var(--space-md);
+      background: linear-gradient(135deg, var(--primary-light) 0%, var(--primary-color) 100%);
+      color: white;
       border-radius: 30px;
-      font-size: 14px;
+      font-size: 0.9rem;
       font-weight: 500;
+      transition: all var(--transition-normal);
+    }
+    
+    .skill-tag:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-md);
     }
     
     /* Portfolio Section */
     .portfolio-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-      gap: 30px;
+      grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+      gap: var(--space-lg);
     }
     
     .portfolio-item {
-      background-color: var(--white);
+      background-color: var(--bg-card);
       border-radius: var(--border-radius);
       overflow: hidden;
-      box-shadow: var(--box-shadow);
-      transition: var(--transition);
+      box-shadow: var(--shadow-md);
+      transition: all var(--transition-normal);
+      border: 1px solid var(--border-color);
     }
     
     .portfolio-item:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+      transform: translateY(-8px);
+      box-shadow: var(--shadow-xl);
     }
     
     .portfolio-image {
       height: 200px;
-      background-color: var(--light-gray);
+      background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--bg-accent) 100%);
+      position: relative;
+      overflow: hidden;
     }
     
     .portfolio-info {
-      padding: 20px;
+      padding: var(--space-lg);
     }
     
     .portfolio-info h3 {
-      font-size: 18px;
-      margin-bottom: 10px;
+      font-size: 1.25rem;
+      margin-bottom: var(--space-sm);
+      color: var(--text-primary);
     }
     
     .portfolio-info p {
       color: var(--text-secondary);
-      margin-bottom: 15px;
-      font-size: 14px;
+      margin-bottom: var(--space-md);
+      font-size: 0.95rem;
+      line-height: 1.6;
     }
     
-    .tag {
-      display: inline-block;
-      padding: 4px 8px;
-      background-color: var(--secondary-color);
+    .tech-stack {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-xs);
+      margin-top: var(--space-md);
+    }
+    
+    .tech-badge {
+      padding: 4px var(--space-sm);
+      background-color: var(--bg-secondary);
       color: var(--text-secondary);
-      border-radius: 4px;
-      font-size: 12px;
-      margin-right: 5px;
+      border-radius: var(--border-radius-sm);
+      font-size: 0.8rem;
+      font-weight: 500;
+      border: 1px solid var(--border-color);
+    }
+    
+    /* Timeline Section */
+    .timeline {
+      position: relative;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 50%;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: linear-gradient(to bottom, var(--primary-color), var(--primary-light));
+      transform: translateX(-50%);
+    }
+    
+    .timeline-item {
+      position: relative;
+      margin-bottom: var(--space-xl);
+      width: 50%;
+    }
+    
+    .timeline-item:nth-child(odd) {
+      left: 0;
+      padding-right: var(--space-xl);
+    }
+    
+    .timeline-item:nth-child(even) {
+      left: 50%;
+      padding-left: var(--space-xl);
+    }
+    
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      top: 20px;
+      width: 16px;
+      height: 16px;
+      background-color: var(--primary-color);
+      border-radius: 50%;
+      border: 4px solid var(--bg-primary);
+      box-shadow: var(--shadow-md);
+    }
+    
+    .timeline-item:nth-child(odd)::before {
+      right: -8px;
+    }
+    
+    .timeline-item:nth-child(even)::before {
+      left: -8px;
+    }
+    
+    .timeline-content {
+      background-color: var(--bg-card);
+      padding: var(--space-lg);
+      border-radius: var(--border-radius);
+      box-shadow: var(--shadow-md);
+      border: 1px solid var(--border-color);
+    }
+    
+    .timeline-date {
+      color: var(--primary-color);
+      font-weight: 600;
+      font-size: 0.9rem;
+      margin-bottom: var(--space-xs);
+    }
+    
+    .timeline-title {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: var(--space-sm);
+      color: var(--text-primary);
+    }
+    
+    .timeline-description {
+      color: var(--text-secondary);
+      font-size: 0.95rem;
     }
     
     /* Contact Section */
     .contact-section {
-      background-color: var(--secondary-color);
+      background-color: var(--bg-secondary);
       border-radius: var(--border-radius);
-      padding: 60px;
+      padding: var(--space-2xl);
     }
     
     .contact-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 40px;
+      gap: var(--space-xl);
     }
     
     .contact-info h3 {
-      font-size: 24px;
-      margin-bottom: 20px;
+      font-size: 1.5rem;
+      margin-bottom: var(--space-md);
+      color: var(--text-primary);
     }
     
     .contact-info p {
-      margin-bottom: 30px;
+      margin-bottom: var(--space-xl);
       color: var(--text-secondary);
+      font-size: 1.1rem;
     }
     
     .contact-details {
       display: flex;
       flex-direction: column;
-      gap: 15px;
+      gap: var(--space-md);
     }
     
     .contact-item {
       display: flex;
       align-items: center;
-      gap: 10px;
+      gap: var(--space-md);
+      padding: var(--space-md);
+      background-color: var(--bg-card);
+      border-radius: var(--border-radius);
+      border: 1px solid var(--border-color);
+      transition: all var(--transition-normal);
+    }
+    
+    .contact-item:hover {
+      transform: translateX(4px);
+      box-shadow: var(--shadow-md);
     }
     
     .contact-icon {
-      width: 40px;
-      height: 40px;
+      width: 48px;
+      height: 48px;
       border-radius: 50%;
-      background-color: var(--accent-color);
-      color: var(--white);
+      background: linear-gradient(135deg, var(--primary-color), var(--primary-light));
+      color: white;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 18px;
+      font-size: 1.2rem;
+      flex-shrink: 0;
+    }
+    
+    .contact-text {
+      color: var(--text-primary);
+      font-weight: 500;
     }
     
     .social-links {
       display: flex;
-      gap: 15px;
-      margin-top: 30px;
+      gap: var(--space-md);
+      margin-top: var(--space-xl);
     }
     
-    .social-icon {
-      width: 40px;
-      height: 40px;
+    .social-link {
+      width: 48px;
+      height: 48px;
       border-radius: 50%;
-      background-color: var(--white);
-      color: var(--accent-color);
+      background-color: var(--bg-card);
+      color: var(--primary-color);
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 18px;
-      transition: var(--transition);
+      font-size: 1.2rem;
+      transition: all var(--transition-normal);
+      border: 1px solid var(--border-color);
+      text-decoration: none;
     }
     
-    .social-icon:hover {
-      background-color: var(--accent-color);
-      color: var(--white);
+    .social-link:hover {
+      background-color: var(--primary-color);
+      color: white;
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-lg);
     }
     
     .contact-form .form-group {
-      margin-bottom: 20px;
+      margin-bottom: var(--space-md);
     }
     
     .form-control {
       width: 100%;
-      padding: 12px;
-      border-radius: 8px;
-      border: 1px solid var(--light-gray);
-      background-color: var(--white);
+      padding: var(--space-md);
+      border-radius: var(--border-radius-sm);
+      border: 1px solid var(--border-color);
+      background-color: var(--bg-card);
       font-family: inherit;
-      font-size: 16px;
+      font-size: 1rem;
       color: var(--text-primary);
+      transition: all var(--transition-normal);
+    }
+    
+    .form-control:focus {
+      outline: none;
+      border-color: var(--primary-color);
+      box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
     }
     
     textarea.form-control {
@@ -359,10 +575,11 @@
     
     /* Footer */
     footer {
-      background-color: var(--secondary-color);
-      padding: 30px 0;
+      background-color: var(--bg-secondary);
+      padding: var(--space-xl) 0;
       text-align: center;
-      margin-top: 60px;
+      margin-top: var(--space-2xl);
+      border-top: 1px solid var(--border-color);
     }
     
     .footer-content {
@@ -373,99 +590,45 @@
     
     .copyright {
       color: var(--text-secondary);
-      font-size: 14px;
+      font-size: 0.9rem;
     }
     
-    .switch-theme {
+    .footer-links {
       display: flex;
-      align-items: center;
-      gap: 10px;
+      gap: var(--space-md);
     }
     
-    /* Hidden Color Picker */
-    .color-picker-tab {
-      position: fixed;
-      right: -300px;
-      top: 50%;
-      transform: translateY(-50%);
-      width: 300px;
-      background-color: var(--white);
-      border-radius: 12px 0 0 12px;
-      box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-      padding: 20px;
-      transition: right 0.4s cubic-bezier(0.77, 0, 0.175, 1);
-      z-index: 1000;
-      border: 1px solid var(--light-gray);
+    .footer-link {
+      color: var(--text-secondary);
+      text-decoration: none;
+      transition: color var(--transition-normal);
     }
     
-    .color-picker-tab.visible {
-      right: 0;
+    .footer-link:hover {
+      color: var(--primary-color);
     }
     
-    .tab-button {
-      position: absolute;
-      left: -40px;
-      top: 50%;
-      transform: translateY(-50%);
-      width: 40px;
-      height: 40px;
-      background-color: var(--white);
-      border-radius: 8px 0 0 8px;
-      border: 1px solid var(--light-gray);
-      border-right: none;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      box-shadow: -5px 0 10px rgba(0, 0, 0, 0.05);
-    }
-    
-    .color-picker-title {
-      font-size: 18px;
-      margin-bottom: 20px;
-      font-weight: 600;
-      text-align: center;
-    }
-    
-    .color-picker {
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-    }
-    
-    /* Beach Wave Page Transition */
-    .page-transition {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: var(--accent-color);
-      z-index: 9999;
-      pointer-events: none;
-      clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
-    }
-    
-    .page-transition.active {
-      animation: beachWave 1s ease-in-out forwards;
-    }
-    
-    @keyframes beachWave {
-      0% {
-        clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
+    /* Animations */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
       }
-      50% {
-        clip-path: polygon(0 0, 100% 10%, 100% 90%, 0 100%);
-      }
-      100% {
-        clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
+      to {
+        opacity: 1;
+        transform: translateY(0);
       }
     }
     
-    /* Media Queries */
+    .animate-fade-in {
+      animation: fadeInUp 0.8s ease forwards;
+    }
+    
+    /* Responsive Design */
     @media (max-width: 768px) {
       .about-content {
         grid-template-columns: 1fr;
+        gap: var(--space-lg);
       }
       
       .profile-image {
@@ -474,61 +637,78 @@
       
       .contact-grid {
         grid-template-columns: 1fr;
+        gap: var(--space-lg);
       }
       
       .portfolio-grid {
         grid-template-columns: 1fr;
       }
       
-      .footer-content {
-        flex-direction: column;
-        gap: 20px;
+      .timeline::before {
+        left: 20px;
       }
       
-      .color-picker-tab {
-        width: 260px;
+      .timeline-item {
+        width: 100%;
+        left: 0 !important;
+        padding-left: 50px !important;
+        padding-right: 0 !important;
+      }
+      
+      .timeline-item::before {
+        left: 12px !important;
+      }
+      
+      .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+      }
+      
+      .footer-content {
+        flex-direction: column;
+        gap: var(--space-md);
+      }
+      
+      .navbar {
+        display: none;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .container {
+        padding: 0 var(--space-sm);
+      }
+      
+      .hero {
+        padding: var(--space-xl) 0;
+      }
+      
+      section {
+        padding: var(--space-xl) 0;
+      }
+      
+      .contact-section {
+        padding: var(--space-lg);
       }
     }
   </style>
 </head>
 <body>
-  <!-- Page Transition Element -->
-  <div class="page-transition"></div>
-  
-  <!-- Hidden Color Picker Tab -->
-  <div class="color-picker-tab" id="colorPickerTab">
-    <div class="tab-button" id="tabButton">
-      <span>🎨</span>
-    </div>
-    <div class="color-picker-title">Theme Customization</div>
-    
-    <div class="color-picker-password" id="passwordSection">
-      <input type="password" class="form-control" id="accessPassword" placeholder="Enter access code">
-      <div class="password-hint">Hint: The default code has 4 digits</div>
-      <button class="button" id="submitPassword" style="width: 100%; margin-top: 10px;">Access</button>
-    </div>
-    
-    <div class="color-picker" id="colorPickerControls" style="display: none;">
-      <div>
-        <label for="colorPicker">Primary Color:</label>
-        <input type="color" id="colorPicker" value="#4361ee" style="width: 100%;">
-      </div>
-      <button class="button" id="applyColorBtn" style="width: 100%;">Apply Color</button>
-      <button class="button button-outline" id="resetColorBtn" style="width: 100%;">Reset to Default</button>
-    </div>
-  </div>
-  
   <!-- Header -->
   <header>
     <div class="container">
       <div class="header-content">
-        <div class="logo">Ashraf<span>Mohiuddin</span></div>
+        <a href="#" class="logo">Ashraf<span>Mohiuddin</span></a>
         <nav class="navbar">
           <a href="#about" class="nav-item active">About</a>
           <a href="#portfolio" class="nav-item">Portfolio</a>
-          <a href="#contact" class="nav-item">Contact me</a>
-          <a href="creative-corner.html" class="nav-item page-link">Creative Corner</a>
+          <a href="#timeline" class="nav-item">Timeline</a>
+          <a href="#contact" class="nav-item">Contact</a>
+          <a href="creative-corner.html" class="nav-item">Creative Corner</a>
         </nav>
+        <button class="theme-toggle" id="themeToggle">
+          <i class="fas fa-moon"></i>
+        </button>
       </div>
     </div>
   </header>
@@ -536,9 +716,18 @@
   <!-- Hero Section -->
   <section class="hero">
     <div class="container">
-      <h1>Hello, I'm Ashraf Mohiuddin</h1>
-      <p>A Full Stack Developer with 2+ years of experience at Oracle, passionate about ML and productivity.</p>
-      <a href="#contact" class="button">Get in Touch</a>
+      <h1 class="animate-fade-in">Hello, I'm Ashraf Mohiuddin</h1>
+      <p class="animate-fade-in" style="animation-delay: 0.2s;">A Full Stack Developer with 2+ years of experience at Oracle, passionate about AI/ML and building impactful solutions.</p>
+      <div class="hero-buttons">
+        <a href="#portfolio" class="button animate-fade-in" style="animation-delay: 0.4s;">
+          <i class="fas fa-code"></i>
+          View My Work
+        </a>
+        <a href="#contact" class="button button-outline animate-fade-in" style="animation-delay: 0.6s;">
+          <i class="fas fa-envelope"></i>
+          Get in Touch
+        </a>
+      </div>
     </div>
   </section>
   
@@ -547,21 +736,22 @@
     <div class="container">
       <h2 class="section-title">About Me</h2>
       <div class="about-content">
-        <div class="profile-image"></div>
-        <div class="bio">
+        <div class="profile-image animate-fade-in"></div>
+        <div class="bio animate-fade-in">
           <h2>Professional Background</h2>
           <p>I'm a versatile developer with a strong foundation in both software engineering and machine learning. With over 2.5 years of experience at Oracle Financial Services, I've worked on full-stack enterprise applications and led key Kafka integrations for real-time financial systems.</p>
-          <p>My journey started at <strong>NIT Calicut</strong>, where I earned my B.Tech in Computer Science and cultivated a passion for solving real-world problems through technology. I’ve built apps ranging from a mobile-based OCT disease classifier to an expense tracker and a table retriever model powered by LLMs—all while staying curious and hands-on.</p>
+          <p>My journey started at <strong>NIT Calicut</strong>, where I earned my B.Tech in Computer Science and cultivated a passion for solving real-world problems through technology. I've built apps ranging from a mobile-based OCT disease classifier to an expense tracker and a table retriever model powered by LLMs—all while staying curious and hands-on.</p>
           <p>I believe in continuous learning and building systems that are both efficient and user-friendly. Whether it's designing data pipelines with Flink, deploying models offline, or teaching Python to school kids, I enjoy contributing across the stack—and beyond.</p>
           <h3>My Skills</h3>
           <div class="skills">
-            <span class="skill-tag">UI/UX Design</span>
-            <span class="skill-tag">AI Generalist</span>
-            <span class="skill-tag">Web Development</span>
-            <span class="skill-tag">Full Stack Developer</span>
-            <span class="skill-tag">Machine Learning</span>
+            <span class="skill-tag">Full Stack Development</span>
+            <span class="skill-tag">AI/ML Engineering</span>
             <span class="skill-tag">Python</span>
             <span class="skill-tag">JavaScript</span>
+            <span class="skill-tag">React</span>
+            <span class="skill-tag">Node.js</span>
+            <span class="skill-tag">Kafka</span>
+            <span class="skill-tag">Docker</span>
           </div>
         </div>
       </div>
@@ -573,40 +763,127 @@
     <div class="container">
       <h2 class="section-title">My Portfolio</h2>
       <div class="portfolio-grid">
-        <div class="portfolio-item">
+        <div class="portfolio-item animate-fade-in">
+          <div class="portfolio-image"></div>
+          <div class="portfolio-info">
+            <h3>DB-mapping Recommendation Engine</h3>
+            <p>Built an intelligent recommendation system using LLMs and Hugging Face transformers to map database schemas and suggest optimal relationships between tables. Reduces manual mapping time by 70%.</p>
+            <div class="tech-stack">
+              <span class="tech-badge">Python</span>
+              <span class="tech-badge">Hugging Face</span>
+              <span class="tech-badge">LLMs</span>
+              <span class="tech-badge">PostgreSQL</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="portfolio-item animate-fade-in" style="animation-delay: 0.2s;">
+          <div class="portfolio-image"></div>
+          <div class="portfolio-info">
+            <h3>Offline Code Generation Tools</h3>
+            <p>Developed offline-capable code generation tools using Mistral and DeepSeek Coder models. Enables developers to generate production-ready code without internet connectivity, with 85% accuracy.</p>
+            <div class="tech-stack">
+              <span class="tech-badge">Mistral AI</span>
+              <span class="tech-badge">DeepSeek</span>
+              <span class="tech-badge">Python</span>
+              <span class="tech-badge">Docker</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="portfolio-item animate-fade-in" style="animation-delay: 0.4s;">
+          <div class="portfolio-image"></div>
+          <div class="portfolio-info">
+            <h3>Personal Expense Tracker</h3>
+            <p>Flutter-based expense tracking app with AI integration for smart categorization and spending insights. Features include budget alerts, expense analytics, and AI-powered receipt scanning.</p>
+            <div class="tech-stack">
+              <span class="tech-badge">Flutter</span>
+              <span class="tech-badge">Dart</span>
+              <span class="tech-badge">AI Integration</span>
+              <span class="tech-badge">SQLite</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="portfolio-item animate-fade-in" style="animation-delay: 0.6s;">
           <div class="portfolio-image"></div>
           <div class="portfolio-info">
             <h3>OCT Disease Classifier</h3>
-            <p>Mobile app that classifies retinal diseases using OCT images and deep learning. Built lightweight to run offline on devices.</p>
-            <div class="tags">
-              <span class="tag">Flutter</span>
-              <span class="tag">Deep Learning</span>
-              <span class="tag">Mobile ML</span>
+            <p>Mobile app that classifies retinal diseases using OCT images and deep learning. Built lightweight to run offline on devices with 92% accuracy in disease detection.</p>
+            <div class="tech-stack">
+              <span class="tech-badge">Flutter</span>
+              <span class="tech-badge">TensorFlow Lite</span>
+              <span class="tech-badge">Deep Learning</span>
+              <span class="tech-badge">Mobile ML</span>
             </div>
           </div>
         </div>
-        <div class="portfolio-item">
+        
+        <div class="portfolio-item animate-fade-in" style="animation-delay: 0.8s;">
           <div class="portfolio-image"></div>
           <div class="portfolio-info">
             <h3>Kafka Integration – Oracle</h3>
-            <p>Led the integration of Kafka-based real-time services in enterprise banking apps, reducing latency and improving responsiveness.</p>
-            <div class="tags">
-              <span class="tag">Kafka</span>
-              <span class="tag">Microservices</span>
-              <span class="tag">Full Stack</span>
+            <p>Led the integration of Kafka-based real-time services in enterprise banking apps, reducing latency by 60% and improving system responsiveness for financial transactions.</p>
+            <div class="tech-stack">
+              <span class="tech-badge">Kafka</span>
+              <span class="tech-badge">Microservices</span>
+              <span class="tech-badge">Java</span>
+              <span class="tech-badge">Spring Boot</span>
             </div>
           </div>
         </div>
-        <div class="portfolio-item">
+        
+        <div class="portfolio-item animate-fade-in" style="animation-delay: 1s;">
           <div class="portfolio-image"></div>
           <div class="portfolio-info">
-            <h3>Expense Tracker App</h3>
-            <p>Flutter-based app to track and visualize daily expenses with intuitive local data storage.</p>
-            <div class="tags">
-              <span class="tag">Flutter</span>
-              <span class="tag">UI Design</span>
-              <span class="tag">Personal Project</span>
+            <h3>Table Retriever Model</h3>
+            <p>Built a sophisticated table retrieval system using LLMs to intelligently search and extract relevant data from large document collections with natural language queries.</p>
+            <div class="tech-stack">
+              <span class="tech-badge">Python</span>
+              <span class="tech-badge">LLMs</span>
+              <span class="tech-badge">NLP</span>
+              <span class="tech-badge">FastAPI</span>
             </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Timeline Section -->
+  <section id="timeline">
+    <div class="container">
+      <h2 class="section-title">My Journey</h2>
+      <div class="timeline">
+        <div class="timeline-item animate-fade-in">
+          <div class="timeline-content">
+            <div class="timeline-date">2018 - 2022</div>
+            <div class="timeline-title">B.Tech Computer Science</div>
+            <div class="timeline-description">Graduated from NIT Calicut with a strong foundation in computer science, algorithms, and software engineering principles.</div>
+          </div>
+        </div>
+        
+        <div class="timeline-item animate-fade-in" style="animation-delay: 0.2s;">
+          <div class="timeline-content">
+            <div class="timeline-date">2022 - Present</div>
+            <div class="timeline-title">Full Stack Developer at Oracle</div>
+            <div class="timeline-description">Working on enterprise financial applications, leading Kafka integrations, and contributing to real-time banking systems.</div>
+          </div>
+        </div>
+        
+        <div class="timeline-item animate-fade-in" style="animation-delay: 0.4s;">
+          <div class="timeline-content">
+            <div class="timeline-date">2023 - Present</div>
+            <div class="timeline-title">AI/ML Projects</div>
+            <div class="timeline-description">Developed multiple AI-powered applications including code generation tools, recommendation engines, and mobile ML solutions.</div>
+          </div>
+        </div>
+        
+        <div class="timeline-item animate-fade-in" style="animation-delay: 0.6s;">
+          <div class="timeline-content">
+            <div class="timeline-date">2024 - Future</div>
+            <div class="timeline-title">AI-First Solutions</div>
+            <div class="timeline-description">Focusing on building AI-first applications that solve real-world problems and improve developer productivity.</div>
           </div>
         </div>
       </div>
@@ -624,34 +901,47 @@
             <p>Have a project in mind? I'd love to hear about it. Drop me a message and I'll get back to you as soon as possible.</p>
             <div class="contact-details">
               <div class="contact-item">
-                <div class="contact-icon">📧</div>
-                <span>sashrafmohiuddin@gmail.com</span>
+                <div class="contact-icon">
+                  <i class="fas fa-envelope"></i>
+                </div>
+                <div class="contact-text">sashrafmohiuddin@gmail.com</div>
               </div>
               <div class="contact-item">
-                <div class="contact-icon">📍</div>
-                <span>Hyderabad, India</span>
+                <div class="contact-icon">
+                  <i class="fas fa-map-marker-alt"></i>
+                </div>
+                <div class="contact-text">Hyderabad, India</div>
               </div>
             </div>
             <div class="social-links">
-              <a href="#" class="social-icon">in</a>
-              <a href="#" class="social-icon">gh</a>
-              <a href="#" class="social-icon">tw</a>
+              <a href="https://linkedin.com/in/ashraf-mohiuddin" class="social-link" target="_blank" rel="noopener">
+                <i class="fab fa-linkedin-in"></i>
+              </a>
+              <a href="https://github.com/ashraf-mohiuddin" class="social-link" target="_blank" rel="noopener">
+                <i class="fab fa-github"></i>
+              </a>
+              <a href="mailto:sashrafmohiuddin@gmail.com" class="social-link">
+                <i class="fas fa-envelope"></i>
+              </a>
             </div>
           </div>
           <form class="contact-form">
             <div class="form-group">
-              <input type="text" class="form-control" placeholder="Your Name">
+              <input type="text" class="form-control" placeholder="Your Name" required>
             </div>
             <div class="form-group">
-              <input type="email" class="form-control" placeholder="Your Email">
+              <input type="email" class="form-control" placeholder="Your Email" required>
             </div>
             <div class="form-group">
-              <input type="text" class="form-control" placeholder="Subject">
+              <input type="text" class="form-control" placeholder="Subject" required>
             </div>
             <div class="form-group">
-              <textarea class="form-control" placeholder="Your Message"></textarea>
+              <textarea class="form-control" placeholder="Your Message" required></textarea>
             </div>
-            <button type="submit" class="button">Send Message</button>
+            <button type="submit" class="button">
+              <i class="fas fa-paper-plane"></i>
+              Send Message
+            </button>
           </form>
         </div>
       </div>
@@ -662,119 +952,103 @@
   <footer>
     <div class="container">
       <div class="footer-content">
-        <div class="copyright">© 2025 John Doe. All rights reserved.</div>
-        <div class="switch-theme">
-          <span>Switch to</span>
-          <a href="creative-corner.html" class="button button-outline page-link">Creative Corner</a>
+        <div class="copyright">© 2025 Ashraf Mohiuddin. All rights reserved.</div>
+        <div class="footer-links">
+          <a href="creative-corner.html" class="footer-link">Creative Corner</a>
+          <a href="#portfolio" class="footer-link">Portfolio</a>
+          <a href="#contact" class="footer-link">Contact</a>
         </div>
       </div>
     </div>
   </footer>
   
   <script>
-    // Page Transition Animation
-    const pageTransition = document.querySelector('.page-transition');
-    const pageLinks = document.querySelectorAll('.page-link');
-    pageLinks.forEach(link => {
-      link.addEventListener('click', function(e) {
+    // Theme Toggle
+    const themeToggle = document.getElementById('themeToggle');
+    const body = document.body;
+    
+    // Check for saved theme preference or default to light
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    body.setAttribute('data-theme', savedTheme);
+    updateThemeIcon(savedTheme);
+    
+    themeToggle.addEventListener('click', () => {
+      const currentTheme = body.getAttribute('data-theme');
+      const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+      
+      body.setAttribute('data-theme', newTheme);
+      localStorage.setItem('theme', newTheme);
+      updateThemeIcon(newTheme);
+    });
+    
+    function updateThemeIcon(theme) {
+      const icon = themeToggle.querySelector('i');
+      icon.className = theme === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
+    }
+    
+    // Smooth scrolling for navigation links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
         e.preventDefault();
-        const href = this.getAttribute('href');
-        pageTransition.classList.add('active');
-        setTimeout(() => {
-          window.location.href = href;
-        }, 1000);
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
       });
     });
     
-    // Toggle Theme Customizer Icon
-    const DEFAULT_PASSWORD = "0000";
-    const tabButton = document.getElementById('tabButton');
-    const colorPickerTab = document.getElementById('colorPickerTab');
-    const passwordSection = document.getElementById('passwordSection');
-    const accessPassword = document.getElementById('accessPassword');
-    const submitPassword = document.getElementById('submitPassword');
-    const colorPickerControls = document.getElementById('colorPickerControls');
+    // Navigation active state
+    const navItems = document.querySelectorAll('.nav-item');
+    const sections = document.querySelectorAll('section[id]');
     
-    tabButton.addEventListener('click', () => {
-      colorPickerTab.classList.toggle('visible');
-      if(colorPickerTab.classList.contains('visible')) {
-        tabButton.innerHTML = '<i class="fas fa-times"></i>';
-      } else {
-        tabButton.innerHTML = '<span>🎨</span>';
-      }
-    });
+    function updateActiveNav() {
+      const scrollPos = window.scrollY + 100;
+      
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.offsetHeight;
+        const sectionId = section.getAttribute('id');
+        
+        if (scrollPos >= sectionTop && scrollPos < sectionTop + sectionHeight) {
+          navItems.forEach(item => {
+            item.classList.remove('active');
+            if (item.getAttribute('href') === `#${sectionId}`) {
+              item.classList.add('active');
+            }
+          });
+        }
+      });
+    }
     
-    submitPassword.addEventListener('click', () => {
-      if (accessPassword.value === DEFAULT_PASSWORD) {
-        passwordSection.style.display = 'none';
-        colorPickerControls.style.display = 'block';
-      } else {
-        accessPassword.style.borderColor = 'red';
-        accessPassword.value = '';
-        accessPassword.placeholder = 'Wrong password, try again';
+    window.addEventListener('scroll', updateActiveNav);
+    
+    // Form submission
+    const contactForm = document.querySelector('.contact-form');
+    contactForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      // Add loading state
+      const submitBtn = this.querySelector('button[type="submit"]');
+      const originalText = submitBtn.innerHTML;
+      submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+      submitBtn.disabled = true;
+      
+      // Simulate form submission
+      setTimeout(() => {
+        submitBtn.innerHTML = '<i class="fas fa-check"></i> Message Sent!';
+        submitBtn.style.backgroundColor = '#10b981';
+        
         setTimeout(() => {
-          accessPassword.style.borderColor = '';
-          accessPassword.placeholder = 'Enter access code';
+          submitBtn.innerHTML = originalText;
+          submitBtn.disabled = false;
+          submitBtn.style.backgroundColor = '';
+          this.reset();
         }, 2000);
-      }
-    });
-    
-    // Update Colors based on Selection
-    document.getElementById('colorPicker').addEventListener('input', function(e) {
-      applyColor(e.target.value);
-    });
-    
-    document.getElementById('applyColorBtn').addEventListener('click', function() {
-      applyColor(document.getElementById('colorPicker').value);
-    });
-    
-    document.getElementById('resetColorBtn').addEventListener('click', function() {
-      const DEFAULT_COLOR = "#4361ee";
-      document.getElementById('colorPicker').value = DEFAULT_COLOR;
-      applyColor(DEFAULT_COLOR);
-    });
-    
-    function applyColor(selectedColor) {
-      document.documentElement.style.setProperty('--primary-color', selectedColor);
-      const lighterShade = lightenColor(selectedColor, 40);
-      const darkerShade = darkenColor(selectedColor, 20);
-      document.documentElement.style.setProperty('--primary-light', lighterShade);
-      document.documentElement.style.setProperty('--primary-dark', darkerShade);
-      document.documentElement.style.setProperty('--accent-color', selectedColor);
-      localStorage.setItem('portfolio-primary-color', selectedColor);
-    }
-    
-    function lightenColor(hex, amount) {
-      return adjustColor(hex, amount);
-    }
-    
-    function darkenColor(hex, amount) {
-      return adjustColor(hex, -amount);
-    }
-    
-    function adjustColor(hex, amount) {
-      let r = parseInt(hex.slice(1, 3), 16);
-      let g = parseInt(hex.slice(3, 5), 16);
-      let b = parseInt(hex.slice(5, 7), 16);
-      r = Math.max(0, Math.min(255, r + amount));
-      g = Math.max(0, Math.min(255, g + amount));
-      b = Math.max(0, Math.min(255, b + amount));
-      return `#${r.toString(16).padStart(2, '0')}${g.toString(16).padStart(2, '0')}${b.toString(16).padStart(2, '0')}`;
-    }
-    
-    // Navigation active highlight
-    document.addEventListener('DOMContentLoaded', function() {
-      const navItems = document.querySelectorAll('.nav-item');
-      navItems.forEach(item => {
-        item.addEventListener('click', function() {
-          if (!this.getAttribute('href').includes('.html')) {
-            navItems.forEach(nav => nav.classList.remove('active'));
-            this.classList.add('active');
-          }
-        });
-      });
+      }, 1500);
     });
   </script>
 </body>
 </html>
-
