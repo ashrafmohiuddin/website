@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Ashraf Mohiuddin - Full Stack Developer & AI Enthusiast. 2+ years at Oracle, passionate about ML and productivity." />
-  <meta name="keywords" content="Ashraf Mohiuddin, Full Stack Developer, AI, Machine Learning, Oracle, Portfolio" />
-  <meta name="author" content="Ashraf Mohiuddin" />
-  <title>Ashraf Mohiuddin - Full Stack Developer & AI Enthusiast</title>
+  <meta name="description" content="Ashraf Mohiuddin Shaik - Full-stack Software Engineer at Oracle Financial Services. 3 years building scalable enterprise apps with Spring Boot, Kafka, and Oracle JET." />
+  <meta name="keywords" content="Ashraf Mohiuddin Shaik, Full-stack Software Engineer, Oracle Financial Services, Spring Boot, Kafka, Oracle JET, AI/ML" />
+  <meta name="author" content="Ashraf Mohiuddin Shaik" />
+  <title>Ashraf Mohiuddin Shaik - Full-stack Software Engineer</title>
   
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -163,6 +163,24 @@
     }
     
     .theme-toggle:hover {
+      background-color: var(--bg-secondary);
+      color: var(--text-primary);
+    }
+    
+    /* Mobile Menu Toggle */
+    .mobile-menu-toggle {
+      display: none;
+      background: none;
+      border: none;
+      color: var(--text-secondary);
+      font-size: 1.2rem;
+      cursor: pointer;
+      padding: var(--space-xs);
+      border-radius: 50%;
+      transition: all var(--transition-normal);
+    }
+    
+    .mobile-menu-toggle:hover {
       background-color: var(--bg-secondary);
       color: var(--text-primary);
     }
@@ -671,6 +689,30 @@
       
       .navbar {
         display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: var(--bg-primary);
+        border-top: 1px solid var(--border-color);
+        padding: var(--space-md);
+        flex-direction: column;
+        box-shadow: var(--shadow-lg);
+      }
+      
+      .navbar.show {
+        display: flex;
+      }
+      
+      /* Mobile menu toggle */
+      .mobile-menu-toggle {
+        display: block;
+        background: none;
+        border: none;
+        color: var(--text-secondary);
+        font-size: 1.5rem;
+        cursor: pointer;
+        padding: var(--space-xs);
       }
     }
     
@@ -698,14 +740,18 @@
   <header>
     <div class="container">
       <div class="header-content">
-        <a href="#" class="logo">Ashraf<span>Mohiuddin</span></a>
+        <a href="#" class="logo">Ashraf<span>Mohiuddin Shaik</span></a>
         <nav class="navbar">
           <a href="#about" class="nav-item active">About</a>
           <a href="#portfolio" class="nav-item">Portfolio</a>
           <a href="#timeline" class="nav-item">Timeline</a>
           <a href="#contact" class="nav-item">Contact</a>
           <a href="creative-corner.html" class="nav-item">Creative Corner</a>
+          <a href="photography.html" class="nav-item">Photography</a>
         </nav>
+        <button class="mobile-menu-toggle" id="mobileMenuToggle">
+          <i class="fas fa-bars"></i>
+        </button>
         <button class="theme-toggle" id="themeToggle">
           <i class="fas fa-moon"></i>
         </button>
@@ -716,8 +762,8 @@
   <!-- Hero Section -->
   <section class="hero">
     <div class="container">
-      <h1 class="animate-fade-in">Hello, I'm Ashraf Mohiuddin</h1>
-      <p class="animate-fade-in" style="animation-delay: 0.2s;">A Full Stack Developer with 2+ years of experience at Oracle, passionate about AI/ML and building impactful solutions.</p>
+      <h1 class="animate-fade-in">Hello, I'm Ashraf Mohiuddin Shaik</h1>
+      <p class="animate-fade-in" style="animation-delay: 0.2s;">A Full-stack Software Engineer with 3 years at Oracle Financial Services, building scalable enterprise apps with Spring Boot, Kafka, and Oracle JET.</p>
       <div class="hero-buttons">
         <a href="#portfolio" class="button animate-fade-in" style="animation-delay: 0.4s;">
           <i class="fas fa-code"></i>
@@ -739,20 +785,20 @@
         <div class="profile-image animate-fade-in"></div>
         <div class="bio animate-fade-in">
           <h2>Professional Background</h2>
-          <p>I'm a versatile developer with a strong foundation in both software engineering and machine learning. With over 2.5 years of experience at Oracle Financial Services, I've worked on full-stack enterprise applications and led key Kafka integrations for real-time financial systems.</p>
-          <p>My journey started at <strong>NIT Calicut</strong>, where I earned my B.Tech in Computer Science and cultivated a passion for solving real-world problems through technology. I've built apps ranging from a mobile-based OCT disease classifier to an expense tracker and a table retriever model powered by LLMs—all while staying curious and hands-on.</p>
-          <p>I believe in continuous learning and building systems that are both efficient and user-friendly. Whether it's designing data pipelines with Flink, deploying models offline, or teaching Python to school kids, I enjoy contributing across the stack—and beyond.</p>
+          <p>I'm a Full-stack Software Engineer with 3 years of experience at Oracle Financial Services, building scalable enterprise applications across backend (Spring Boot, Kafka) and frontend (Oracle JET). I've led multiple high-impact features now used by major banks, including real-time streaming UIs and automation tools.</p>
+          <p>My journey started at <strong>NIT Calicut</strong>, where I earned my B.Tech in Computer Science and Engineering with a CGPA of 7.55. I'm passionate about using lightweight LLMs and embeddings like Mistral and Hugging Face to build and enhance developer tools.</p>
+          <p>I'm actively exploring the latest in AI and LLMs, seeking opportunities to apply my passion in a product-driven environment. When I'm not coding, you'll find me exploring photography, tech automation, or riding my motorcycle.</p>
           <h3>My Skills</h3>
-          <div class="skills">
-            <span class="skill-tag">Full Stack Development</span>
-            <span class="skill-tag">AI/ML Engineering</span>
-            <span class="skill-tag">Python</span>
-            <span class="skill-tag">JavaScript</span>
-            <span class="skill-tag">React</span>
-            <span class="skill-tag">Node.js</span>
-            <span class="skill-tag">Kafka</span>
-            <span class="skill-tag">Docker</span>
-          </div>
+                      <div class="skills">
+              <span class="skill-tag">Full-stack Development</span>
+              <span class="skill-tag">Spring Boot</span>
+              <span class="skill-tag">Oracle JET</span>
+              <span class="skill-tag">Kafka</span>
+              <span class="skill-tag">Python</span>
+              <span class="skill-tag">Java</span>
+              <span class="skill-tag">Flutter</span>
+              <span class="skill-tag">AI/ML</span>
+            </div>
         </div>
       </div>
     </div>
@@ -767,12 +813,12 @@
           <div class="portfolio-image"></div>
           <div class="portfolio-info">
             <h3>DB-mapping Recommendation Engine</h3>
-            <p>Built an intelligent recommendation system using LLMs and Hugging Face transformers to map database schemas and suggest optimal relationships between tables. Reduces manual mapping time by 70%.</p>
+            <p>Developed a DB-mapping recommendation engine by implementing a sentence transformer, which takes a workspace objective and database details to suggest the optimal data source. This tool reduces manual search time from over 2 minutes to less than 10 seconds.</p>
             <div class="tech-stack">
               <span class="tech-badge">Python</span>
               <span class="tech-badge">Hugging Face</span>
+              <span class="tech-badge">Sentence Transformers</span>
               <span class="tech-badge">LLMs</span>
-              <span class="tech-badge">PostgreSQL</span>
             </div>
           </div>
         </div>
@@ -780,13 +826,13 @@
         <div class="portfolio-item animate-fade-in" style="animation-delay: 0.2s;">
           <div class="portfolio-image"></div>
           <div class="portfolio-info">
-            <h3>Offline Code Generation Tools</h3>
-            <p>Developed offline-capable code generation tools using Mistral and DeepSeek Coder models. Enables developers to generate production-ready code without internet connectivity, with 85% accuracy.</p>
+            <h3>Kafka Integration – Oracle</h3>
+            <p>Owned and led the full-stack development of a Kafka-backed, real-time microservices module from scratch. Built with Spring Boot and Oracle JET, enabling real-time data streaming and windowing for the "Model Management and Governance" product.</p>
             <div class="tech-stack">
-              <span class="tech-badge">Mistral AI</span>
-              <span class="tech-badge">DeepSeek</span>
-              <span class="tech-badge">Python</span>
-              <span class="tech-badge">Docker</span>
+              <span class="tech-badge">Spring Boot</span>
+              <span class="tech-badge">Oracle JET</span>
+              <span class="tech-badge">Kafka</span>
+              <span class="tech-badge">Microservices</span>
             </div>
           </div>
         </div>
@@ -795,7 +841,7 @@
           <div class="portfolio-image"></div>
           <div class="portfolio-info">
             <h3>Personal Expense Tracker</h3>
-            <p>Flutter-based expense tracking app with AI integration for smart categorization and spending insights. Features include budget alerts, expense analytics, and AI-powered receipt scanning.</p>
+            <p>Developing a cross-platform Flutter app with a local sync engine to manage finances, track spending, and visualize trends offline. Launching August 2025 for Android and iOS with AI-assisted budget analysis.</p>
             <div class="tech-stack">
               <span class="tech-badge">Flutter</span>
               <span class="tech-badge">Dart</span>
@@ -809,40 +855,12 @@
           <div class="portfolio-image"></div>
           <div class="portfolio-info">
             <h3>OCT Disease Classifier</h3>
-            <p>Mobile app that classifies retinal diseases using OCT images and deep learning. Built lightweight to run offline on devices with 92% accuracy in disease detection.</p>
+            <p>Final year project: Built a CNN-based model (99.69% accuracy) using TensorFlow to classify retinal diseases from OCT scans. Optimized for on-device inference and deployed in a Flutter mobile app with minimal latency.</p>
             <div class="tech-stack">
               <span class="tech-badge">Flutter</span>
-              <span class="tech-badge">TensorFlow Lite</span>
-              <span class="tech-badge">Deep Learning</span>
+              <span class="tech-badge">TensorFlow</span>
+              <span class="tech-badge">CNN</span>
               <span class="tech-badge">Mobile ML</span>
-            </div>
-          </div>
-        </div>
-        
-        <div class="portfolio-item animate-fade-in" style="animation-delay: 0.8s;">
-          <div class="portfolio-image"></div>
-          <div class="portfolio-info">
-            <h3>Kafka Integration – Oracle</h3>
-            <p>Led the integration of Kafka-based real-time services in enterprise banking apps, reducing latency by 60% and improving system responsiveness for financial transactions.</p>
-            <div class="tech-stack">
-              <span class="tech-badge">Kafka</span>
-              <span class="tech-badge">Microservices</span>
-              <span class="tech-badge">Java</span>
-              <span class="tech-badge">Spring Boot</span>
-            </div>
-          </div>
-        </div>
-        
-        <div class="portfolio-item animate-fade-in" style="animation-delay: 1s;">
-          <div class="portfolio-image"></div>
-          <div class="portfolio-info">
-            <h3>Table Retriever Model</h3>
-            <p>Built a sophisticated table retrieval system using LLMs to intelligently search and extract relevant data from large document collections with natural language queries.</p>
-            <div class="tech-stack">
-              <span class="tech-badge">Python</span>
-              <span class="tech-badge">LLMs</span>
-              <span class="tech-badge">NLP</span>
-              <span class="tech-badge">FastAPI</span>
             </div>
           </div>
         </div>
@@ -858,32 +876,24 @@
         <div class="timeline-item animate-fade-in">
           <div class="timeline-content">
             <div class="timeline-date">2018 - 2022</div>
-            <div class="timeline-title">B.Tech Computer Science</div>
-            <div class="timeline-description">Graduated from NIT Calicut with a strong foundation in computer science, algorithms, and software engineering principles.</div>
+            <div class="timeline-title">B.Tech Computer Science & Engineering</div>
+            <div class="timeline-description">Graduated from NIT Calicut with a CGPA of 7.55, building a strong foundation in computer science, algorithms, and software engineering principles.</div>
           </div>
         </div>
         
         <div class="timeline-item animate-fade-in" style="animation-delay: 0.2s;">
           <div class="timeline-content">
-            <div class="timeline-date">2022 - Present</div>
-            <div class="timeline-title">Full Stack Developer at Oracle</div>
-            <div class="timeline-description">Working on enterprise financial applications, leading Kafka integrations, and contributing to real-time banking systems.</div>
+            <div class="timeline-date">July 2022 - Present</div>
+            <div class="timeline-title">Associate Software Developer at Oracle</div>
+            <div class="timeline-description">Working at Oracle Financial Services in Bengaluru, building scalable enterprise apps with Spring Boot, Kafka, and Oracle JET. Leading high-impact features used by major banks.</div>
           </div>
         </div>
         
         <div class="timeline-item animate-fade-in" style="animation-delay: 0.4s;">
           <div class="timeline-content">
-            <div class="timeline-date">2023 - Present</div>
-            <div class="timeline-title">AI/ML Projects</div>
-            <div class="timeline-description">Developed multiple AI-powered applications including code generation tools, recommendation engines, and mobile ML solutions.</div>
-          </div>
-        </div>
-        
-        <div class="timeline-item animate-fade-in" style="animation-delay: 0.6s;">
-          <div class="timeline-content">
-            <div class="timeline-date">2024 - Future</div>
-            <div class="timeline-title">AI-First Solutions</div>
-            <div class="timeline-description">Focusing on building AI-first applications that solve real-world problems and improve developer productivity.</div>
+            <div class="timeline-date">August 2025 - Present</div>
+            <div class="timeline-title">Personal Expense Tracker App</div>
+            <div class="timeline-description">Started developing a cross-platform Flutter app with local sync engine for offline finance management. Planning AI-assisted budget analysis and insights.</div>
           </div>
         </div>
       </div>
@@ -904,7 +914,7 @@
                 <div class="contact-icon">
                   <i class="fas fa-envelope"></i>
                 </div>
-                <div class="contact-text">sashrafmohiuddin@gmail.com</div>
+                <div class="contact-text">ashraf61242@gmail.com</div>
               </div>
               <div class="contact-item">
                 <div class="contact-icon">
@@ -920,7 +930,7 @@
               <a href="https://github.com/ashraf-mohiuddin" class="social-link" target="_blank" rel="noopener">
                 <i class="fab fa-github"></i>
               </a>
-              <a href="mailto:sashrafmohiuddin@gmail.com" class="social-link">
+              <a href="mailto:ashraf61242@gmail.com" class="social-link">
                 <i class="fas fa-envelope"></i>
               </a>
             </div>
@@ -952,9 +962,10 @@
   <footer>
     <div class="container">
       <div class="footer-content">
-        <div class="copyright">© 2025 Ashraf Mohiuddin. All rights reserved.</div>
+        <div class="copyright">© 2025 Ashraf Mohiuddin Shaik. All rights reserved.</div>
         <div class="footer-links">
           <a href="creative-corner.html" class="footer-link">Creative Corner</a>
+          <a href="photography.html" class="footer-link">Photography</a>
           <a href="#portfolio" class="footer-link">Portfolio</a>
           <a href="#contact" class="footer-link">Contact</a>
         </div>
@@ -985,6 +996,16 @@
       const icon = themeToggle.querySelector('i');
       icon.className = theme === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
     }
+    
+    // Mobile Menu Toggle
+    const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+    const navbar = document.querySelector('.navbar');
+    
+    mobileMenuToggle.addEventListener('click', () => {
+      navbar.classList.toggle('show');
+      const icon = mobileMenuToggle.querySelector('i');
+      icon.className = navbar.classList.contains('show') ? 'fas fa-times' : 'fas fa-bars';
+    });
     
     // Smooth scrolling for navigation links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {

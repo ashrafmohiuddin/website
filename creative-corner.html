@@ -155,6 +155,24 @@
       color: var(--text-primary);
     }
     
+    /* Mobile Menu Toggle */
+    .mobile-menu-toggle {
+      display: none;
+      background: none;
+      border: none;
+      color: var(--text-secondary);
+      font-size: 1.2rem;
+      cursor: pointer;
+      padding: var(--space-xs);
+      border-radius: 50%;
+      transition: all var(--transition-normal);
+    }
+    
+    .mobile-menu-toggle:hover {
+      background-color: var(--bg-secondary);
+      color: var(--text-primary);
+    }
+    
     /* Hero Section */
     .hero {
       padding: var(--space-2xl) 0;
@@ -322,6 +340,89 @@
       border: 1px solid var(--primary-light);
     }
     
+    .bike-stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: var(--space-sm);
+      margin: var(--space-md) 0;
+      padding: var(--space-md);
+      background-color: var(--bg-accent);
+      border-radius: var(--border-radius-sm);
+      border: 1px solid var(--primary-light);
+    }
+    
+    .stat-item {
+      display: flex;
+      align-items: center;
+      gap: var(--space-xs);
+      color: var(--primary-color);
+    }
+    
+    .stat-item i {
+      font-size: 1.2rem;
+      width: 20px;
+    }
+    
+    .stat-label {
+      font-weight: 600;
+      font-size: 0.9rem;
+    }
+    
+    .stat-value {
+      font-weight: 500;
+      color: var(--text-primary);
+    }
+    
+    /* New Layout Structure */
+    .activity-content-wrapper {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-xl);
+      align-items: start;
+    }
+    
+    .activity-description-section {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-md);
+    }
+    
+    .activity-images {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+      gap: var(--space-md);
+    }
+    
+    .image-placeholder {
+      aspect-ratio: 1;
+      background-color: var(--bg-accent);
+      border: 2px dashed var(--primary-light);
+      border-radius: var(--border-radius-sm);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: var(--primary-color);
+      transition: all var(--transition-normal);
+    }
+    
+    .image-placeholder:hover {
+      background-color: var(--primary-light);
+      color: white;
+      transform: translateY(-2px);
+    }
+    
+    .image-placeholder i {
+      font-size: 2rem;
+      margin-bottom: var(--space-xs);
+    }
+    
+    .image-placeholder span {
+      font-size: 0.8rem;
+      text-align: center;
+      font-weight: 500;
+    }
+    
     /* Gallery Section */
     .gallery-grid {
       display: grid;
@@ -412,6 +513,53 @@
       font-size: 1rem;
     }
     
+    /* Shows Section */
+    .shows-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: var(--space-lg);
+    }
+    
+    .show-card {
+      background-color: var(--bg-card);
+      padding: var(--space-lg);
+      border-radius: var(--border-radius);
+      text-align: center;
+      box-shadow: var(--shadow-md);
+      transition: var(--transition-normal);
+      border: 1px solid var(--border-color);
+    }
+    
+    .show-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-lg);
+    }
+    
+    .show-icon {
+      width: 60px;
+      height: 60px;
+      margin: 0 auto var(--space-md);
+      background: linear-gradient(135deg, var(--primary-color), var(--primary-light));
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 1.5rem;
+    }
+    
+    .show-card h4 {
+      color: var(--text-primary);
+      margin-bottom: var(--space-sm);
+      font-size: 1.2rem;
+    }
+    
+    .show-card p {
+      color: var(--text-secondary);
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+    
     /* Footer */
     footer {
       background-color: var(--bg-secondary);
@@ -465,12 +613,13 @@
     
     /* Responsive Design */
     @media (max-width: 768px) {
-      .activities-grid {
+      .activity-content-wrapper {
         grid-template-columns: 1fr;
+        gap: var(--space-lg);
       }
       
-      .gallery-grid {
-        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      .activity-images {
+        grid-template-columns: repeat(3, 1fr);
       }
       
       .fun-facts-grid {
@@ -484,6 +633,23 @@
       
       .navbar {
         display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: var(--bg-primary);
+        border-top: 1px solid var(--border-color);
+        padding: var(--space-md);
+        flex-direction: column;
+        box-shadow: var(--shadow-lg);
+      }
+      
+      .navbar.show {
+        display: flex;
+      }
+      
+      .mobile-menu-toggle {
+        display: block;
       }
     }
     
@@ -513,10 +679,15 @@
         <a href="index.html" class="logo">My <span>Creative</span> Corner</a>
         <nav class="navbar">
           <a href="index.html" class="nav-item">Home</a>
-          <a href="#activities" class="nav-item active">Activities</a>
-          <a href="#gallery" class="nav-item">Gallery</a>
+          <a href="#bike-riding" class="nav-item active">Bike Riding</a>
+          <a href="#photography" class="nav-item">Photography</a>
+          <a href="#coffee-brewing" class="nav-item">Coffee Brewing</a>
           <a href="#fun-facts" class="nav-item">Fun Facts</a>
+          <a href="photography.html" class="nav-item">Full Gallery</a>
         </nav>
+        <button class="mobile-menu-toggle" id="mobileMenuToggle">
+          <i class="fas fa-bars"></i>
+        </button>
         <button class="theme-toggle" id="themeToggle">
           <i class="fas fa-moon"></i>
         </button>
@@ -536,100 +707,138 @@
     </div>
   </section>
   
-  <!-- Creative Activities Section -->
-  <section id="activities">
+  <!-- Bike Riding Section -->
+  <section id="bike-riding">
     <div class="container">
-      <h2 class="section-title">My Creative Activities</h2>
-      <div class="activities-grid">
-        <div class="activity-card animate-fade-in">
-          <div class="activity-image bike-riding">
-            <div class="activity-overlay">
-              <h3 class="activity-title">Bike Riding</h3>
+      <h2 class="section-title">Bike Riding Adventures</h2>
+      <div class="activity-content-wrapper">
+        <div class="activity-description-section">
+          <p class="activity-description">
+            My Triumph Speed 400 is more than just a motorcycle—it's my escape to freedom and adventure. 
+            Whether it's exploring scenic routes around Hyderabad or taking weekend trips to nearby destinations, 
+            riding helps me clear my mind and find inspiration in the open road. The feeling of wind in my face 
+            and the open road ahead is pure therapy after a long day of coding.
+          </p>
+          <div class="bike-stats">
+            <div class="stat-item">
+              <i class="fas fa-motorcycle"></i>
+              <span class="stat-label">Bike:</span>
+              <span class="stat-value">Triumph Speed 400</span>
+            </div>
+            <div class="stat-item">
+              <i class="fas fa-calendar-alt"></i>
+              <span class="stat-label">Age:</span>
+              <span class="stat-value">1 year 1 month old</span>
+            </div>
+            <div class="stat-item">
+              <i class="fas fa-road"></i>
+              <span class="stat-label">Distance:</span>
+              <span class="stat-value">14,100 km done</span>
             </div>
           </div>
-          <div class="activity-content">
-            <p class="activity-description">
-              My Triumph Speed 400 is more than just a motorcycle—it's my escape to freedom and adventure. 
-              Whether it's exploring scenic routes around Hyderabad or taking weekend trips to nearby destinations, 
-              riding helps me clear my mind and find inspiration in the open road.
-            </p>
-            <div class="activity-features">
-              <span class="feature-tag">Triumph Speed 400</span>
-              <span class="feature-tag">Scenic Routes</span>
-              <span class="feature-tag">Weekend Adventures</span>
-              <span class="feature-tag">Freedom & Exploration</span>
-            </div>
+          <div class="activity-features">
+            <span class="feature-tag">Scenic Routes</span>
+            <span class="feature-tag">Weekend Adventures</span>
+            <span class="feature-tag">Freedom & Exploration</span>
           </div>
         </div>
-        
-        <div class="activity-card animate-fade-in" style="animation-delay: 0.2s;">
-          <div class="activity-image photography">
-            <div class="activity-overlay">
-              <h3 class="activity-title">Photography</h3>
-            </div>
+        <div class="activity-images">
+          <div class="image-placeholder">
+            <i class="fas fa-motorcycle"></i>
+            <span>Bike Adventure 1</span>
           </div>
-          <div class="activity-content">
-            <p class="activity-description">
-              Photography is my way of capturing moments and telling stories through visuals. 
-              I love exploring different perspectives, from wildlife photography to landscape shots. 
-              Each photo represents a moment frozen in time, a memory preserved forever.
-            </p>
-            <div class="activity-features">
-              <span class="feature-tag">Wildlife Photography</span>
-              <span class="feature-tag">Landscape Shots</span>
-              <span class="feature-tag">Storytelling</span>
-              <span class="feature-tag">Creative Expression</span>
-            </div>
+          <div class="image-placeholder">
+            <i class="fas fa-road"></i>
+            <span>Bike Adventure 2</span>
+          </div>
+          <div class="image-placeholder">
+            <i class="fas fa-mountain"></i>
+            <span>Bike Adventure 3</span>
           </div>
         </div>
       </div>
     </div>
   </section>
   
-  <!-- Gallery Section -->
-  <section id="gallery">
+  <!-- Photography Section -->
+  <section id="photography">
     <div class="container">
-      <h2 class="section-title">Photo Gallery</h2>
-      <div class="gallery-grid">
-        <div class="gallery-item animate-fade-in">
-          <img src="./images/20211212_180203.jpg" alt="Summer beach day at Goa" loading="lazy">
-          <div class="gallery-overlay">
-            <h4 class="gallery-title">Summer beach day at Goa</h4>
+      <h2 class="section-title">Photography Journey</h2>
+      <div class="activity-content-wrapper">
+        <div class="activity-description-section">
+          <p class="activity-description">
+            Photography is my way of capturing moments and telling stories through visuals. 
+            I love exploring different perspectives, from wildlife photography to landscape shots. 
+            Each photo represents a moment frozen in time, a memory preserved forever. My camera 
+            is always with me, ready to capture the beauty of nature and the moments that make life special.
+          </p>
+          <div class="activity-features">
+            <span class="feature-tag">Wildlife Photography</span>
+            <span class="feature-tag">Landscape Shots</span>
+            <span class="feature-tag">Storytelling</span>
+            <span class="feature-tag">Creative Expression</span>
           </div>
+          <a href="photography.html" class="button">
+            <i class="fas fa-camera"></i>
+            View Full Gallery
+          </a>
         </div>
-        <div class="gallery-item animate-fade-in" style="animation-delay: 0.1s;">
-          <img src="./images/ASH02346.jpg" alt="White Bengal Tiger" loading="lazy">
-          <div class="gallery-overlay">
-            <h4 class="gallery-title">White Bengal Tiger</h4>
+        <div class="activity-images">
+          <div class="image-placeholder">
+            <i class="fas fa-camera"></i>
+            <span>Photo 1</span>
           </div>
-        </div>
-        <div class="gallery-item animate-fade-in" style="animation-delay: 0.2s;">
-          <img src="./images/ASH02373.jpg" alt="White Bengal Tiger and Bengal Tiger" loading="lazy">
-          <div class="gallery-overlay">
-            <h4 class="gallery-title">White Bengal Tiger and Bengal Tiger</h4>
+          <div class="image-placeholder">
+            <i class="fas fa-image"></i>
+            <span>Photo 2</span>
           </div>
-        </div>
-        <div class="gallery-item animate-fade-in" style="animation-delay: 0.3s;">
-          <img src="./images/ASH03655-crop.JPG" alt="Bike riding adventure" loading="lazy">
-          <div class="gallery-overlay">
-            <h4 class="gallery-title">Bike riding adventure</h4>
-          </div>
-        </div>
-        <div class="gallery-item animate-fade-in" style="animation-delay: 0.4s;">
-          <img src="./images/ASH04929.jpg" alt="Nature photography" loading="lazy">
-          <div class="gallery-overlay">
-            <h4 class="gallery-title">Nature photography</h4>
-          </div>
-        </div>
-        <div class="gallery-item animate-fade-in" style="animation-delay: 0.5s;">
-          <img src="./images/ASH05056.jpg" alt="Landscape shot" loading="lazy">
-          <div class="gallery-overlay">
-            <h4 class="gallery-title">Landscape shot</h4>
+          <div class="image-placeholder">
+            <i class="fas fa-photo-video"></i>
+            <span>Photo 3</span>
           </div>
         </div>
       </div>
     </div>
   </section>
+  
+  <!-- Coffee Brewing Section -->
+  <section id="coffee-brewing">
+    <div class="container">
+      <h2 class="section-title">Coffee Brewing</h2>
+      <div class="activity-content-wrapper">
+        <div class="activity-description-section">
+          <p class="activity-description">
+            There's something meditative about brewing the perfect cup of coffee. From grinding fresh beans 
+            to the aroma that fills the room, it's a ritual that helps me start my day with focus and clarity. 
+            I love experimenting with different brewing methods and discovering new flavors. A good cup of coffee 
+            is like a warm hug for the soul.
+          </p>
+          <div class="activity-features">
+            <span class="feature-tag">Fresh Ground Beans</span>
+            <span class="feature-tag">Multiple Brewing Methods</span>
+            <span class="feature-tag">Flavor Exploration</span>
+            <span class="feature-tag">Morning Ritual</span>
+          </div>
+        </div>
+        <div class="activity-images">
+          <div class="image-placeholder">
+            <i class="fas fa-coffee"></i>
+            <span>Coffee Setup 1</span>
+          </div>
+          <div class="image-placeholder">
+            <i class="fas fa-mug-hot"></i>
+            <span>Coffee Setup 2</span>
+          </div>
+          <div class="image-placeholder">
+            <i class="fas fa-seedling"></i>
+            <span>Coffee Setup 3</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+
   
   <!-- Fun Facts Section -->
   <section id="fun-facts">
@@ -646,11 +855,39 @@
         </div>
         <div class="fun-fact-card animate-fade-in" style="animation-delay: 0.4s;">
           <h3>Childhood Dream</h3>
-          <p>I want to be a "Jack of all trades" - constantly learning and exploring new skills and technologies.</p>
+          <p>I want to be constantly learning and exploring new skills and technologies, always staying curious about what's next.</p>
         </div>
         <div class="fun-fact-card animate-fade-in" style="animation-delay: 0.6s;">
           <h3>Creative Philosophy</h3>
           <p>When I'm not coding, you'll find me riding my bike, taking photos, or brewing the perfect cup of coffee.</p>
+        </div>
+      </div>
+      
+      <!-- Favorite Shows Section -->
+      <h3 style="text-align: center; margin-top: var(--space-2xl); margin-bottom: var(--space-lg); color: var(--text-secondary); font-size: 1.5rem;">My Favorite Shows & Movies</h3>
+      <div class="shows-grid">
+        <div class="show-card animate-fade-in">
+          <div class="show-icon">
+            <i class="fas fa-tv"></i>
+          </div>
+          <h4>How I Met Your Mother</h4>
+          <p>The perfect blend of humor, friendship, and life lessons. Barney's suits and Ted's romantic quests never get old!</p>
+        </div>
+        
+        <div class="show-card animate-fade-in" style="animation-delay: 0.2s;">
+          <div class="show-icon">
+            <i class="fas fa-coffee"></i>
+          </div>
+          <h4>Friends</h4>
+          <p>Could this BE any more iconic? The Central Perk gang taught me about friendship, love, and that "we were on a break!"</p>
+        </div>
+        
+        <div class="show-card animate-fade-in" style="animation-delay: 0.4s;">
+          <div class="show-icon">
+            <i class="fas fa-magic"></i>
+          </div>
+          <h4>Harry Potter</h4>
+          <p>You're a wizard, Ashraf! The magical world of Hogwarts has been my escape since childhood. Always waiting for my Hogwarts letter!</p>
         </div>
       </div>
     </div>
@@ -660,11 +897,11 @@
   <footer>
     <div class="container">
       <div class="footer-content">
-        <div class="copyright">© 2025 My Creative Corner - Made with ❤️ and a lot of coffee</div>
+        <div class="copyright">© 2025 Ashraf Mohiuddin Shaik - Made with ❤️ and a lot of coffee</div>
         <div class="footer-links">
           <a href="index.html" class="footer-link">Professional Side</a>
-          <a href="#activities" class="footer-link">Activities</a>
-          <a href="#gallery" class="footer-link">Gallery</a>
+          <a href="#bike-riding" class="footer-link">Activities</a>
+          <a href="#photography" class="footer-link">Gallery</a>
         </div>
       </div>
     </div>
@@ -693,6 +930,16 @@
       const icon = themeToggle.querySelector('i');
       icon.className = theme === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
     }
+    
+    // Mobile Menu Toggle
+    const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+    const navbar = document.querySelector('.navbar');
+    
+    mobileMenuToggle.addEventListener('click', () => {
+      navbar.classList.toggle('show');
+      const icon = mobileMenuToggle.querySelector('i');
+      icon.className = navbar.classList.contains('show') ? 'fas fa-times' : 'fas fa-bars';
+    });
     
     // Smooth scrolling for navigation links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
