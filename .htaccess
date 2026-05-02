@@ -1,0 +1,10 @@
+# Enable URL rewriting
+RewriteEngine On
+
+# Redirect /sushmitha to sushmitha.html
+RewriteRule ^sushmitha/?$ sushmitha.html [L]
+
+# Optional: Remove .html extension from URLs
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}\.html -f
+RewriteRule ^([^\.]+)$ $1.html [NC,L]
