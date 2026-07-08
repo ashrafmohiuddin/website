@@ -1,0 +1,553 @@
+{
+  "version": 1,
+  "updatedAt": "2026-07-08",
+  "notes": "Generated with scripts/build-photo-manifest.mjs. Fill captureDate/location/tags as needed.",
+  "photos": [
+    {
+      "slug": "20211211-101627",
+      "title": "20211211 101627",
+      "alt": "20211211 101627",
+      "location": "",
+      "captureDate": "",
+      "tags": [
+        "photography"
+      ],
+      "previewSrc": "https://img.sashraf.in/cdn-cgi/image/width=900,quality=70,format=auto/photos/20211211_101627.jpg",
+      "fullResSrc": "https://img.sashraf.in/cdn-cgi/image/width=2800,quality=86,format=auto/photos/20211211_101627.jpg",
+      "downloadSrc": "https://img.sashraf.in/photos-watermarked/20211211_101627.jpg",
+      "srcSet": "https://img.sashraf.in/cdn-cgi/image/width=480,quality=68,format=auto/photos/20211211_101627.jpg 480w, https://img.sashraf.in/cdn-cgi/image/width=900,quality=70,format=auto/photos/20211211_101627.jpg 900w, https://img.sashraf.in/cdn-cgi/image/width=1400,quality=75,format=auto/photos/20211211_101627.jpg 1400w"
+    },
+    {
+      "slug": "20211211-182845",
+      "title": "20211211 182845",
+      "alt": "20211211 182845",
+      "location": "",
+      "captureDate": "",
+      "tags": [
+        "photography"
+      ],
+      "previewSrc": "https://img.sashraf.in/cdn-cgi/image/width=900,quality=70,format=auto/photos/20211211_182845.jpg",
+      "fullResSrc": "https://img.sashraf.in/cdn-cgi/image/width=2800,quality=86,format=auto/photos/20211211_182845.jpg",
+      "downloadSrc": "https://img.sashraf.in/photos-watermarked/20211211_182845.jpg",
+      "srcSet": "https://img.sashraf.in/cdn-cgi/image/width=480,quality=68,format=auto/photos/20211211_182845.jpg 480w, https://img.sashraf.in/cdn-cgi/image/width=900,quality=70,format=auto/photos/20211211_182845.jpg 900w, https://img.sashraf.in/cdn-cgi/image/width=1400,quality=75,format=auto/photos/20211211_182845.jpg 1400w"
+    },
+    {
+      "slug": "20211212-100019",
+      "title": "20211212 100019",
+      "alt": "20211212 100019",
+      "location": "",
+      "captureDate": "",
+      "tags": [
+        "photography"
+      ],
+      "previewSrc": "https://img.sashraf.in/cdn-cgi/image/width=900,quality=70,format=auto/photos/20211212_100019.jpg",
+      "fullResSrc": "https://img.sashraf.in/cdn-cgi/image/width=2800,quality=86,format=auto/photos/20211212_100019.jpg",
+      "downloadSrc": "https://img.sashraf.in/photos-watermarked/20211212_100019.jpg",
+      "srcSet": "https://img.sashraf.in/cdn-cgi/image/width=480,quality=68,format=auto/photos/20211212_100019.jpg 480w, https://img.sashraf.in/cdn-cgi/image/width=900,quality=70,format=auto/photos/20211212_100019.jpg 900w, https://img.sashraf.in/cdn-cgi/image/width=1400,quality=75,format=auto/photos/20211212_100019.jpg 1400w"
+    },
+    {
+      "slug": "20211212-123740",
+      "title": "20211212 123740",
+      "alt": "20211212 123740",
+      "location": "",
+      "captureDate": "",
+      "tags": [
+        "photography"
+      ],
+      "previewSrc": "https://img.sashraf.in/cdn-cgi/image/width=900,quality=70,format=auto/photos/20211212_123740.jpg",
+      "fullResSrc": "https://img.sashraf.in/cdn-cgi/image/width=2800,quality=86,format=auto/photos/20211212_123740.jpg",
+      "downloadSrc": "https://img.sashraf.in/photos-watermarked/20211212_123740.jpg",
+      "srcSet": "https://img.sashraf.in/cdn-cgi/image/width=480,quality=68,format=auto/photos/20211212_123740.jpg 480w, https://img.sashraf.in/cdn-cgi/image/width=900,quality=70,format=auto/photos/20211212_123740.jpg 900w, https://img.sashraf.in/cdn-cgi/image/width=1400,quality=75,format=auto/photos/20211212_123740.jpg 1400w"
+    },
+    {
+      "slug": "20211212-175127",
+      "title": "20211212 175127",
+      "alt": "20211212 175127",
+      "location": "",
+      "captureDate": "",
+      "tags": [
+        "photography"
+      ],
+      "previewSrc": "https://img.sashraf.in/cdn-cgi/image/width=900,quality=70,format=auto/photos/20211212_175127.jpg",
+      "fullResSrc": "https://img.sashraf.in/cdn-cgi/image/width=2800,quality=86,format=auto/photos/20211212_175127.jpg",
+      "downloadSrc": "https://img.sashraf.in/photos-watermarked/20211212_175127.jpg",
+      "srcSet": "https://img.sashraf.in/cdn-cgi/image/width=480,quality=68,format=auto/photos/20211212_175127.jpg 480w, https://img.sashraf.in/cdn-cgi/image/width=900,quality=70,format=auto/photos/20211212_175127.jpg 900w, https://img.sashraf.in/cdn-cgi/image/width=1400,quality=75,format=auto/photos/20211212_175127.jpg 1400w"
+    },
+    {
+      "slug": "20211212-180203",
+      "title": "20211212 180203",
+      "alt": "20211212 180203",
+      "location": "",
+      "captureDate": "",
+      "tags": [
+        "photography"
+      ],
+      "previewSrc": "https://img.sashraf.in/cdn-cgi/image/width=900,quality=70,format=auto/photos/20211212_180203.jpg",
+      "fullResSrc": "https://img.sashraf.in/cdn-cgi/image/width=2800,quality=86,format=auto/photos/20211212_180203.jpg",
+      "downloadSrc": "https://img.sashraf.in/photos-watermarked/20211212_180203.jpg",
+      "srcSet": "https://img.sashraf.in/cdn-cgi/image/width=480,quality=68,format=auto/photos/20211212_180203.jpg 480w, https://img.sashraf.in/cdn-cgi/image/width=900,quality=70,format=auto/photos/20211212_180203.jpg 900w, https://img.sashraf.in/cdn-cgi/image/width=1400,quality=75,format=auto/photos/20211212_180203.jpg 1400w"
+    },
+    {
+      "slug": "20211214-160612-2",
+      "title": "20211214 160612 2",
+      "alt": "20211214 160612 2",
+      "location": "",
+      "captureDate": "",
+      "tags": [
+        "photography"
+      ],
+      "previewSrc": "https://img.sashraf.in/cdn-cgi/image/width=900,quality=70,format=auto/photos/20211214_160612-2.jpg",
+      "fullResSrc": "https://img.sashraf.in/cdn-cgi/image/width=2800,quality=86,format=auto/photos/20211214_160612-2.jpg",
+      "downloadSrc": "https://img.sashraf.in/photos-watermarked/20211214_160612-2.jpg",
+      "srcSet": "https://img.sashraf.in/cdn-cgi/image/width=480,quality=68,format=auto/photos/20211214_160612-2.jpg 480w, https://img.sashraf.in/cdn-cgi/image/width=900,quality=70,format=auto/photos/20211214_160612-2.jpg 900w, https://img.sashraf.in/cdn-cgi/image/width=1400,quality=75,format=auto/photos/20211214_160612-2.jpg 1400w"
+    },
+    {
+      "slug": "20211214-160612",
+      "title": "20211214 160612",
+      "alt": "20211214 160612",
+      "location": "",
+      "captureDate": "",
+      "tags": [
+        "photography"
+      ],
+      "previewSrc": "https://img.sashraf.in/cdn-cgi/image/width=900,quality=70,format=auto/photos/20211214_160612.jpg",
+      "fullResSrc": "https://img.sashraf.in/cdn-cgi/image/width=2800,quality=86,format=auto/photos/20211214_160612.jpg",
+      "downloadSrc": "https://img.sashraf.in/photos-watermarked/20211214_160612.jpg",
+      "srcSet": "https://img.sashraf.in/cdn-cgi/image/width=480,quality=68,format=auto/photos/20211214_160612.jpg 480w, https://img.sashraf.in/cdn-cgi/image/width=900,quality=70,format=auto/photos/20211214_160612.jpg 900w, https://img.sashraf.in/cdn-cgi/image/width=1400,quality=75,format=auto/photos/20211214_160612.jpg 1400w"
+    },
+    {
+      "slug": "20220314-173238",
+      "title": "20220314 173238",
+      "alt": "20220314 173238",
+      "location": "",
+      "captureDate": "",
+      "tags": [
+        "photography"
+      ],
+      "previewSrc": "https://img.sashraf.in/cdn-cgi/image/width=900,quality=70,format=auto/photos/20220314_173238.jpg",
+      "fullResSrc": "https://img.sashraf.in/cdn-cgi/image/width=2800,quality=86,format=auto/photos/20220314_173238.jpg",
+      "downloadSrc": "https://img.sashraf.in/photos-watermarked/20220314_173238.jpg",
+      "srcSet": "https://img.sashraf.in/cdn-cgi/image/width=480,quality=68,format=auto/photos/20220314_173238.jpg 480w, https://img.sashraf.in/cdn-cgi/image/width=900,quality=70,format=auto/photos/20220314_173238.jpg 900w, https://img.sashraf.in/cdn-cgi/image/width=1400,quality=75,format=auto/photos/20220314_173238.jpg 1400w"
+    },
+    {
+      "slug": "20220427-200606",
+      "title": "20220427 200606",
+      "alt": "20220427 200606",
+      "location": "",
+      "captureDate": "",
+      "tags": [
+        "photography"
+      ],
+      "previewSrc": "https://img.sashraf.in/cdn-cgi/image/width=900,quality=70,format=auto/photos/20220427_200606.jpg",
+      "fullResSrc": "https://img.sashraf.in/cdn-cgi/image/width=2800,quality=86,format=auto/photos/20220427_200606.jpg",
+      "downloadSrc": "https://img.sashraf.in/photos-watermarked/20220427_200606.jpg",
+      "srcSet": "https://img.sashraf.in/cdn-cgi/image/width=480,quality=68,format=auto/photos/20220427_200606.jpg 480w, https://img.sashraf.in/cdn-cgi/image/width=900,quality=70,format=auto/photos/20220427_200606.jpg 900w, https://img.sashraf.in/cdn-cgi/image/width=1400,quality=75,format=auto/photos/20220427_200606.jpg 1400w"
+    },
+    {
+      "slug": "ash02346",
+      "title": "ASH02346",
+      "alt": "ASH02346",
+      "location": "",
+      "captureDate": "",
+      "tags": [
+        "featured"
+      ],
+      "previewSrc": "https://img.sashraf.in/cdn-cgi/image/width=900,quality=70,format=auto/photos/ASH02346.jpg",
+      "fullResSrc": "https://img.sashraf.in/cdn-cgi/image/width=2800,quality=86,format=auto/photos/ASH02346.jpg",
+      "downloadSrc": "https://img.sashraf.in/photos-watermarked/ASH02346.jpg",
+      "srcSet": "https://img.sashraf.in/cdn-cgi/image/width=480,quality=68,format=auto/photos/ASH02346.jpg 480w, https://img.sashraf.in/cdn-cgi/image/width=900,quality=70,format=auto/photos/ASH02346.jpg 900w, https://img.sashraf.in/cdn-cgi/image/width=1400,quality=75,format=auto/photos/ASH02346.jpg 1400w"
+    },
+    {
+      "slug": "ash02373",
+      "title": "ASH02373",
+      "alt": "ASH02373",
+      "location": "",
+      "captureDate": "",
+      "tags": [
+        "featured"
+      ],
+      "previewSrc": "https://img.sashraf.in/cdn-cgi/image/width=900,quality=70,format=auto/photos/ASH02373.jpg",
+      "fullResSrc": "https://img.sashraf.in/cdn-cgi/image/width=2800,quality=86,format=auto/photos/ASH02373.jpg",
+      "downloadSrc": "https://img.sashraf.in/photos-watermarked/ASH02373.jpg",
+      "srcSet": "https://img.sashraf.in/cdn-cgi/image/width=480,quality=68,format=auto/photos/ASH02373.jpg 480w, https://img.sashraf.in/cdn-cgi/image/width=900,quality=70,format=auto/photos/ASH02373.jpg 900w, https://img.sashraf.in/cdn-cgi/image/width=1400,quality=75,format=auto/photos/ASH02373.jpg 1400w"
+    },
+    {
+      "slug": "ash03049",
+      "title": "ASH03049",
+      "alt": "ASH03049",
+      "location": "",
+      "captureDate": "",
+      "tags": [
+        "featured"
+      ],
+      "previewSrc": "https://img.sashraf.in/cdn-cgi/image/width=900,quality=70,format=auto/photos/ASH03049.jpg",
+      "fullResSrc": "https://img.sashraf.in/cdn-cgi/image/width=2800,quality=86,format=auto/photos/ASH03049.jpg",
+      "downloadSrc": "https://img.sashraf.in/photos-watermarked/ASH03049.jpg",
+      "srcSet": "https://img.sashraf.in/cdn-cgi/image/width=480,quality=68,format=auto/photos/ASH03049.jpg 480w, https://img.sashraf.in/cdn-cgi/image/width=900,quality=70,format=auto/photos/ASH03049.jpg 900w, https://img.sashraf.in/cdn-cgi/image/width=1400,quality=75,format=auto/photos/ASH03049.jpg 1400w"
+    },
+    {
+      "slug": "ash03547-3",
+      "title": "ASH03547 3",
+      "alt": "ASH03547 3",
+      "location": "",
+      "captureDate": "",
+      "tags": [
+        "featured"
+      ],
+      "previewSrc": "https://img.sashraf.in/cdn-cgi/image/width=900,quality=70,format=auto/photos/ASH03547-3.jpg",
+      "fullResSrc": "https://img.sashraf.in/cdn-cgi/image/width=2800,quality=86,format=auto/photos/ASH03547-3.jpg",
+      "downloadSrc": "https://img.sashraf.in/photos-watermarked/ASH03547-3.jpg",
+      "srcSet": "https://img.sashraf.in/cdn-cgi/image/width=480,quality=68,format=auto/photos/ASH03547-3.jpg 480w, https://img.sashraf.in/cdn-cgi/image/width=900,quality=70,format=auto/photos/ASH03547-3.jpg 900w, https://img.sashraf.in/cdn-cgi/image/width=1400,quality=75,format=auto/photos/ASH03547-3.jpg 1400w"
+    },
+    {
+      "slug": "ash03620",
+      "title": "ASH03620",
+      "alt": "ASH03620",
+      "location": "",
+      "captureDate": "",
+      "tags": [
+        "featured"
+      ],
+      "previewSrc": "https://img.sashraf.in/cdn-cgi/image/width=900,quality=70,format=auto/photos/ASH03620.jpg",
+      "fullResSrc": "https://img.sashraf.in/cdn-cgi/image/width=2800,quality=86,format=auto/photos/ASH03620.jpg",
+      "downloadSrc": "https://img.sashraf.in/photos-watermarked/ASH03620.jpg",
+      "srcSet": "https://img.sashraf.in/cdn-cgi/image/width=480,quality=68,format=auto/photos/ASH03620.jpg 480w, https://img.sashraf.in/cdn-cgi/image/width=900,quality=70,format=auto/photos/ASH03620.jpg 900w, https://img.sashraf.in/cdn-cgi/image/width=1400,quality=75,format=auto/photos/ASH03620.jpg 1400w"
+    },
+    {
+      "slug": "ash03648",
+      "title": "ASH03648",
+      "alt": "ASH03648",
+      "location": "",
+      "captureDate": "",
+      "tags": [
+        "featured"
+      ],
+      "previewSrc": "https://img.sashraf.in/cdn-cgi/image/width=900,quality=70,format=auto/photos/ASH03648.jpg",
+      "fullResSrc": "https://img.sashraf.in/cdn-cgi/image/width=2800,quality=86,format=auto/photos/ASH03648.jpg",
+      "downloadSrc": "https://img.sashraf.in/photos-watermarked/ASH03648.jpg",
+      "srcSet": "https://img.sashraf.in/cdn-cgi/image/width=480,quality=68,format=auto/photos/ASH03648.jpg 480w, https://img.sashraf.in/cdn-cgi/image/width=900,quality=70,format=auto/photos/ASH03648.jpg 900w, https://img.sashraf.in/cdn-cgi/image/width=1400,quality=75,format=auto/photos/ASH03648.jpg 1400w"
+    },
+    {
+      "slug": "ash03655-crop",
+      "title": "ASH03655 Crop",
+      "alt": "ASH03655 Crop",
+      "location": "",
+      "captureDate": "",
+      "tags": [
+        "featured"
+      ],
+      "previewSrc": "https://img.sashraf.in/cdn-cgi/image/width=900,quality=70,format=auto/photos/ASH03655-crop.JPG",
+      "fullResSrc": "https://img.sashraf.in/cdn-cgi/image/width=2800,quality=86,format=auto/photos/ASH03655-crop.JPG",
+      "downloadSrc": "https://img.sashraf.in/photos-watermarked/ASH03655-crop.JPG",
+      "srcSet": "https://img.sashraf.in/cdn-cgi/image/width=480,quality=68,format=auto/photos/ASH03655-crop.JPG 480w, https://img.sashraf.in/cdn-cgi/image/width=900,quality=70,format=auto/photos/ASH03655-crop.JPG 900w, https://img.sashraf.in/cdn-cgi/image/width=1400,quality=75,format=auto/photos/ASH03655-crop.JPG 1400w"
+    },
+    {
+      "slug": "ash03890",
+      "title": "ASH03890",
+      "alt": "ASH03890",
+      "location": "",
+      "captureDate": "",
+      "tags": [
+        "featured"
+      ],
+      "previewSrc": "https://img.sashraf.in/cdn-cgi/image/width=900,quality=70,format=auto/photos/ASH03890.JPG",
+      "fullResSrc": "https://img.sashraf.in/cdn-cgi/image/width=2800,quality=86,format=auto/photos/ASH03890.JPG",
+      "downloadSrc": "https://img.sashraf.in/photos-watermarked/ASH03890.JPG",
+      "srcSet": "https://img.sashraf.in/cdn-cgi/image/width=480,quality=68,format=auto/photos/ASH03890.JPG 480w, https://img.sashraf.in/cdn-cgi/image/width=900,quality=70,format=auto/photos/ASH03890.JPG 900w, https://img.sashraf.in/cdn-cgi/image/width=1400,quality=75,format=auto/photos/ASH03890.JPG 1400w"
+    },
+    {
+      "slug": "ash03963",
+      "title": "ASH03963",
+      "alt": "ASH03963",
+      "location": "",
+      "captureDate": "",
+      "tags": [
+        "featured"
+      ],
+      "previewSrc": "https://img.sashraf.in/cdn-cgi/image/width=900,quality=70,format=auto/photos/ASH03963.JPG",
+      "fullResSrc": "https://img.sashraf.in/cdn-cgi/image/width=2800,quality=86,format=auto/photos/ASH03963.JPG",
+      "downloadSrc": "https://img.sashraf.in/photos-watermarked/ASH03963.JPG",
+      "srcSet": "https://img.sashraf.in/cdn-cgi/image/width=480,quality=68,format=auto/photos/ASH03963.JPG 480w, https://img.sashraf.in/cdn-cgi/image/width=900,quality=70,format=auto/photos/ASH03963.JPG 900w, https://img.sashraf.in/cdn-cgi/image/width=1400,quality=75,format=auto/photos/ASH03963.JPG 1400w"
+    },
+    {
+      "slug": "ash04012",
+      "title": "ASH04012",
+      "alt": "ASH04012",
+      "location": "",
+      "captureDate": "",
+      "tags": [
+        "featured"
+      ],
+      "previewSrc": "https://img.sashraf.in/cdn-cgi/image/width=900,quality=70,format=auto/photos/ASH04012.JPG",
+      "fullResSrc": "https://img.sashraf.in/cdn-cgi/image/width=2800,quality=86,format=auto/photos/ASH04012.JPG",
+      "downloadSrc": "https://img.sashraf.in/photos-watermarked/ASH04012.JPG",
+      "srcSet": "https://img.sashraf.in/cdn-cgi/image/width=480,quality=68,format=auto/photos/ASH04012.JPG 480w, https://img.sashraf.in/cdn-cgi/image/width=900,quality=70,format=auto/photos/ASH04012.JPG 900w, https://img.sashraf.in/cdn-cgi/image/width=1400,quality=75,format=auto/photos/ASH04012.JPG 1400w"
+    },
+    {
+      "slug": "ash04151",
+      "title": "ASH04151",
+      "alt": "ASH04151",
+      "location": "",
+      "captureDate": "",
+      "tags": [
+        "featured"
+      ],
+      "previewSrc": "https://img.sashraf.in/cdn-cgi/image/width=900,quality=70,format=auto/photos/ASH04151.JPG",
+      "fullResSrc": "https://img.sashraf.in/cdn-cgi/image/width=2800,quality=86,format=auto/photos/ASH04151.JPG",
+      "downloadSrc": "https://img.sashraf.in/photos-watermarked/ASH04151.JPG",
+      "srcSet": "https://img.sashraf.in/cdn-cgi/image/width=480,quality=68,format=auto/photos/ASH04151.JPG 480w, https://img.sashraf.in/cdn-cgi/image/width=900,quality=70,format=auto/photos/ASH04151.JPG 900w, https://img.sashraf.in/cdn-cgi/image/width=1400,quality=75,format=auto/photos/ASH04151.JPG 1400w"
+    },
+    {
+      "slug": "ash04307",
+      "title": "ASH04307",
+      "alt": "ASH04307",
+      "location": "",
+      "captureDate": "",
+      "tags": [
+        "featured"
+      ],
+      "previewSrc": "https://img.sashraf.in/cdn-cgi/image/width=900,quality=70,format=auto/photos/ASH04307.JPG",
+      "fullResSrc": "https://img.sashraf.in/cdn-cgi/image/width=2800,quality=86,format=auto/photos/ASH04307.JPG",
+      "downloadSrc": "https://img.sashraf.in/photos-watermarked/ASH04307.JPG",
+      "srcSet": "https://img.sashraf.in/cdn-cgi/image/width=480,quality=68,format=auto/photos/ASH04307.JPG 480w, https://img.sashraf.in/cdn-cgi/image/width=900,quality=70,format=auto/photos/ASH04307.JPG 900w, https://img.sashraf.in/cdn-cgi/image/width=1400,quality=75,format=auto/photos/ASH04307.JPG 1400w"
+    },
+    {
+      "slug": "ash04692",
+      "title": "ASH04692",
+      "alt": "ASH04692",
+      "location": "",
+      "captureDate": "",
+      "tags": [
+        "featured"
+      ],
+      "previewSrc": "https://img.sashraf.in/cdn-cgi/image/width=900,quality=70,format=auto/photos/ASH04692.jpg",
+      "fullResSrc": "https://img.sashraf.in/cdn-cgi/image/width=2800,quality=86,format=auto/photos/ASH04692.jpg",
+      "downloadSrc": "https://img.sashraf.in/photos-watermarked/ASH04692.jpg",
+      "srcSet": "https://img.sashraf.in/cdn-cgi/image/width=480,quality=68,format=auto/photos/ASH04692.jpg 480w, https://img.sashraf.in/cdn-cgi/image/width=900,quality=70,format=auto/photos/ASH04692.jpg 900w, https://img.sashraf.in/cdn-cgi/image/width=1400,quality=75,format=auto/photos/ASH04692.jpg 1400w"
+    },
+    {
+      "slug": "ash04718",
+      "title": "ASH04718",
+      "alt": "ASH04718",
+      "location": "",
+      "captureDate": "",
+      "tags": [
+        "featured"
+      ],
+      "previewSrc": "https://img.sashraf.in/cdn-cgi/image/width=900,quality=70,format=auto/photos/ASH04718.JPG",
+      "fullResSrc": "https://img.sashraf.in/cdn-cgi/image/width=2800,quality=86,format=auto/photos/ASH04718.JPG",
+      "downloadSrc": "https://img.sashraf.in/photos-watermarked/ASH04718.JPG",
+      "srcSet": "https://img.sashraf.in/cdn-cgi/image/width=480,quality=68,format=auto/photos/ASH04718.JPG 480w, https://img.sashraf.in/cdn-cgi/image/width=900,quality=70,format=auto/photos/ASH04718.JPG 900w, https://img.sashraf.in/cdn-cgi/image/width=1400,quality=75,format=auto/photos/ASH04718.JPG 1400w"
+    },
+    {
+      "slug": "ash04929",
+      "title": "ASH04929",
+      "alt": "ASH04929",
+      "location": "",
+      "captureDate": "",
+      "tags": [
+        "featured"
+      ],
+      "previewSrc": "https://img.sashraf.in/cdn-cgi/image/width=900,quality=70,format=auto/photos/ASH04929.jpg",
+      "fullResSrc": "https://img.sashraf.in/cdn-cgi/image/width=2800,quality=86,format=auto/photos/ASH04929.jpg",
+      "downloadSrc": "https://img.sashraf.in/photos-watermarked/ASH04929.jpg",
+      "srcSet": "https://img.sashraf.in/cdn-cgi/image/width=480,quality=68,format=auto/photos/ASH04929.jpg 480w, https://img.sashraf.in/cdn-cgi/image/width=900,quality=70,format=auto/photos/ASH04929.jpg 900w, https://img.sashraf.in/cdn-cgi/image/width=1400,quality=75,format=auto/photos/ASH04929.jpg 1400w"
+    },
+    {
+      "slug": "ash04955",
+      "title": "ASH04955",
+      "alt": "ASH04955",
+      "location": "",
+      "captureDate": "",
+      "tags": [
+        "featured"
+      ],
+      "previewSrc": "https://img.sashraf.in/cdn-cgi/image/width=900,quality=70,format=auto/photos/ASH04955.jpg",
+      "fullResSrc": "https://img.sashraf.in/cdn-cgi/image/width=2800,quality=86,format=auto/photos/ASH04955.jpg",
+      "downloadSrc": "https://img.sashraf.in/photos-watermarked/ASH04955.jpg",
+      "srcSet": "https://img.sashraf.in/cdn-cgi/image/width=480,quality=68,format=auto/photos/ASH04955.jpg 480w, https://img.sashraf.in/cdn-cgi/image/width=900,quality=70,format=auto/photos/ASH04955.jpg 900w, https://img.sashraf.in/cdn-cgi/image/width=1400,quality=75,format=auto/photos/ASH04955.jpg 1400w"
+    },
+    {
+      "slug": "ash04976",
+      "title": "ASH04976",
+      "alt": "ASH04976",
+      "location": "",
+      "captureDate": "",
+      "tags": [
+        "featured"
+      ],
+      "previewSrc": "https://img.sashraf.in/cdn-cgi/image/width=900,quality=70,format=auto/photos/ASH04976.jpg",
+      "fullResSrc": "https://img.sashraf.in/cdn-cgi/image/width=2800,quality=86,format=auto/photos/ASH04976.jpg",
+      "downloadSrc": "https://img.sashraf.in/photos-watermarked/ASH04976.jpg",
+      "srcSet": "https://img.sashraf.in/cdn-cgi/image/width=480,quality=68,format=auto/photos/ASH04976.jpg 480w, https://img.sashraf.in/cdn-cgi/image/width=900,quality=70,format=auto/photos/ASH04976.jpg 900w, https://img.sashraf.in/cdn-cgi/image/width=1400,quality=75,format=auto/photos/ASH04976.jpg 1400w"
+    },
+    {
+      "slug": "ash05056",
+      "title": "ASH05056",
+      "alt": "ASH05056",
+      "location": "",
+      "captureDate": "",
+      "tags": [
+        "featured"
+      ],
+      "previewSrc": "https://img.sashraf.in/cdn-cgi/image/width=900,quality=70,format=auto/photos/ASH05056.jpg",
+      "fullResSrc": "https://img.sashraf.in/cdn-cgi/image/width=2800,quality=86,format=auto/photos/ASH05056.jpg",
+      "downloadSrc": "https://img.sashraf.in/photos-watermarked/ASH05056.jpg",
+      "srcSet": "https://img.sashraf.in/cdn-cgi/image/width=480,quality=68,format=auto/photos/ASH05056.jpg 480w, https://img.sashraf.in/cdn-cgi/image/width=900,quality=70,format=auto/photos/ASH05056.jpg 900w, https://img.sashraf.in/cdn-cgi/image/width=1400,quality=75,format=auto/photos/ASH05056.jpg 1400w"
+    },
+    {
+      "slug": "ash05075",
+      "title": "ASH05075",
+      "alt": "ASH05075",
+      "location": "",
+      "captureDate": "",
+      "tags": [
+        "featured"
+      ],
+      "previewSrc": "https://img.sashraf.in/cdn-cgi/image/width=900,quality=70,format=auto/photos/ASH05075.jpg",
+      "fullResSrc": "https://img.sashraf.in/cdn-cgi/image/width=2800,quality=86,format=auto/photos/ASH05075.jpg",
+      "downloadSrc": "https://img.sashraf.in/photos-watermarked/ASH05075.jpg",
+      "srcSet": "https://img.sashraf.in/cdn-cgi/image/width=480,quality=68,format=auto/photos/ASH05075.jpg 480w, https://img.sashraf.in/cdn-cgi/image/width=900,quality=70,format=auto/photos/ASH05075.jpg 900w, https://img.sashraf.in/cdn-cgi/image/width=1400,quality=75,format=auto/photos/ASH05075.jpg 1400w"
+    },
+    {
+      "slug": "ash05621-2",
+      "title": "ASH05621 2",
+      "alt": "ASH05621 2",
+      "location": "",
+      "captureDate": "",
+      "tags": [
+        "featured"
+      ],
+      "previewSrc": "https://img.sashraf.in/cdn-cgi/image/width=900,quality=70,format=auto/photos/ASH05621-2.jpg",
+      "fullResSrc": "https://img.sashraf.in/cdn-cgi/image/width=2800,quality=86,format=auto/photos/ASH05621-2.jpg",
+      "downloadSrc": "https://img.sashraf.in/photos-watermarked/ASH05621-2.jpg",
+      "srcSet": "https://img.sashraf.in/cdn-cgi/image/width=480,quality=68,format=auto/photos/ASH05621-2.jpg 480w, https://img.sashraf.in/cdn-cgi/image/width=900,quality=70,format=auto/photos/ASH05621-2.jpg 900w, https://img.sashraf.in/cdn-cgi/image/width=1400,quality=75,format=auto/photos/ASH05621-2.jpg 1400w"
+    },
+    {
+      "slug": "ash05626",
+      "title": "ASH05626",
+      "alt": "ASH05626",
+      "location": "",
+      "captureDate": "",
+      "tags": [
+        "featured"
+      ],
+      "previewSrc": "https://img.sashraf.in/cdn-cgi/image/width=900,quality=70,format=auto/photos/ASH05626.jpg",
+      "fullResSrc": "https://img.sashraf.in/cdn-cgi/image/width=2800,quality=86,format=auto/photos/ASH05626.jpg",
+      "downloadSrc": "https://img.sashraf.in/photos-watermarked/ASH05626.jpg",
+      "srcSet": "https://img.sashraf.in/cdn-cgi/image/width=480,quality=68,format=auto/photos/ASH05626.jpg 480w, https://img.sashraf.in/cdn-cgi/image/width=900,quality=70,format=auto/photos/ASH05626.jpg 900w, https://img.sashraf.in/cdn-cgi/image/width=1400,quality=75,format=auto/photos/ASH05626.jpg 1400w"
+    },
+    {
+      "slug": "ash05835",
+      "title": "ASH05835",
+      "alt": "ASH05835",
+      "location": "",
+      "captureDate": "",
+      "tags": [
+        "featured"
+      ],
+      "previewSrc": "https://img.sashraf.in/cdn-cgi/image/width=900,quality=70,format=auto/photos/ASH05835.jpg",
+      "fullResSrc": "https://img.sashraf.in/cdn-cgi/image/width=2800,quality=86,format=auto/photos/ASH05835.jpg",
+      "downloadSrc": "https://img.sashraf.in/photos-watermarked/ASH05835.jpg",
+      "srcSet": "https://img.sashraf.in/cdn-cgi/image/width=480,quality=68,format=auto/photos/ASH05835.jpg 480w, https://img.sashraf.in/cdn-cgi/image/width=900,quality=70,format=auto/photos/ASH05835.jpg 900w, https://img.sashraf.in/cdn-cgi/image/width=1400,quality=75,format=auto/photos/ASH05835.jpg 1400w"
+    },
+    {
+      "slug": "ash06363",
+      "title": "ASH06363",
+      "alt": "ASH06363",
+      "location": "",
+      "captureDate": "",
+      "tags": [
+        "featured"
+      ],
+      "previewSrc": "https://img.sashraf.in/cdn-cgi/image/width=900,quality=70,format=auto/photos/ASH06363.jpg",
+      "fullResSrc": "https://img.sashraf.in/cdn-cgi/image/width=2800,quality=86,format=auto/photos/ASH06363.jpg",
+      "downloadSrc": "https://img.sashraf.in/photos-watermarked/ASH06363.jpg",
+      "srcSet": "https://img.sashraf.in/cdn-cgi/image/width=480,quality=68,format=auto/photos/ASH06363.jpg 480w, https://img.sashraf.in/cdn-cgi/image/width=900,quality=70,format=auto/photos/ASH06363.jpg 900w, https://img.sashraf.in/cdn-cgi/image/width=1400,quality=75,format=auto/photos/ASH06363.jpg 1400w"
+    },
+    {
+      "slug": "ash06431",
+      "title": "ASH06431",
+      "alt": "ASH06431",
+      "location": "",
+      "captureDate": "",
+      "tags": [
+        "featured"
+      ],
+      "previewSrc": "https://img.sashraf.in/cdn-cgi/image/width=900,quality=70,format=auto/photos/ASH06431.jpg",
+      "fullResSrc": "https://img.sashraf.in/cdn-cgi/image/width=2800,quality=86,format=auto/photos/ASH06431.jpg",
+      "downloadSrc": "https://img.sashraf.in/photos-watermarked/ASH06431.jpg",
+      "srcSet": "https://img.sashraf.in/cdn-cgi/image/width=480,quality=68,format=auto/photos/ASH06431.jpg 480w, https://img.sashraf.in/cdn-cgi/image/width=900,quality=70,format=auto/photos/ASH06431.jpg 900w, https://img.sashraf.in/cdn-cgi/image/width=1400,quality=75,format=auto/photos/ASH06431.jpg 1400w"
+    },
+    {
+      "slug": "ash06438-2",
+      "title": "ASH06438 2",
+      "alt": "ASH06438 2",
+      "location": "",
+      "captureDate": "",
+      "tags": [
+        "featured"
+      ],
+      "previewSrc": "https://img.sashraf.in/cdn-cgi/image/width=900,quality=70,format=auto/photos/ASH06438-2.jpg",
+      "fullResSrc": "https://img.sashraf.in/cdn-cgi/image/width=2800,quality=86,format=auto/photos/ASH06438-2.jpg",
+      "downloadSrc": "https://img.sashraf.in/photos-watermarked/ASH06438-2.jpg",
+      "srcSet": "https://img.sashraf.in/cdn-cgi/image/width=480,quality=68,format=auto/photos/ASH06438-2.jpg 480w, https://img.sashraf.in/cdn-cgi/image/width=900,quality=70,format=auto/photos/ASH06438-2.jpg 900w, https://img.sashraf.in/cdn-cgi/image/width=1400,quality=75,format=auto/photos/ASH06438-2.jpg 1400w"
+    },
+    {
+      "slug": "ash06840",
+      "title": "ASH06840",
+      "alt": "ASH06840",
+      "location": "",
+      "captureDate": "",
+      "tags": [
+        "featured"
+      ],
+      "previewSrc": "https://img.sashraf.in/cdn-cgi/image/width=900,quality=70,format=auto/photos/ASH06840.jpg",
+      "fullResSrc": "https://img.sashraf.in/cdn-cgi/image/width=2800,quality=86,format=auto/photos/ASH06840.jpg",
+      "downloadSrc": "https://img.sashraf.in/photos-watermarked/ASH06840.jpg",
+      "srcSet": "https://img.sashraf.in/cdn-cgi/image/width=480,quality=68,format=auto/photos/ASH06840.jpg 480w, https://img.sashraf.in/cdn-cgi/image/width=900,quality=70,format=auto/photos/ASH06840.jpg 900w, https://img.sashraf.in/cdn-cgi/image/width=1400,quality=75,format=auto/photos/ASH06840.jpg 1400w"
+    },
+    {
+      "slug": "ash06899",
+      "title": "ASH06899",
+      "alt": "ASH06899",
+      "location": "",
+      "captureDate": "",
+      "tags": [
+        "featured"
+      ],
+      "previewSrc": "https://img.sashraf.in/cdn-cgi/image/width=900,quality=70,format=auto/photos/ASH06899.jpg",
+      "fullResSrc": "https://img.sashraf.in/cdn-cgi/image/width=2800,quality=86,format=auto/photos/ASH06899.jpg",
+      "downloadSrc": "https://img.sashraf.in/photos-watermarked/ASH06899.jpg",
+      "srcSet": "https://img.sashraf.in/cdn-cgi/image/width=480,quality=68,format=auto/photos/ASH06899.jpg 480w, https://img.sashraf.in/cdn-cgi/image/width=900,quality=70,format=auto/photos/ASH06899.jpg 900w, https://img.sashraf.in/cdn-cgi/image/width=1400,quality=75,format=auto/photos/ASH06899.jpg 1400w"
+    },
+    {
+      "slug": "ash06941",
+      "title": "ASH06941",
+      "alt": "ASH06941",
+      "location": "",
+      "captureDate": "",
+      "tags": [
+        "featured"
+      ],
+      "previewSrc": "https://img.sashraf.in/cdn-cgi/image/width=900,quality=70,format=auto/photos/ASH06941.jpg",
+      "fullResSrc": "https://img.sashraf.in/cdn-cgi/image/width=2800,quality=86,format=auto/photos/ASH06941.jpg",
+      "downloadSrc": "https://img.sashraf.in/photos-watermarked/ASH06941.jpg",
+      "srcSet": "https://img.sashraf.in/cdn-cgi/image/width=480,quality=68,format=auto/photos/ASH06941.jpg 480w, https://img.sashraf.in/cdn-cgi/image/width=900,quality=70,format=auto/photos/ASH06941.jpg 900w, https://img.sashraf.in/cdn-cgi/image/width=1400,quality=75,format=auto/photos/ASH06941.jpg 1400w"
+    },
+    {
+      "slug": "ash06964",
+      "title": "ASH06964",
+      "alt": "ASH06964",
+      "location": "",
+      "captureDate": "",
+      "tags": [
+        "featured"
+      ],
+      "previewSrc": "https://img.sashraf.in/cdn-cgi/image/width=900,quality=70,format=auto/photos/ASH06964.jpg",
+      "fullResSrc": "https://img.sashraf.in/cdn-cgi/image/width=2800,quality=86,format=auto/photos/ASH06964.jpg",
+      "downloadSrc": "https://img.sashraf.in/photos-watermarked/ASH06964.jpg",
+      "srcSet": "https://img.sashraf.in/cdn-cgi/image/width=480,quality=68,format=auto/photos/ASH06964.jpg 480w, https://img.sashraf.in/cdn-cgi/image/width=900,quality=70,format=auto/photos/ASH06964.jpg 900w, https://img.sashraf.in/cdn-cgi/image/width=1400,quality=75,format=auto/photos/ASH06964.jpg 1400w"
+    }
+  ]
+}
