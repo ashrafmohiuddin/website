@@ -1,0 +1,3 @@
+# Photography subdomain serves only the gallery (no path back to portfolio)
+https://photography.sashraf.in/   /photography.html   200!
+https://photography.sashraf.in/*  /photography.html   200!

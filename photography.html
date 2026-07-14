@@ -5,11 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Photography by Ashraf Mohiuddin — wildlife, travel, and landscape." />
   <title>Photography | Ashraf Mohiuddin</title>
-  <link rel="canonical" href="https://sashraf.in/photography.html" />
+  <link rel="canonical" href="https://photography.sashraf.in/" />
   <meta property="og:title" content="Photography | Ashraf Mohiuddin" />
   <meta property="og:description" content="Wildlife, travel, and landscape photography." />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://sashraf.in/photography.html" />
+  <meta property="og:url" content="https://photography.sashraf.in/" />
   <meta property="og:image" content="https://sashraf.in/images/ASH02346.jpg" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -21,7 +21,7 @@
       --bg: #050505;
       --text: #f2f2f2;
       --muted: #8a8a8a;
-      --gap: 5px;
+      --gap: 14px;
       --header-h: 56px;
       --ease: cubic-bezier(0.4, 0, 0.2, 1);
     }
@@ -69,6 +69,14 @@
       letter-spacing: 0.04em;
       color: var(--text);
       text-decoration: none;
+    }
+
+    .site-tag {
+      font-size: 0.72rem;
+      font-weight: 400;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--muted);
     }
 
     nav {
@@ -123,9 +131,53 @@
 
     /* ── Masonry gallery ── */
     .gallery-wrap {
-      padding: 0 clamp(1rem, 3vw, 2.5rem) 4rem;
+      padding: 0 clamp(1rem, 3vw, 2.5rem) 4.5rem;
       max-width: 1600px;
       margin: 0 auto;
+    }
+
+    .filters {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.65rem;
+      align-items: center;
+      margin-bottom: 1.25rem;
+      padding: 0.4rem 0.1rem;
+    }
+
+    .filter-select {
+      background: #121212;
+      color: var(--text);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 999px;
+      padding: 0.45rem 0.85rem;
+      font-size: 0.76rem;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .tag-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.45rem;
+    }
+
+    .tag-chip {
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      background: transparent;
+      color: var(--muted);
+      border-radius: 999px;
+      padding: 0.4rem 0.7rem;
+      font-size: 0.72rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      cursor: pointer;
+    }
+
+    .tag-chip.active {
+      color: var(--text);
+      border-color: rgba(255, 255, 255, 0.55);
+      background: rgba(255, 255, 255, 0.08);
     }
 
     .masonry {
@@ -140,17 +192,25 @@
       cursor: pointer;
       overflow: hidden;
       line-height: 0;
+      border-radius: 2px;
     }
 
     .photo img {
       width: 100%;
       height: auto;
       display: block;
+      background: #111;
       transition: transform 0.7s var(--ease), opacity 0.4s var(--ease);
-      opacity: 0;
+      opacity: 1;
     }
 
-    .photo img.loaded { opacity: 1; }
+    .photo img.is-loading { opacity: 0.15; }
+
+    .photo img.is-error {
+      opacity: 0.35;
+      min-height: 120px;
+      object-fit: cover;
+    }
 
     .photo:hover img { transform: scale(1.015); }
 
@@ -292,20 +352,6 @@
     @media (max-width: 1200px) { .masonry { columns: 3; } }
     @media (max-width: 768px) {
       .masonry { columns: 2; }
-      nav {
-        display: none;
-        position: fixed;
-        top: var(--header-h);
-        left: 0;
-        right: 0;
-        background: rgba(5,5,5,0.97);
-        flex-direction: column;
-        padding: 1.5rem;
-        gap: 1rem;
-        border-bottom: 1px solid rgba(255,255,255,0.06);
-      }
-      nav.open { display: flex; }
-      .menu-btn { display: block; }
       .lb-nav { font-size: 1.2rem; padding: 0.5rem; }
     }
     @media (max-width: 480px) { .masonry { columns: 1; } }
@@ -315,13 +361,8 @@
 
   <header>
     <div class="header-inner">
-      <a href="index.html" class="site-name">Ashraf Mohiuddin</a>
-      <nav id="nav">
-        <a href="index.html">Portfolio</a>
-        <a href="creative-corner.html">Creative Corner</a>
-        <a href="photography.html" class="active">Photography</a>
-      </nav>
-      <button class="menu-btn" id="menuBtn" aria-label="Menu">☰</button>
+      <span class="site-name">Ashraf Mohiuddin</span>
+      <span class="site-tag">Photography</span>
     </div>
   </header>
 
@@ -331,6 +372,12 @@
   </div>
 
   <div class="gallery-wrap">
+    <div class="filters">
+      <select id="categoryFilter" class="filter-select">
+        <option value="all">All Categories</option>
+      </select>
+      <div class="tag-list" id="tagList"></div>
+    </div>
     <div class="masonry" id="masonry"></div>
     <div class="sentinel" id="sentinel"></div>
     <div class="loading-indicator" id="loader" hidden>Loading</div>
@@ -354,8 +401,11 @@
   <script>
     const PAGE_SIZE = 24;
     let allPhotos = [];
+    let filteredPhotos = [];
     let rendered = 0;
     let lbIndex = 0;
+    let activeTag = "all";
+    let activeCategory = "all";
 
     const masonry = document.getElementById("masonry");
     const sentinel = document.getElementById("sentinel");
@@ -364,22 +414,103 @@
     const lbImage = document.getElementById("lbImage");
     const lbTitle = document.getElementById("lbTitle");
     const lbCounter = document.getElementById("lbCounter");
-
-    document.getElementById("menuBtn").addEventListener("click", () => {
-      document.getElementById("nav").classList.toggle("open");
-    });
+    const categoryFilter = document.getElementById("categoryFilter");
+    const tagList = document.getElementById("tagList");
 
     async function init() {
       try {
         const res = await fetch("./data/photos.manifest.json");
         if (!res.ok) throw new Error("manifest missing");
         const data = await res.json();
-        allPhotos = data.photos || [];
-        renderBatch();
+        allPhotos = (data.photos || []).map((photo) => ({
+          ...photo,
+          category: photo.category || "uncategorized",
+          tags: Array.isArray(photo.tags) ? photo.tags : []
+        }));
+        buildFilters();
+        applyFilters();
         observeSentinel();
       } catch {
         masonry.innerHTML = '<p style="color:#8a8a8a;padding:2rem 0;">Gallery could not be loaded.</p>';
       }
+    }
+
+    function buildFilters() {
+      const categories = ["all", ...new Set(allPhotos.map((p) => p.category))];
+      categoryFilter.innerHTML = "";
+      categories.forEach((category) => {
+        const option = document.createElement("option");
+        option.value = category;
+        option.textContent = category === "all" ? "All Categories" : category;
+        categoryFilter.appendChild(option);
+      });
+
+      const tags = ["all", ...new Set(allPhotos.flatMap((p) => p.tags))];
+      tagList.innerHTML = "";
+      tags.forEach((tag) => {
+        const button = document.createElement("button");
+        button.className = `tag-chip ${tag === "all" ? "active" : ""}`;
+        button.type = "button";
+        button.dataset.tag = tag;
+        button.textContent = tag;
+        button.addEventListener("click", () => {
+          activeTag = tag;
+          [...tagList.querySelectorAll(".tag-chip")].forEach((chip) => chip.classList.remove("active"));
+          button.classList.add("active");
+          applyFilters();
+        });
+        tagList.appendChild(button);
+      });
+    }
+
+    function applyFilters() {
+      filteredPhotos = allPhotos.filter((photo) => {
+        const categoryMatch = activeCategory === "all" || photo.category === activeCategory;
+        const tagMatch = activeTag === "all" || photo.tags.includes(activeTag);
+        return categoryMatch && tagMatch;
+      });
+
+      rendered = 0;
+      masonry.innerHTML = "";
+      renderBatch();
+    }
+
+    function photoSources(photo) {
+      const name = photo.filename || "";
+      return [
+        photo.previewSrc,
+        name ? `./images/low-res/${name}` : null,
+        name ? `./images/${name}` : null,
+        photo.fullResSrc,
+        photo.downloadSrc
+      ].filter(Boolean).filter((url, i, arr) => arr.indexOf(url) === i);
+    }
+
+    function setImageWithFallback(img, sources, onDone) {
+      let index = 0;
+
+      function tryNext() {
+        if (index >= sources.length) {
+          img.classList.remove("is-loading");
+          img.classList.add("is-error");
+          if (onDone) onDone(false);
+          return;
+        }
+
+        const url = sources[index++];
+        img.classList.add("is-loading");
+        img.classList.remove("is-error");
+
+        img.onload = () => {
+          img.classList.remove("is-loading");
+          if (onDone) onDone(true);
+        };
+
+        img.onerror = () => tryNext();
+        img.src = url;
+      }
+
+      tryNext();
     }
 
     function createPhotoEl(photo, index) {
@@ -391,17 +522,13 @@
       img.alt = photo.alt || photo.title || "";
       img.loading = "lazy";
       img.decoding = "async";
-      img.src = photo.previewSrc;
-      img.addEventListener("load", () => img.classList.add("loaded"));
-      img.addEventListener("error", () => {
-        const fallbacks = [photo.fullResSrc, photo.downloadSrc].filter(Boolean);
-        const next = fallbacks.find((url) => url !== img.src);
-        if (next) img.src = next;
-      });
+      setImageWithFallback(img, photoSources(photo));
 
       const caption = document.createElement("div");
       caption.className = "photo-caption";
-      caption.innerHTML = `<span>${photo.title || ""}</span>`;
+      const title = document.createElement("span");
+      title.textContent = photo.title || "";
+      caption.appendChild(title);
 
       el.appendChild(img);
       el.appendChild(caption);
@@ -410,19 +537,19 @@
     }
 
     function renderBatch() {
-      const end = Math.min(rendered + PAGE_SIZE, allPhotos.length);
+      const end = Math.min(rendered + PAGE_SIZE, filteredPhotos.length);
       const frag = document.createDocumentFragment();
       for (let i = rendered; i < end; i++) {
-        frag.appendChild(createPhotoEl(allPhotos[i], i));
+        frag.appendChild(createPhotoEl(filteredPhotos[i], i));
       }
       masonry.appendChild(frag);
       rendered = end;
-      loader.hidden = rendered >= allPhotos.length;
+      loader.hidden = rendered >= filteredPhotos.length;
     }
 
     function observeSentinel() {
       const obs = new IntersectionObserver((entries) => {
-        if (entries[0].isIntersecting && rendered < allPhotos.length) {
+        if (entries[0].isIntersecting && rendered < filteredPhotos.length) {
           loader.hidden = false;
           renderBatch();
         }
@@ -446,17 +573,29 @@
     }
 
     function updateLightbox() {
-      const photo = allPhotos[lbIndex];
+      const photo = filteredPhotos[lbIndex];
       if (!photo) return;
-      lbImage.src = photo.fullResSrc;
+
+      lbImage.classList.add("is-loading");
+      const sources = [
+        photo.fullResSrc,
+        photo.downloadSrc,
+        photo.filename ? `./images/${photo.filename}` : null,
+        photo.previewSrc
+      ].filter(Boolean).filter((url, i, arr) => arr.indexOf(url) === i);
+
+      setImageWithFallback(lbImage, sources, () => {
+        lbImage.classList.remove("is-loading");
+      });
+
       lbImage.alt = photo.alt || photo.title || "";
       lbTitle.textContent = photo.title || "";
-      lbCounter.textContent = `${lbIndex + 1} / ${allPhotos.length}`;
+      lbCounter.textContent = `${lbIndex + 1} / ${filteredPhotos.length}`;
 
       const preload = (i) => {
-        if (i >= 0 && i < allPhotos.length) {
+        if (i >= 0 && i < filteredPhotos.length) {
           const img = new Image();
-          img.src = allPhotos[i].fullResSrc;
+          img.src = filteredPhotos[i].fullResSrc || filteredPhotos[i].previewSrc;
         }
       };
       preload(lbIndex + 1);
@@ -464,9 +603,14 @@
     }
 
     function step(dir) {
-      lbIndex = (lbIndex + dir + allPhotos.length) % allPhotos.length;
+      lbIndex = (lbIndex + dir + filteredPhotos.length) % filteredPhotos.length;
       updateLightbox();
     }
+
+    categoryFilter.addEventListener("change", () => {
+      activeCategory = categoryFilter.value;
+      applyFilters();
+    });
 
     document.getElementById("lbClose").addEventListener("click", closeLightbox);
     document.getElementById("lbPrev").addEventListener("click", () => step(-1));

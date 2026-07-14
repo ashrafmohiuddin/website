@@ -1,0 +1,8 @@
+Contact: mailto:ashraf61242@gmail.com
+Expires: 2027-12-31T23:59:59.000Z
+Preferred-Languages: en
+Canonical: https://sashraf.in/.well-known/security.txt
+Policy: https://sashraf.in
+
+# If you discover a security issue on this site, please report it responsibly.
+# Do not access, modify, or delete data that does not belong to you.

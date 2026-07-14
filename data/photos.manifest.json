@@ -1,15 +1,17 @@
 {
   "version": 1,
-  "updatedAt": "2026-07-09",
+  "updatedAt": "2026-07-13",
   "photos": [
     {
       "slug": "20211211-101627",
       "title": "20211211 101627",
       "alt": "20211211 101627",
+      "category": "uncategorized",
       "tags": [
         "landscape"
       ],
-      "previewSrc": "https://img.sashraf.in/photos-previews/20211211_101627.jpg",
+      "filename": "20211211_101627.jpg",
+      "previewSrc": "./images/low-res/20211211_101627.jpg",
       "fullResSrc": "https://img.sashraf.in/photos/20211211_101627.jpg",
       "downloadSrc": "https://img.sashraf.in/photos-watermarked/20211211_101627.jpg"
     },
@@ -17,10 +19,12 @@
       "slug": "20211211-182845",
       "title": "20211211 182845",
       "alt": "20211211 182845",
+      "category": "uncategorized",
       "tags": [
         "landscape"
       ],
-      "previewSrc": "https://img.sashraf.in/photos-previews/20211211_182845.jpg",
+      "filename": "20211211_182845.jpg",
+      "previewSrc": "./images/low-res/20211211_182845.jpg",
       "fullResSrc": "https://img.sashraf.in/photos/20211211_182845.jpg",
       "downloadSrc": "https://img.sashraf.in/photos-watermarked/20211211_182845.jpg"
     },
@@ -28,10 +32,12 @@
       "slug": "20211212-100019",
       "title": "20211212 100019",
       "alt": "20211212 100019",
+      "category": "uncategorized",
       "tags": [
         "landscape"
       ],
-      "previewSrc": "https://img.sashraf.in/photos-previews/20211212_100019.jpg",
+      "filename": "20211212_100019.jpg",
+      "previewSrc": "./images/low-res/20211212_100019.jpg",
       "fullResSrc": "https://img.sashraf.in/photos/20211212_100019.jpg",
       "downloadSrc": "https://img.sashraf.in/photos-watermarked/20211212_100019.jpg"
     },
@@ -39,10 +45,12 @@
       "slug": "20211212-123740",
       "title": "20211212 123740",
       "alt": "20211212 123740",
+      "category": "uncategorized",
       "tags": [
         "landscape"
       ],
-      "previewSrc": "https://img.sashraf.in/photos-previews/20211212_123740.jpg",
+      "filename": "20211212_123740.jpg",
+      "previewSrc": "./images/low-res/20211212_123740.jpg",
       "fullResSrc": "https://img.sashraf.in/photos/20211212_123740.jpg",
       "downloadSrc": "https://img.sashraf.in/photos-watermarked/20211212_123740.jpg"
     },
@@ -50,10 +58,12 @@
       "slug": "20211212-175127",
       "title": "20211212 175127",
       "alt": "20211212 175127",
+      "category": "uncategorized",
       "tags": [
         "landscape"
       ],
-      "previewSrc": "https://img.sashraf.in/photos-previews/20211212_175127.jpg",
+      "filename": "20211212_175127.jpg",
+      "previewSrc": "./images/low-res/20211212_175127.jpg",
       "fullResSrc": "https://img.sashraf.in/photos/20211212_175127.jpg",
       "downloadSrc": "https://img.sashraf.in/photos-watermarked/20211212_175127.jpg"
     },
@@ -61,10 +71,12 @@
       "slug": "20211212-180203",
       "title": "Summer Beach Day at Goa",
       "alt": "Summer Beach Day at Goa",
+      "category": "uncategorized",
       "tags": [
         "landscape"
       ],
-      "previewSrc": "https://img.sashraf.in/photos-previews/20211212_180203.jpg",
+      "filename": "20211212_180203.jpg",
+      "previewSrc": "./images/low-res/20211212_180203.jpg",
       "fullResSrc": "https://img.sashraf.in/photos/20211212_180203.jpg",
       "downloadSrc": "https://img.sashraf.in/photos-watermarked/20211212_180203.jpg"
     },
@@ -72,10 +84,12 @@
       "slug": "20211214-160612-2",
       "title": "20211214 160612 2",
       "alt": "20211214 160612 2",
+      "category": "uncategorized",
       "tags": [
         "landscape"
       ],
-      "previewSrc": "https://img.sashraf.in/photos-previews/20211214_160612-2.jpg",
+      "filename": "20211214_160612-2.jpg",
+      "previewSrc": "./images/low-res/20211214_160612-2.jpg",
       "fullResSrc": "https://img.sashraf.in/photos/20211214_160612-2.jpg",
       "downloadSrc": "https://img.sashraf.in/photos-watermarked/20211214_160612-2.jpg"
     },
@@ -83,10 +97,12 @@
       "slug": "20211214-160612",
       "title": "20211214 160612",
       "alt": "20211214 160612",
+      "category": "uncategorized",
       "tags": [
         "landscape"
       ],
-      "previewSrc": "https://img.sashraf.in/photos-previews/20211214_160612.jpg",
+      "filename": "20211214_160612.jpg",
+      "previewSrc": "./images/low-res/20211214_160612.jpg",
       "fullResSrc": "https://img.sashraf.in/photos/20211214_160612.jpg",
       "downloadSrc": "https://img.sashraf.in/photos-watermarked/20211214_160612.jpg"
     },
@@ -94,10 +110,12 @@
       "slug": "20220314-173238",
       "title": "20220314 173238",
       "alt": "20220314 173238",
+      "category": "uncategorized",
       "tags": [
         "landscape"
       ],
-      "previewSrc": "https://img.sashraf.in/photos-previews/20220314_173238.jpg",
+      "filename": "20220314_173238.jpg",
+      "previewSrc": "./images/low-res/20220314_173238.jpg",
       "fullResSrc": "https://img.sashraf.in/photos/20220314_173238.jpg",
       "downloadSrc": "https://img.sashraf.in/photos-watermarked/20220314_173238.jpg"
     },
@@ -105,21 +123,27 @@
       "slug": "20220427-200606",
       "title": "20220427 200606",
       "alt": "20220427 200606",
+      "category": "uncategorized",
       "tags": [
         "landscape"
       ],
-      "previewSrc": "https://img.sashraf.in/photos-previews/20220427_200606.jpg",
+      "filename": "20220427_200606.jpg",
+      "previewSrc": "./images/low-res/20220427_200606.jpg",
       "fullResSrc": "https://img.sashraf.in/photos/20220427_200606.jpg",
       "downloadSrc": "https://img.sashraf.in/photos-watermarked/20220427_200606.jpg"
     },
     {
       "slug": "ash02346",
       "title": "White Bengal Tiger",
-      "alt": "White Bengal Tiger",
+      "alt": "White Bengal tiger resting and looking ahead",
+      "category": "wildlife",
       "tags": [
-        "wildlife"
+        "tiger",
+        "wildlife",
+        "featured"
       ],
-      "previewSrc": "https://img.sashraf.in/photos-previews/ASH02346.jpg",
+      "filename": "ASH02346.jpg",
+      "previewSrc": "./images/low-res/ASH02346.jpg",
       "fullResSrc": "https://img.sashraf.in/photos/ASH02346.jpg",
       "downloadSrc": "https://img.sashraf.in/photos-watermarked/ASH02346.jpg"
     },
@@ -127,10 +151,12 @@
       "slug": "ash02373",
       "title": "White Bengal Tiger and Bengal Tiger",
       "alt": "White Bengal Tiger and Bengal Tiger",
+      "category": "uncategorized",
       "tags": [
         "wildlife"
       ],
-      "previewSrc": "https://img.sashraf.in/photos-previews/ASH02373.jpg",
+      "filename": "ASH02373.jpg",
+      "previewSrc": "./images/low-res/ASH02373.jpg",
       "fullResSrc": "https://img.sashraf.in/photos/ASH02373.jpg",
       "downloadSrc": "https://img.sashraf.in/photos-watermarked/ASH02373.jpg"
     },
@@ -138,10 +164,12 @@
       "slug": "ash03049",
       "title": "Wildlife Photography",
       "alt": "Wildlife Photography",
+      "category": "uncategorized",
       "tags": [
         "wildlife"
       ],
-      "previewSrc": "https://img.sashraf.in/photos-previews/ASH03049.jpg",
+      "filename": "ASH03049.jpg",
+      "previewSrc": "./images/low-res/ASH03049.jpg",
       "fullResSrc": "https://img.sashraf.in/photos/ASH03049.jpg",
       "downloadSrc": "https://img.sashraf.in/photos-watermarked/ASH03049.jpg"
     },
@@ -149,10 +177,12 @@
       "slug": "ash03547-3",
       "title": "Adventure Shot",
       "alt": "Adventure Shot",
+      "category": "uncategorized",
       "tags": [
         "wildlife"
       ],
-      "previewSrc": "https://img.sashraf.in/photos-previews/ASH03547-3.jpg",
+      "filename": "ASH03547-3.jpg",
+      "previewSrc": "./images/low-res/ASH03547-3.jpg",
       "fullResSrc": "https://img.sashraf.in/photos/ASH03547-3.jpg",
       "downloadSrc": "https://img.sashraf.in/photos-watermarked/ASH03547-3.jpg"
     },
@@ -160,10 +190,12 @@
       "slug": "ash03620",
       "title": "Scenic View",
       "alt": "Scenic View",
+      "category": "uncategorized",
       "tags": [
         "wildlife"
       ],
-      "previewSrc": "https://img.sashraf.in/photos-previews/ASH03620.jpg",
+      "filename": "ASH03620.jpg",
+      "previewSrc": "./images/low-res/ASH03620.jpg",
       "fullResSrc": "https://img.sashraf.in/photos/ASH03620.jpg",
       "downloadSrc": "https://img.sashraf.in/photos-watermarked/ASH03620.jpg"
     },
@@ -171,22 +203,27 @@
       "slug": "ash03648",
       "title": "Nature Scene",
       "alt": "Nature Scene",
+      "category": "uncategorized",
       "tags": [
         "wildlife"
       ],
-      "previewSrc": "https://img.sashraf.in/photos-previews/ASH03648.jpg",
+      "filename": "ASH03648.jpg",
+      "previewSrc": "./images/low-res/ASH03648.jpg",
       "fullResSrc": "https://img.sashraf.in/photos/ASH03648.jpg",
       "downloadSrc": "https://img.sashraf.in/photos-watermarked/ASH03648.jpg"
     },
     {
       "slug": "ash03655-crop",
       "title": "Bike Riding Adventure",
-      "alt": "Bike Riding Adventure",
+      "alt": "Triumph Speed 400 on an open road",
+      "category": "travel",
       "tags": [
-        "wildlife",
-        "travel"
+        "bike",
+        "road",
+        "featured"
       ],
-      "previewSrc": "https://img.sashraf.in/photos-previews/ASH03655-crop.JPG",
+      "filename": "ASH03655-crop.JPG",
+      "previewSrc": "./images/low-res/ASH03655-crop.JPG",
       "fullResSrc": "https://img.sashraf.in/photos/ASH03655-crop.JPG",
       "downloadSrc": "https://img.sashraf.in/photos-watermarked/ASH03655-crop.JPG"
     },
@@ -194,10 +231,12 @@
       "slug": "ash03890",
       "title": "Adventure Moment",
       "alt": "Adventure Moment",
+      "category": "uncategorized",
       "tags": [
         "wildlife"
       ],
-      "previewSrc": "https://img.sashraf.in/photos-previews/ASH03890.JPG",
+      "filename": "ASH03890.JPG",
+      "previewSrc": "./images/low-res/ASH03890.JPG",
       "fullResSrc": "https://img.sashraf.in/photos/ASH03890.JPG",
       "downloadSrc": "https://img.sashraf.in/photos-watermarked/ASH03890.JPG"
     },
@@ -205,10 +244,12 @@
       "slug": "ash03963",
       "title": "Scenic Landscape",
       "alt": "Scenic Landscape",
+      "category": "uncategorized",
       "tags": [
         "wildlife"
       ],
-      "previewSrc": "https://img.sashraf.in/photos-previews/ASH03963.JPG",
+      "filename": "ASH03963.JPG",
+      "previewSrc": "./images/low-res/ASH03963.JPG",
       "fullResSrc": "https://img.sashraf.in/photos/ASH03963.JPG",
       "downloadSrc": "https://img.sashraf.in/photos-watermarked/ASH03963.JPG"
     },
@@ -216,10 +257,12 @@
       "slug": "ash04012",
       "title": "Wildlife Moment",
       "alt": "Wildlife Moment",
+      "category": "uncategorized",
       "tags": [
         "wildlife"
       ],
-      "previewSrc": "https://img.sashraf.in/photos-previews/ASH04012.JPG",
+      "filename": "ASH04012.JPG",
+      "previewSrc": "./images/low-res/ASH04012.JPG",
       "fullResSrc": "https://img.sashraf.in/photos/ASH04012.JPG",
       "downloadSrc": "https://img.sashraf.in/photos-watermarked/ASH04012.JPG"
     },
@@ -227,10 +270,12 @@
       "slug": "ash04151",
       "title": "Nature Beauty",
       "alt": "Nature Beauty",
+      "category": "uncategorized",
       "tags": [
         "wildlife"
       ],
-      "previewSrc": "https://img.sashraf.in/photos-previews/ASH04151.JPG",
+      "filename": "ASH04151.JPG",
+      "previewSrc": "./images/low-res/ASH04151.JPG",
       "fullResSrc": "https://img.sashraf.in/photos/ASH04151.JPG",
       "downloadSrc": "https://img.sashraf.in/photos-watermarked/ASH04151.JPG"
     },
@@ -238,10 +283,12 @@
       "slug": "ash04307",
       "title": "Adventure Photography",
       "alt": "Adventure Photography",
+      "category": "uncategorized",
       "tags": [
         "wildlife"
       ],
-      "previewSrc": "https://img.sashraf.in/photos-previews/ASH04307.JPG",
+      "filename": "ASH04307.JPG",
+      "previewSrc": "./images/low-res/ASH04307.JPG",
       "fullResSrc": "https://img.sashraf.in/photos/ASH04307.JPG",
       "downloadSrc": "https://img.sashraf.in/photos-watermarked/ASH04307.JPG"
     },
@@ -249,10 +296,12 @@
       "slug": "ash04692",
       "title": "Landscape Photography",
       "alt": "Landscape Photography",
+      "category": "uncategorized",
       "tags": [
         "wildlife"
       ],
-      "previewSrc": "https://img.sashraf.in/photos-previews/ASH04692.jpg",
+      "filename": "ASH04692.jpg",
+      "previewSrc": "./images/low-res/ASH04692.jpg",
       "fullResSrc": "https://img.sashraf.in/photos/ASH04692.jpg",
       "downloadSrc": "https://img.sashraf.in/photos-watermarked/ASH04692.jpg"
     },
@@ -260,10 +309,12 @@
       "slug": "ash04718",
       "title": "Nature Photography",
       "alt": "Nature Photography",
+      "category": "uncategorized",
       "tags": [
         "wildlife"
       ],
-      "previewSrc": "https://img.sashraf.in/photos-previews/ASH04718.JPG",
+      "filename": "ASH04718.JPG",
+      "previewSrc": "./images/low-res/ASH04718.JPG",
       "fullResSrc": "https://img.sashraf.in/photos/ASH04718.JPG",
       "downloadSrc": "https://img.sashraf.in/photos-watermarked/ASH04718.JPG"
     },
@@ -271,10 +322,12 @@
       "slug": "ash04929",
       "title": "Nature Photography",
       "alt": "Nature Photography",
+      "category": "uncategorized",
       "tags": [
         "wildlife"
       ],
-      "previewSrc": "https://img.sashraf.in/photos-previews/ASH04929.jpg",
+      "filename": "ASH04929.jpg",
+      "previewSrc": "./images/low-res/ASH04929.jpg",
       "fullResSrc": "https://img.sashraf.in/photos/ASH04929.jpg",
       "downloadSrc": "https://img.sashraf.in/photos-watermarked/ASH04929.jpg"
     },
@@ -282,10 +335,12 @@
       "slug": "ash04955",
       "title": "Wildlife Shot",
       "alt": "Wildlife Shot",
+      "category": "uncategorized",
       "tags": [
         "wildlife"
       ],
-      "previewSrc": "https://img.sashraf.in/photos-previews/ASH04955.jpg",
+      "filename": "ASH04955.jpg",
+      "previewSrc": "./images/low-res/ASH04955.jpg",
       "fullResSrc": "https://img.sashraf.in/photos/ASH04955.jpg",
       "downloadSrc": "https://img.sashraf.in/photos-watermarked/ASH04955.jpg"
     },
@@ -293,10 +348,12 @@
       "slug": "ash04976",
       "title": "Adventure Scene",
       "alt": "Adventure Scene",
+      "category": "uncategorized",
       "tags": [
         "wildlife"
       ],
-      "previewSrc": "https://img.sashraf.in/photos-previews/ASH04976.jpg",
+      "filename": "ASH04976.jpg",
+      "previewSrc": "./images/low-res/ASH04976.jpg",
       "fullResSrc": "https://img.sashraf.in/photos/ASH04976.jpg",
       "downloadSrc": "https://img.sashraf.in/photos-watermarked/ASH04976.jpg"
     },
@@ -304,10 +361,12 @@
       "slug": "ash05056",
       "title": "Landscape Shot",
       "alt": "Landscape Shot",
+      "category": "uncategorized",
       "tags": [
         "wildlife"
       ],
-      "previewSrc": "https://img.sashraf.in/photos-previews/ASH05056.jpg",
+      "filename": "ASH05056.jpg",
+      "previewSrc": "./images/low-res/ASH05056.jpg",
       "fullResSrc": "https://img.sashraf.in/photos/ASH05056.jpg",
       "downloadSrc": "https://img.sashraf.in/photos-watermarked/ASH05056.jpg"
     },
@@ -315,10 +374,12 @@
       "slug": "ash05075",
       "title": "Nature Scene",
       "alt": "Nature Scene",
+      "category": "uncategorized",
       "tags": [
         "wildlife"
       ],
-      "previewSrc": "https://img.sashraf.in/photos-previews/ASH05075.jpg",
+      "filename": "ASH05075.jpg",
+      "previewSrc": "./images/low-res/ASH05075.jpg",
       "fullResSrc": "https://img.sashraf.in/photos/ASH05075.jpg",
       "downloadSrc": "https://img.sashraf.in/photos-watermarked/ASH05075.jpg"
     },
@@ -326,10 +387,12 @@
       "slug": "ash05621-2",
       "title": "Landscape View",
       "alt": "Landscape View",
+      "category": "uncategorized",
       "tags": [
         "wildlife"
       ],
-      "previewSrc": "https://img.sashraf.in/photos-previews/ASH05621-2.jpg",
+      "filename": "ASH05621-2.jpg",
+      "previewSrc": "./images/low-res/ASH05621-2.jpg",
       "fullResSrc": "https://img.sashraf.in/photos/ASH05621-2.jpg",
       "downloadSrc": "https://img.sashraf.in/photos-watermarked/ASH05621-2.jpg"
     },
@@ -337,10 +400,12 @@
       "slug": "ash05626",
       "title": "Nature Photography",
       "alt": "Nature Photography",
+      "category": "uncategorized",
       "tags": [
         "wildlife"
       ],
-      "previewSrc": "https://img.sashraf.in/photos-previews/ASH05626.jpg",
+      "filename": "ASH05626.jpg",
+      "previewSrc": "./images/low-res/ASH05626.jpg",
       "fullResSrc": "https://img.sashraf.in/photos/ASH05626.jpg",
       "downloadSrc": "https://img.sashraf.in/photos-watermarked/ASH05626.jpg"
     },
@@ -348,10 +413,12 @@
       "slug": "ash05835",
       "title": "Adventure Shot",
       "alt": "Adventure Shot",
+      "category": "uncategorized",
       "tags": [
         "wildlife"
       ],
-      "previewSrc": "https://img.sashraf.in/photos-previews/ASH05835.jpg",
+      "filename": "ASH05835.jpg",
+      "previewSrc": "./images/low-res/ASH05835.jpg",
       "fullResSrc": "https://img.sashraf.in/photos/ASH05835.jpg",
       "downloadSrc": "https://img.sashraf.in/photos-watermarked/ASH05835.jpg"
     },
@@ -359,10 +426,12 @@
       "slug": "ash06363",
       "title": "Wildlife Photography",
       "alt": "Wildlife Photography",
+      "category": "uncategorized",
       "tags": [
         "wildlife"
       ],
-      "previewSrc": "https://img.sashraf.in/photos-previews/ASH06363.jpg",
+      "filename": "ASH06363.jpg",
+      "previewSrc": "./images/low-res/ASH06363.jpg",
       "fullResSrc": "https://img.sashraf.in/photos/ASH06363.jpg",
       "downloadSrc": "https://img.sashraf.in/photos-watermarked/ASH06363.jpg"
     },
@@ -370,10 +439,12 @@
       "slug": "ash06431",
       "title": "Nature Beauty",
       "alt": "Nature Beauty",
+      "category": "uncategorized",
       "tags": [
         "wildlife"
       ],
-      "previewSrc": "https://img.sashraf.in/photos-previews/ASH06431.jpg",
+      "filename": "ASH06431.jpg",
+      "previewSrc": "./images/low-res/ASH06431.jpg",
       "fullResSrc": "https://img.sashraf.in/photos/ASH06431.jpg",
       "downloadSrc": "https://img.sashraf.in/photos-watermarked/ASH06431.jpg"
     },
@@ -381,10 +452,12 @@
       "slug": "ash06438-2",
       "title": "Landscape Photography",
       "alt": "Landscape Photography",
+      "category": "uncategorized",
       "tags": [
         "wildlife"
       ],
-      "previewSrc": "https://img.sashraf.in/photos-previews/ASH06438-2.jpg",
+      "filename": "ASH06438-2.jpg",
+      "previewSrc": "./images/low-res/ASH06438-2.jpg",
       "fullResSrc": "https://img.sashraf.in/photos/ASH06438-2.jpg",
       "downloadSrc": "https://img.sashraf.in/photos-watermarked/ASH06438-2.jpg"
     },
@@ -392,10 +465,12 @@
       "slug": "ash06840",
       "title": "Adventure Photography",
       "alt": "Adventure Photography",
+      "category": "uncategorized",
       "tags": [
         "wildlife"
       ],
-      "previewSrc": "https://img.sashraf.in/photos-previews/ASH06840.jpg",
+      "filename": "ASH06840.jpg",
+      "previewSrc": "./images/low-res/ASH06840.jpg",
       "fullResSrc": "https://img.sashraf.in/photos/ASH06840.jpg",
       "downloadSrc": "https://img.sashraf.in/photos-watermarked/ASH06840.jpg"
     },
@@ -403,10 +478,12 @@
       "slug": "ash06899",
       "title": "Nature Scene",
       "alt": "Nature Scene",
+      "category": "uncategorized",
       "tags": [
         "wildlife"
       ],
-      "previewSrc": "https://img.sashraf.in/photos-previews/ASH06899.jpg",
+      "filename": "ASH06899.jpg",
+      "previewSrc": "./images/low-res/ASH06899.jpg",
       "fullResSrc": "https://img.sashraf.in/photos/ASH06899.jpg",
       "downloadSrc": "https://img.sashraf.in/photos-watermarked/ASH06899.jpg"
     },
@@ -414,10 +491,12 @@
       "slug": "ash06941",
       "title": "Wildlife Photography",
       "alt": "Wildlife Photography",
+      "category": "uncategorized",
       "tags": [
         "wildlife"
       ],
-      "previewSrc": "https://img.sashraf.in/photos-previews/ASH06941.jpg",
+      "filename": "ASH06941.jpg",
+      "previewSrc": "./images/low-res/ASH06941.jpg",
       "fullResSrc": "https://img.sashraf.in/photos/ASH06941.jpg",
       "downloadSrc": "https://img.sashraf.in/photos-watermarked/ASH06941.jpg"
     },
@@ -425,10 +504,12 @@
       "slug": "ash06964",
       "title": "Landscape Shot",
       "alt": "Landscape Shot",
+      "category": "uncategorized",
       "tags": [
         "wildlife"
       ],
-      "previewSrc": "https://img.sashraf.in/photos-previews/ASH06964.jpg",
+      "filename": "ASH06964.jpg",
+      "previewSrc": "./images/low-res/ASH06964.jpg",
       "fullResSrc": "https://img.sashraf.in/photos/ASH06964.jpg",
       "downloadSrc": "https://img.sashraf.in/photos-watermarked/ASH06964.jpg"
     }

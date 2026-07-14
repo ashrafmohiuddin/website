@@ -11,7 +11,7 @@ const args = Object.fromEntries(
 );
 
 const config = {
-  mode: args.mode || "r2",
+  mode: args.mode || "hybrid",
   sourceDir: args.sourceDir || "images",
   outputFile: args.output || "data/photos.manifest.json",
   previewDir: args.previewDir || "images/low-res",
@@ -21,6 +21,8 @@ const config = {
   watermarkedPrefix: args.watermarkedPrefix || "photos-watermarked",
   useTransforms: args.useTransforms === "true"
 };
+
+const metadataFile = args.metadata || "data/photos.metadata.json";
 
 const IMAGE_EXTENSIONS = new Set([".jpg", ".jpeg", ".png", ".webp", ".JPG", ".JPEG", ".PNG", ".WEBP"]);
 
@@ -80,9 +82,20 @@ function inferTags(nameLower) {
   return [...new Set(tags)];
 }
 
+async function loadMetadataMap() {
+  try {
+    const raw = await fs.readFile(path.resolve(process.cwd(), metadataFile), "utf8");
+    const parsed = JSON.parse(raw);
+    return parsed && parsed.photos ? parsed.photos : {};
+  } catch {
+    return {};
+  }
+}
+
 function buildUrls(filename) {
   if (config.mode === "local") {
     return {
+      filename,
       previewSrc: `./${config.previewDir}/${filename}`,
       fullResSrc: `./${config.sourceDir}/${filename}`,
       downloadSrc: `./${config.sourceDir}/${filename}`
@@ -93,15 +106,26 @@ function buildUrls(filename) {
   const previewKey = `${config.previewPrefix}/${filename}`;
   const directOriginal = `${config.r2Base}/${originalKey}`;
   const directPreview = `${config.r2Base}/${previewKey}`;
+  const watermarked = `${config.r2Base}/${config.watermarkedPrefix}/${filename}`;
+
+  if (config.mode === "hybrid") {
+    return {
+      filename,
+      previewSrc: `./${config.previewDir}/${filename}`,
+      fullResSrc: directOriginal,
+      downloadSrc: watermarked
+    };
+  }
 
   if (config.useTransforms) {
     const transformed = (width, quality, key) =>
       `${config.r2Base}/cdn-cgi/image/width=${width},quality=${quality},format=auto/${key}`;
 
     return {
+      filename,
       previewSrc: transformed(900, 70, previewKey),
       fullResSrc: transformed(2800, 86, originalKey),
-      downloadSrc: `${config.r2Base}/${config.watermarkedPrefix}/${filename}`,
+      downloadSrc: watermarked,
       srcSet: [
         transformed(480, 68, previewKey) + " 480w",
         transformed(900, 70, previewKey) + " 900w",
@@ -111,25 +135,29 @@ function buildUrls(filename) {
   }
 
   return {
+    filename,
     previewSrc: directPreview,
     fullResSrc: directOriginal,
-    downloadSrc: `${config.r2Base}/${config.watermarkedPrefix}/${filename}`
+    downloadSrc: watermarked
   };
 }
 
 async function buildManifest() {
+  const metadataMap = await loadMetadataMap();
   const sourceAbsolute = path.resolve(process.cwd(), config.sourceDir);
   const files = await fs.readdir(sourceAbsolute);
   const imageFiles = files.filter((file) => IMAGE_EXTENSIONS.has(path.extname(file)));
 
   const photos = imageFiles.map((filename) => {
+    const custom = metadataMap[filename] || {};
     const lowered = filename.toLowerCase();
-    const title = toTitle(filename);
+    const title = custom.title || toTitle(filename);
     return {
       slug: toSlug(filename),
       title,
-      alt: title,
-      tags: inferTags(lowered),
+      alt: custom.alt || title,
+      category: custom.category || "uncategorized",
+      tags: Array.isArray(custom.tags) ? custom.tags : inferTags(lowered),
       ...buildUrls(filename)
     };
   });

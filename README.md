@@ -1,99 +1,148 @@
-# sashraf.in Photography Pipeline
+# Photography Workflow (Folder -> Website)
 
-This repo now contains a premium, data-driven photography page at `photography.html`.
-It is built to scale from tens of photos to 1000+ using:
+This project supports a seamless photography pipeline:
 
-- Netlify for page hosting
-- Cloudflare R2 for image storage
-- Cloudflare image transforms for fast previews and responsive variants
-- Watermarked full-resolution download links
+1. Export edited photos from Lightroom to one folder
+2. Run one script to create:
+   - compressed previews for gallery loading
+   - watermarked full-resolution download copies
+   - metadata-driven manifest (`data/photos.manifest.json`)
+3. Optional R2 sync
+4. Deploy to Netlify (`photography.sashraf.in` or `sashraf.in/photography`)
 
-## Files added for the new gallery
+## Important Files
 
-- `photography.html` - premium UI + manifest-driven gallery + lightbox
-- `data/photos.manifest.json` - source of truth for all photos displayed
-- `scripts/build-photo-manifest.mjs` - helper to generate manifest entries from image filenames
+- `photography.html` - premium masonry gallery + lightbox + category/tag filters
+- `data/photos.metadata.json` - your manual metadata input (category/tags/title/alt)
+- `data/photos.manifest.json` - auto-generated gallery data (do not hand edit)
+- `scripts/process-photos.sh` - main processing pipeline
+- `scripts/publish-photography.sh` - process + deploy in one command
+- `scripts/build-photo-manifest.mjs` - manifest generator
 
-## R2 + Netlify setup
+## Install Requirements (Mac)
 
-1. Create an R2 bucket (example: `sashraf-photos`).
-2. Upload images to:
-   - `photos/` (originals)
-   - `photos-watermarked/` (watermarked full-resolution downloads)
-3. Attach a public custom domain like `img.sashraf.in` to R2 (recommended).
-4. Enable Cloudflare image transformations on that domain.
-5. Keep site deployment on Netlify as usual.
+```bash
+brew install imagemagick awscli
+npm i -g netlify-cli
+```
 
-The page expects image URLs like:
+Also run once:
 
-- Preview variant:
-  - `https://img.sashraf.in/cdn-cgi/image/width=900,quality=70,format=auto/photos/ASH02346.jpg`
-- Full viewer variant:
-  - `https://img.sashraf.in/cdn-cgi/image/width=2800,quality=86,format=auto/photos/ASH02346.jpg`
-- Download (full-res watermarked):
-  - `https://img.sashraf.in/photos-watermarked/ASH02346.jpg`
+```bash
+netlify login
+```
 
-## Manifest format
+## R2 Bucket Layout
 
-`data/photos.manifest.json`:
+Your R2 should contain:
+
+- `photos/` -> full-resolution originals
+- `photos-previews/` -> compressed gallery previews
+- `photos-watermarked/` -> full-resolution watermarked download files
+
+## Metadata: How to Add Categories/Tags
+
+Edit `data/photos.metadata.json`:
 
 ```json
 {
-  "version": 1,
-  "updatedAt": "2026-07-09",
-  "photos": [
-    {
-      "slug": "white-bengal-tiger",
+  "photos": {
+    "ASH02346.jpg": {
       "title": "White Bengal Tiger",
-      "alt": "White Bengal tiger portrait",
-      "location": "Nehru Zoological Park, Hyderabad",
-      "captureDate": "2025-02-08",
-      "tags": ["wildlife", "animal", "featured"],
-      "previewSrc": "https://img.sashraf.in/cdn-cgi/image/width=900,quality=70,format=auto/photos/ASH02346.jpg",
-      "fullResSrc": "https://img.sashraf.in/cdn-cgi/image/width=2800,quality=86,format=auto/photos/ASH02346.jpg",
-      "downloadSrc": "https://img.sashraf.in/photos-watermarked/ASH02346.jpg"
+      "alt": "White Bengal tiger resting and looking ahead",
+      "category": "wildlife",
+      "tags": ["tiger", "wildlife", "featured"]
     }
-  ]
+  }
 }
 ```
 
-## Generate manifest quickly
+Rules:
 
-From repo root:
+- Key must exactly match filename
+- `category` is a single string (used in dropdown)
+- `tags` is an array (used for tag chips)
+- Missing files fall back to auto-generated defaults (`uncategorized`, inferred tags)
 
-```bash
-node scripts/build-photo-manifest.mjs --sourceDir=images --output=data/photos.manifest.json --r2Base=https://img.sashraf.in --originalsPrefix=photos --watermarkedPrefix=photos-watermarked
-```
+## Daily Workflow (Recommended)
 
-This script auto-generates entries from filenames. Then manually enrich:
-
-- `title`
-- `alt`
-- `location`
-- `captureDate`
-- `tags`
-
-## Watermarking workflow
-
-Keep original masters private/offline. Publish only watermarked files for downloads.
-
-Batch watermark example with ImageMagick:
+### A) Process only (local + manifest)
 
 ```bash
-mkdir -p images/watermarked
-for f in images/*.{jpg,JPG,jpeg,JPEG,png,PNG}; do \
-  [ -e "$f" ] || continue; \
-  bn=$(basename "$f"); \
-  magick "$f" -gravity southeast -fill "rgba(255,255,255,0.35)" -pointsize 42 -annotate +50+45 "© Ashraf Mohiuddin" "images/watermarked/$bn"; \
-done
+scripts/process-photos.sh "/absolute/path/to/lightroom-export-folder"
 ```
 
-Upload `images/watermarked/*` to `photos-watermarked/` in R2.
+This creates/updates:
 
-## Scaling notes for 1000+ photos
+- `images/` (full originals copy)
+- `images/low-res/` (compressed previews)
+- `images/watermarked/` (download copies)
+- `data/photos.manifest.json`
 
-- Keep all photo metadata in `photos.manifest.json`.
-- Use filters + search tags for discoverability.
-- Keep `previewSrc` small and responsive via Cloudflare transforms.
-- Serve full-res only in lightbox/download flow.
-- Consider splitting manifest into `manifest-featured.json` and paginated chunks later if needed.
+Orientation is preserved using `magick -auto-orient`.
+
+### B) Process + R2 sync
+
+```bash
+R2_BUCKET="your-bucket-name" \
+R2_ENDPOINT="https://<accountid>.r2.cloudflarestorage.com" \
+scripts/process-photos.sh "/absolute/path/to/lightroom-export-folder" --sync-r2
+```
+
+### C) Process + deploy in one command
+
+```bash
+R2_BUCKET="your-bucket-name" \
+R2_ENDPOINT="https://<accountid>.r2.cloudflarestorage.com" \
+scripts/publish-photography.sh "/absolute/path/to/lightroom-export-folder" --site-id=<netlify-site-id> --sync-r2 --prod
+```
+
+If you want preview deploy instead of production, remove `--prod`.
+
+## How Images Load on Site
+
+- Gallery grid: compressed preview image
+- On click: full-resolution image in lightbox
+- Download option: watermarked full-resolution image
+
+Filters are automatic from metadata (`category` and `tags`).
+
+## First-Time Setup Checklist
+
+1. Configure custom domain for R2 assets (`img.sashraf.in`)
+2. Ensure Netlify site points to this repository
+3. Fill `data/photos.metadata.json` entries for your key images
+4. Run process + sync + deploy command
+5. Open `photography.sashraf.in` and verify:
+   - grid loads quickly
+   - filters show expected categories/tags
+   - lightbox opens full-res
+   - download returns watermarked image
+
+## Security Setup
+
+### Already added in repo
+
+- `netlify.toml` security headers (HSTS, CSP, frame protection, nosniff)
+- `.well-known/security.txt` for responsible disclosure
+- `robots.txt` blocks common AI training crawlers
+- Photography page is isolated (no links back to portfolio)
+
+### Enable in Cloudflare dashboard (manual)
+
+For `sashraf.in` and `photography.sashraf.in`:
+
+1. **Bot Fight Mode** -> ON
+2. **AI Labyrinth** -> ON (optional extra bot disruption)
+3. **Security.txt** in Cloudflare can stay disabled if using repo file at `/.well-known/security.txt`
+4. **Always Use HTTPS** -> ON
+5. **Browser Integrity Check** -> ON
+
+### Photography subdomain (one-way sharing)
+
+1. In Netlify -> Domain settings -> add `photography.sashraf.in`
+2. In Cloudflare DNS -> CNAME `photography` -> your Netlify site
+3. Share only: `https://photography.sashraf.in`
+
+Main site (`sashraf.in`) links to photography in a new tab.
+Photography page has no navigation back to portfolio/personal details.

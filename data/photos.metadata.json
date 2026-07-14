@@ -1,0 +1,16 @@
+{
+  "photos": {
+    "ASH02346.jpg": {
+      "title": "White Bengal Tiger",
+      "alt": "White Bengal tiger resting and looking ahead",
+      "category": "wildlife",
+      "tags": ["tiger", "wildlife", "featured"]
+    },
+    "ASH03655-crop.JPG": {
+      "title": "Bike Riding Adventure",
+      "alt": "Triumph Speed 400 on an open road",
+      "category": "travel",
+      "tags": ["bike", "road", "featured"]
+    }
+  }
+}
