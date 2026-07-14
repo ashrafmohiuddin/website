@@ -1,3 +1,11 @@
-# Photography subdomain serves only the gallery (no path back to portfolio)
-https://photography.sashraf.in/   /photography.html   200!
-https://photography.sashraf.in/*  /photography.html   200!
+# Keep asset paths intact on the photography subdomain.
+# Only map bare HTML routes to the gallery page.
+
+# Manifest and image assets must NOT be force-rewritten.
+https://photography.sashraf.in/data/*   /data/:splat    200
+https://photography.sashraf.in/images/* /images/:splat  200
+
+# Gallery entry routes
+https://photography.sashraf.in/           /photography.html  200!
+https://photography.sashraf.in/index.html /photography.html  200!
+https://photography.sashraf.in/photography.html /photography.html  200!

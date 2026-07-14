@@ -418,11 +418,43 @@
     const tagList = document.getElementById("tagList");
 
     async function init() {
+      const candidateUrls = [
+        "./data/photos.manifest.json",
+        "/data/photos.manifest.json",
+        "https://sashraf.in/data/photos.manifest.json"
+      ];
+
       try {
-        const res = await fetch("./data/photos.manifest.json");
-        if (!res.ok) throw new Error("manifest missing");
-        const data = await res.json();
-        allPhotos = (data.photos || []).map((photo) => ({
+        let data = null;
+        let lastError = null;
+
+        for (const url of candidateUrls) {
+          try {
+            const res = await fetch(url, { cache: "no-cache" });
+            if (!res.ok) {
+              lastError = new Error(`HTTP ${res.status} for ${url}`);
+              continue;
+            }
+
+            const contentType = (res.headers.get("content-type") || "").toLowerCase();
+            const text = await res.text();
+            if (contentType.includes("text/html") || text.trim().startsWith("<!DOCTYPE") || text.trim().startsWith("<html")) {
+              lastError = new Error(`Got HTML instead of JSON from ${url}`);
+              continue;
+            }
+
+            data = JSON.parse(text);
+            break;
+          } catch (err) {
+            lastError = err;
+          }
+        }
+
+        if (!data || !Array.isArray(data.photos)) {
+          throw lastError || new Error("manifest missing");
+        }
+
+        allPhotos = data.photos.map((photo) => ({
           ...photo,
           category: photo.category || "uncategorized",
           tags: Array.isArray(photo.tags) ? photo.tags : []
@@ -430,7 +462,8 @@
         buildFilters();
         applyFilters();
         observeSentinel();
-      } catch {
+      } catch (error) {
+        console.error("Gallery load failed:", error);
         masonry.innerHTML = '<p style="color:#8a8a8a;padding:2rem 0;">Gallery could not be loaded.</p>';
       }
     }
