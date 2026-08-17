@@ -3,1106 +3,305 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Ashraf Mohiuddin Shaik - Full-stack Software Engineer at Oracle Financial Services. 3 years building scalable enterprise apps with Spring Boot, Kafka, and Oracle JET." />
-  <meta name="keywords" content="Ashraf Mohiuddin Shaik, Full-stack Software Engineer, Oracle Financial Services, Spring Boot, Kafka, Oracle JET, AI/ML" />
+  <meta name="description" content="Ashraf Mohiuddin Shaik — Backend Software Engineer, SDE-2 candidate. Ex-Oracle Financial Services. Java, Spring Boot, Kafka, distributed systems, and applied AI/ML." />
   <meta name="author" content="Ashraf Mohiuddin Shaik" />
-  <title>Ashraf Mohiuddin Shaik - Full-stack Software Engineer</title>
-  <link rel="canonical" href="https://ashraf-mohiuddin.com/index.html" />
-  
-  <!-- Open Graph / Social Media Meta Tags -->
-  <meta property="og:title" content="Ashraf Mohiuddin Shaik - Full-stack Software Engineer" />
-  <meta property="og:description" content="Ashraf Mohiuddin Shaik - Full-stack Software Engineer at Oracle Financial Services. 3 years building scalable enterprise apps with Spring Boot, Kafka, and Oracle JET." />
+  <title>Ashraf Mohiuddin Shaik — Backend Engineer</title>
+  <link rel="canonical" href="https://sashraf.in/" />
+  <meta property="og:title" content="Ashraf Mohiuddin Shaik — Backend Engineer" />
+  <meta property="og:description" content="SDE-2 candidate. Owned Kafka integration for an enterprise banking product at Oracle. Java, Spring Boot, distributed systems." />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://ashraf-mohiuddin.com/index.html" />
-  <meta property="og:image" content="https://ashraf-mohiuddin.com/images/ASH02346.jpg" />
-  
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Ashraf Mohiuddin Shaik - Full-stack Software Engineer" />
-  <meta name="twitter:description" content="Full-stack Software Engineer at Oracle Financial Services. 3 years building scalable enterprise apps." />
-  <meta name="twitter:image" content="https://ashraf-mohiuddin.com/images/ASH02346.jpg" />
+  <meta property="og:url" content="https://sashraf.in/" />
+  <meta property="og:image" content="https://sashraf.in/images/ASH02346.jpg" />
 
-  <!-- Structured Data (JSON-LD) -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "Person",
     "name": "Ashraf Mohiuddin Shaik",
-    "jobTitle": "Full-stack Software Engineer",
-    "worksFor": {
-      "@type": "Organization",
-      "name": "Oracle Financial Services"
-    },
-    "url": "https://ashraf-mohiuddin.com",
+    "jobTitle": "Backend Software Engineer",
+    "alumniOf": "NIT Calicut",
+    "url": "https://sashraf.in",
     "sameAs": [
       "https://linkedin.com/in/ashraf-mohiuddin",
       "https://github.com/ashraf-mohiuddin"
     ]
   }
   </script>
-  
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  
-  <style>
-    :root {
-      /* Light Theme - Pastel Colors */
-      --primary-color: #6366f1;
-      --primary-light: #a5b4fc;
-      --primary-dark: #4338ca;
-      
-      /* Pastel Background Colors */
-      --bg-primary: #fafafa;
-      --bg-secondary: #f3f4f6;
-      --bg-card: #ffffff;
-      --bg-accent: #f0f9ff;
-      
-      /* Text Colors */
-      --text-primary: #1f2937;
-      --text-secondary: #6b7280;
-      --text-muted: #9ca3af;
-      
-      /* Border & Shadow */
-      --border-color: #e5e7eb;
-      --border-radius: 16px;
-      --border-radius-sm: 8px;
-      --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-      --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-      --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-      --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-      
-      /* Transitions */
-      --transition-fast: 0.15s ease;
-      --transition-normal: 0.3s ease;
-      --transition-slow: 0.5s ease;
-      
-      /* Spacing */
-      --space-xs: 0.5rem;
-      --space-sm: 1rem;
-      --space-md: 1.5rem;
-      --space-lg: 2rem;
-      --space-xl: 3rem;
-      --space-2xl: 4rem;
-    }
-    
-    /* Dark Theme */
-    [data-theme="dark"] {
-      --bg-primary: #0a0a0a;
-      --bg-secondary: #1a1a1a;
-      --bg-card: #1f1f1f;
-      --bg-accent: #1e293b;
-      
-      --text-primary: #f9fafb;
-      --text-secondary: #d1d5db;
-      --text-muted: #9ca3af;
-      
-      --border-color: #374151;
-    }
-    
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-    
-    html {
-      scroll-behavior: smooth;
-    }
-    
-    body {
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-      background-color: var(--bg-primary);
-      color: var(--text-primary);
-      line-height: 1.6;
-      transition: background-color var(--transition-normal), color var(--transition-normal);
-    }
-    
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 var(--space-md);
-    }
-    
-    /* Header */
-    header {
-      background-color: var(--bg-primary);
-      backdrop-filter: blur(10px);
-      border-bottom: 1px solid var(--border-color);
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      transition: all var(--transition-normal);
-    }
-    
-    .header-content {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: var(--space-md) 0;
-    }
-    
-    .logo {
-      font-size: 1.5rem;
-      font-weight: 700;
-      color: var(--text-primary);
-      text-decoration: none;
-    }
-    
-    .logo span {
-      color: var(--primary-color);
-    }
-    
-    .navbar {
-      display: flex;
-      gap: var(--space-sm);
-    }
-    
-    .nav-item {
-      padding: var(--space-xs) var(--space-md);
-      border-radius: 30px;
-      color: var(--text-secondary);
-      text-decoration: none;
-      font-weight: 500;
-      transition: all var(--transition-normal);
-      cursor: pointer;
-    }
-    
-    .nav-item:hover {
-      background-color: var(--bg-secondary);
-      color: var(--text-primary);
-      transform: translateY(-1px);
-    }
-    
-    .nav-item.active {
-      background-color: var(--primary-color);
-      color: white;
-    }
-    
-    /* Theme Toggle */
-    .theme-toggle {
-      background: none;
-      border: none;
-      color: var(--text-secondary);
-      font-size: 1.2rem;
-      cursor: pointer;
-      padding: var(--space-xs);
-      border-radius: 50%;
-      transition: all var(--transition-normal);
-    }
-    
-    .theme-toggle:hover {
-      background-color: var(--bg-secondary);
-      color: var(--text-primary);
-    }
-    
-    /* Mobile Menu Toggle */
-    .mobile-menu-toggle {
-      display: none;
-      background: none;
-      border: none;
-      color: var(--text-secondary);
-      font-size: 1.2rem;
-      cursor: pointer;
-      padding: var(--space-xs);
-      border-radius: 50%;
-      transition: all var(--transition-normal);
-    }
-    
-    .mobile-menu-toggle:hover {
-      background-color: var(--bg-secondary);
-      color: var(--text-primary);
-    }
-    
-    /* Hero Section */
-    .hero {
-      padding: var(--space-2xl) 0;
-      text-align: center;
-      background: linear-gradient(135deg, var(--bg-accent) 0%, var(--bg-secondary) 100%);
-      position: relative;
-      overflow: hidden;
-    }
-    
-    .hero h1 {
-      font-size: clamp(2.5rem, 5vw, 4rem);
-      font-weight: 700;
-      margin-bottom: var(--space-md);
-      background: linear-gradient(135deg, var(--text-primary) 0%, var(--primary-color) 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-    
-    .hero p {
-      font-size: 1.25rem;
-      max-width: 600px;
-      margin: 0 auto var(--space-xl);
-      color: var(--text-secondary);
-    }
-    
-    .hero-buttons {
-      display: flex;
-      gap: var(--space-md);
-      justify-content: center;
-      flex-wrap: wrap;
-    }
-    
-    /* Buttons */
-    .button {
-      display: inline-flex;
-      align-items: center;
-      gap: var(--space-xs);
-      padding: var(--space-md) var(--space-xl);
-      background-color: var(--primary-color);
-      color: white;
-      border-radius: var(--border-radius);
-      text-decoration: none;
-      font-weight: 600;
-      transition: all var(--transition-normal);
-      border: none;
-      cursor: pointer;
-    }
-    
-    .button:hover {
-      background-color: var(--primary-dark);
-      transform: translateY(-2px);
-      box-shadow: var(--shadow-lg);
-    }
-    
-    .button-outline {
-      background-color: transparent;
-      border: 2px solid var(--primary-color);
-      color: var(--primary-color);
-    }
-    
-    .button-outline:hover {
-      background-color: var(--primary-color);
-      color: white;
-    }
-    
-    /* Sections */
-    section {
-      padding: var(--space-2xl) 0;
-      scroll-margin-top: 80px;
-    }
-    
-    .section-title {
-      font-size: clamp(2rem, 4vw, 2.5rem);
-      margin-bottom: var(--space-xl);
-      text-align: center;
-      position: relative;
-      font-weight: 700;
-    }
-    
-    .section-title::after {
-      content: '';
-      position: absolute;
-      bottom: -10px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 60px;
-      height: 4px;
-      background: linear-gradient(90deg, var(--primary-color), var(--primary-light));
-      border-radius: 2px;
-    }
-    
-    /* About Section */
-    .about-content {
-      display: grid;
-      grid-template-columns: 1fr 2fr;
-      gap: var(--space-xl);
-      align-items: center;
-    }
-    
-    .profile-image {
-      width: 100%;
-      height: 400px;
-      background: linear-gradient(135deg, var(--primary-light) 0%, var(--primary-color) 100%);
-      border-radius: var(--border-radius);
-      overflow: hidden;
-      position: relative;
-    }
-    
-    .bio h2 {
-      font-size: 2rem;
-      margin-bottom: var(--space-md);
-      color: var(--text-primary);
-    }
-    
-    .bio p {
-      margin-bottom: var(--space-md);
-      color: var(--text-secondary);
-      font-size: 1.1rem;
-    }
-    
-    .skills {
-      display: flex;
-      flex-wrap: wrap;
-      gap: var(--space-sm);
-      margin-top: var(--space-lg);
-    }
-    
-    .skill-tag {
-      padding: var(--space-xs) var(--space-md);
-      background: linear-gradient(135deg, var(--primary-light) 0%, var(--primary-color) 100%);
-      color: white;
-      border-radius: 30px;
-      font-size: 0.9rem;
-      font-weight: 500;
-      transition: all var(--transition-normal);
-    }
-    
-    .skill-tag:hover {
-      transform: translateY(-2px);
-      box-shadow: var(--shadow-md);
-    }
-    
-    /* Portfolio Section */
-    .portfolio-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-      gap: var(--space-lg);
-    }
-    
-    .portfolio-item {
-      background-color: var(--bg-card);
-      border-radius: var(--border-radius);
-      overflow: hidden;
-      box-shadow: var(--shadow-md);
-      transition: all var(--transition-normal);
-      border: 1px solid var(--border-color);
-    }
-    
-    .portfolio-item:hover {
-      transform: translateY(-8px);
-      box-shadow: var(--shadow-xl);
-    }
-    
-    .portfolio-image {
-      height: 200px;
-      background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--bg-accent) 100%);
-      position: relative;
-      overflow: hidden;
-    }
-    
-    .portfolio-info {
-      padding: var(--space-lg);
-    }
-    
-    .portfolio-info h3 {
-      font-size: 1.25rem;
-      margin-bottom: var(--space-sm);
-      color: var(--text-primary);
-    }
-    
-    .portfolio-info p {
-      color: var(--text-secondary);
-      margin-bottom: var(--space-md);
-      font-size: 0.95rem;
-      line-height: 1.6;
-    }
-    
-    .tech-stack {
-      display: flex;
-      flex-wrap: wrap;
-      gap: var(--space-xs);
-      margin-top: var(--space-md);
-    }
-    
-    .tech-badge {
-      padding: 4px var(--space-sm);
-      background-color: var(--bg-secondary);
-      color: var(--text-secondary);
-      border-radius: var(--border-radius-sm);
-      font-size: 0.8rem;
-      font-weight: 500;
-      border: 1px solid var(--border-color);
-    }
-    
-    /* Timeline Section */
-    .timeline {
-      position: relative;
-      max-width: 800px;
-      margin: 0 auto;
-    }
-    
-    .timeline::before {
-      content: '';
-      position: absolute;
-      left: 50%;
-      top: 0;
-      bottom: 0;
-      width: 2px;
-      background: linear-gradient(to bottom, var(--primary-color), var(--primary-light));
-      transform: translateX(-50%);
-    }
-    
-    .timeline-item {
-      position: relative;
-      margin-bottom: var(--space-xl);
-      width: 50%;
-    }
-    
-    .timeline-item:nth-child(odd) {
-      left: 0;
-      padding-right: var(--space-xl);
-    }
-    
-    .timeline-item:nth-child(even) {
-      left: 50%;
-      padding-left: var(--space-xl);
-    }
-    
-    .timeline-item::before {
-      content: '';
-      position: absolute;
-      top: 20px;
-      width: 16px;
-      height: 16px;
-      background-color: var(--primary-color);
-      border-radius: 50%;
-      border: 4px solid var(--bg-primary);
-      box-shadow: var(--shadow-md);
-    }
-    
-    .timeline-item:nth-child(odd)::before {
-      right: -8px;
-    }
-    
-    .timeline-item:nth-child(even)::before {
-      left: -8px;
-    }
-    
-    .timeline-content {
-      background-color: var(--bg-card);
-      padding: var(--space-lg);
-      border-radius: var(--border-radius);
-      box-shadow: var(--shadow-md);
-      border: 1px solid var(--border-color);
-    }
-    
-    .timeline-date {
-      color: var(--primary-color);
-      font-weight: 600;
-      font-size: 0.9rem;
-      margin-bottom: var(--space-xs);
-    }
-    
-    .timeline-title {
-      font-size: 1.1rem;
-      font-weight: 600;
-      margin-bottom: var(--space-sm);
-      color: var(--text-primary);
-    }
-    
-    .timeline-description {
-      color: var(--text-secondary);
-      font-size: 0.95rem;
-    }
-    
-    /* Contact Section */
-    .contact-section {
-      background-color: var(--bg-secondary);
-      border-radius: var(--border-radius);
-      padding: var(--space-2xl);
-    }
-    
-    .contact-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: var(--space-xl);
-    }
-    
-    .contact-info h3 {
-      font-size: 1.5rem;
-      margin-bottom: var(--space-md);
-      color: var(--text-primary);
-    }
-    
-    .contact-info p {
-      margin-bottom: var(--space-xl);
-      color: var(--text-secondary);
-      font-size: 1.1rem;
-    }
-    
-    .contact-details {
-      display: flex;
-      flex-direction: column;
-      gap: var(--space-md);
-    }
-    
-    .contact-item {
-      display: flex;
-      align-items: center;
-      gap: var(--space-md);
-      padding: var(--space-md);
-      background-color: var(--bg-card);
-      border-radius: var(--border-radius);
-      border: 1px solid var(--border-color);
-      transition: all var(--transition-normal);
-    }
-    
-    .contact-item:hover {
-      transform: translateX(4px);
-      box-shadow: var(--shadow-md);
-    }
-    
-    .contact-icon {
-      width: 48px;
-      height: 48px;
-      border-radius: 50%;
-      background: linear-gradient(135deg, var(--primary-color), var(--primary-light));
-      color: white;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.2rem;
-      flex-shrink: 0;
-    }
-    
-    .contact-text {
-      color: var(--text-primary);
-      font-weight: 500;
-    }
-    
-    .social-links {
-      display: flex;
-      gap: var(--space-md);
-      margin-top: var(--space-xl);
-    }
-    
-    .social-link {
-      width: 48px;
-      height: 48px;
-      border-radius: 50%;
-      background-color: var(--bg-card);
-      color: var(--primary-color);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.2rem;
-      transition: all var(--transition-normal);
-      border: 1px solid var(--border-color);
-      text-decoration: none;
-    }
-    
-    .social-link:hover {
-      background-color: var(--primary-color);
-      color: white;
-      transform: translateY(-2px);
-      box-shadow: var(--shadow-lg);
-    }
-    
-    .contact-form .form-group {
-      margin-bottom: var(--space-md);
-    }
-    
-    .form-control {
-      width: 100%;
-      padding: var(--space-md);
-      border-radius: var(--border-radius-sm);
-      border: 1px solid var(--border-color);
-      background-color: var(--bg-card);
-      font-family: inherit;
-      font-size: 1rem;
-      color: var(--text-primary);
-      transition: all var(--transition-normal);
-    }
-    
-    .form-control:focus {
-      outline: none;
-      border-color: var(--primary-color);
-      box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
-    }
-    
-    textarea.form-control {
-      height: 150px;
-      resize: vertical;
-    }
-    
-    /* Footer */
-    footer {
-      background-color: var(--bg-secondary);
-      padding: var(--space-xl) 0;
-      text-align: center;
-      margin-top: var(--space-2xl);
-      border-top: 1px solid var(--border-color);
-    }
-    
-    .footer-content {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    
-    .copyright {
-      color: var(--text-secondary);
-      font-size: 0.9rem;
-    }
-    
-    .footer-links {
-      display: flex;
-      gap: var(--space-md);
-    }
-    
-    .footer-link {
-      color: var(--text-secondary);
-      text-decoration: none;
-      transition: color var(--transition-normal);
-    }
-    
-    .footer-link:hover {
-      color: var(--primary-color);
-    }
-    
-    /* Animations */
-    @keyframes fadeInUp {
-      from {
-        opacity: 0;
-        transform: translateY(30px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-    
-    .animate-fade-in {
-      animation: fadeInUp 0.8s ease forwards;
-    }
-    
-    /* Responsive Design */
-    @media (max-width: 768px) {
-      .about-content {
-        grid-template-columns: 1fr;
-        gap: var(--space-lg);
-      }
-      
-      .profile-image {
-        height: 300px;
-      }
-      
-      .contact-grid {
-        grid-template-columns: 1fr;
-        gap: var(--space-lg);
-      }
-      
-      .portfolio-grid {
-        grid-template-columns: 1fr;
-      }
-      
-      .timeline::before {
-        left: 20px;
-      }
-      
-      .timeline-item {
-        width: 100%;
-        left: 0 !important;
-        padding-left: 50px !important;
-        padding-right: 0 !important;
-      }
-      
-      .timeline-item::before {
-        left: 12px !important;
-      }
-      
-      .hero-buttons {
-        flex-direction: column;
-        align-items: center;
-      }
-      
-      .footer-content {
-        flex-direction: column;
-        gap: var(--space-md);
-      }
-      
-      .navbar {
-        display: none;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        right: 0;
-        background-color: var(--bg-primary);
-        border-top: 1px solid var(--border-color);
-        padding: var(--space-md);
-        flex-direction: column;
-        box-shadow: var(--shadow-lg);
-      }
-      
-      .navbar.show {
-        display: flex;
-      }
-      
-      /* Mobile menu toggle */
-      .mobile-menu-toggle {
-        display: block;
-        background: none;
-        border: none;
-        color: var(--text-secondary);
-        font-size: 1.5rem;
-        cursor: pointer;
-        padding: var(--space-xs);
-      }
-    }
-    
-    @media (max-width: 480px) {
-      .container {
-        padding: 0 var(--space-sm);
-      }
-      
-      .hero {
-        padding: var(--space-xl) 0;
-      }
-      
-      section {
-        padding: var(--space-xl) 0;
-      }
-      
-      .contact-section {
-        padding: var(--space-lg);
-      }
-    }
-  </style>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./css/site.css" />
 </head>
 <body>
-  <!-- Header -->
-  <header>
-    <div class="container">
-      <div class="header-content">
-        <a href="#" class="logo">Ashraf<span>Mohiuddin Shaik</span></a>
-        <nav class="navbar">
-          <a href="#about" class="nav-item active">About</a>
-          <a href="#portfolio" class="nav-item">Portfolio</a>
-          <a href="#timeline" class="nav-item">Timeline</a>
-          <a href="#contact" class="nav-item">Contact</a>
-          <a href="creative-corner.html" class="nav-item">Creative Corner</a>
-          <a href="https://photography.sashraf.in" class="nav-item" target="_blank" rel="noopener noreferrer">Photography</a>
-        </nav>
-        <button class="mobile-menu-toggle" id="mobileMenuToggle">
-          <i class="fas fa-bars"></i>
-        </button>
-        <button class="theme-toggle" id="themeToggle">
-          <i class="fas fa-moon"></i>
-        </button>
-      </div>
+  <div class="scroll-progress" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <div class="inner">
+      <a class="brand" href="index.html">Ashraf <span>Mohiuddin</span></a>
+      <nav class="nav" id="nav">
+        <a href="#work">Work</a>
+        <a href="#journey">Journey</a>
+        <a href="#world">World</a>
+        <a href="#contact">Contact</a>
+        <a href="creative-corner.html">Creative</a>
+        <a href="https://photography.sashraf.in" target="_blank" rel="noopener noreferrer">Photography</a>
+      </nav>
+      <button class="menu-btn" id="menuBtn" aria-label="Menu" aria-expanded="false">☰</button>
     </div>
   </header>
-  
-  <!-- Hero Section -->
-  <section class="hero">
-    <div class="container">
-      <h1 class="animate-fade-in">Hello, I'm Ashraf Mohiuddin Shaik</h1>
-      <p class="animate-fade-in" style="animation-delay: 0.2s;">A Full-stack Software Engineer with 3 years at Oracle Financial Services, building scalable enterprise apps with Spring Boot, Kafka, and Oracle JET.</p>
-      <div class="hero-buttons">
-        <a href="#portfolio" class="button animate-fade-in" style="animation-delay: 0.4s;">
-          <i class="fas fa-code"></i>
-          View My Work
-        </a>
-        <a href="#contact" class="button button-outline animate-fade-in" style="animation-delay: 0.6s;">
-          <i class="fas fa-envelope"></i>
-          Get in Touch
-        </a>
-      </div>
-    </div>
-  </section>
-  
-  <!-- About Section -->
-  <section id="about">
-    <div class="container">
-      <h2 class="section-title">About Me</h2>
-      <div class="about-content">
-        <div class="profile-image animate-fade-in"></div>
-        <div class="bio animate-fade-in">
-          <h2>Professional Background</h2>
-          <p>I'm a Full-stack Software Engineer with 3 years of experience at Oracle Financial Services, building scalable enterprise applications across backend (Spring Boot, Kafka) and frontend (Oracle JET). I've led multiple high-impact features now used by major banks, including real-time streaming UIs and automation tools.</p>
-          <p>My journey started at <strong>NIT Calicut</strong>, where I earned my B.Tech in Computer Science and Engineering with a CGPA of 7.55. I'm passionate about using lightweight LLMs and embeddings like Mistral and Hugging Face to build and enhance developer tools.</p>
-          <p>I'm actively exploring the latest in AI and LLMs, seeking opportunities to apply my passion in a product-driven environment. When I'm not coding, you'll find me exploring photography, tech automation, or riding my motorcycle.</p>
-          <h3>My Skills</h3>
-                      <div class="skills">
-              <span class="skill-tag">Full-stack Development</span>
-              <span class="skill-tag">Spring Boot</span>
-              <span class="skill-tag">Oracle JET</span>
-              <span class="skill-tag">Kafka</span>
-              <span class="skill-tag">Python</span>
-              <span class="skill-tag">Java</span>
-              <span class="skill-tag">Flutter</span>
-              <span class="skill-tag">AI/ML</span>
-            </div>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <p class="eyebrow reveal">SDE-2 · Backend · Bengaluru preferred</p>
+        <h1 class="display hero-title reveal">
+          I made Kafka usable inside a <em>banking</em> product.
+        </h1>
+        <p class="lede reveal" style="margin-top: 1.4rem;">
+          Associate Software Developer at Oracle Financial Services (Jul 2022 – Aug 2025).
+          Owned Kafka integration for Model Management and Governance — connectivity, security,
+          topic registry, real-time pipelines — and the Oracle JET UI that made it clickable.
+          Based in Hyderabad; targeting Bengaluru.
+        </p>
+        <div class="btn-row reveal">
+          <a class="btn btn-fill" data-magnetic href="#contact">Hire me</a>
+          <a class="btn" data-magnetic href="#work">Selected Work</a>
+          <a class="btn" data-magnetic href="./Ashraf-Mohiuddin-Resume.pdf" download>Download résumé</a>
         </div>
       </div>
-    </div>
-  </section>
-  
-  <!-- Portfolio Section -->
-  <section id="portfolio">
-    <div class="container">
-      <h2 class="section-title">My Portfolio</h2>
-      <div class="portfolio-grid">
-        <div class="portfolio-item animate-fade-in">
-          <div class="portfolio-image"></div>
-          <div class="portfolio-info">
-            <h3>DB-mapping Recommendation Engine</h3>
-            <p>Developed a DB-mapping recommendation engine by implementing a sentence transformer, which takes a workspace objective and database details to suggest the optimal data source. This tool reduces manual search time from over 2 minutes to less than 10 seconds.</p>
-            <div class="tech-stack">
-              <span class="tech-badge">Python</span>
-              <span class="tech-badge">Hugging Face</span>
-              <span class="tech-badge">Sentence Transformers</span>
-              <span class="tech-badge">LLMs</span>
-            </div>
-          </div>
-        </div>
-        
-        <div class="portfolio-item animate-fade-in" style="animation-delay: 0.2s;">
-          <div class="portfolio-image"></div>
-          <div class="portfolio-info">
-            <h3>Kafka Integration – Oracle</h3>
-            <p>Owned and led the full-stack development of a Kafka-backed, real-time microservices module from scratch. Built with Spring Boot and Oracle JET, enabling real-time data streaming and windowing for the "Model Management and Governance" product.</p>
-            <div class="tech-stack">
-              <span class="tech-badge">Spring Boot</span>
-              <span class="tech-badge">Oracle JET</span>
-              <span class="tech-badge">Kafka</span>
-              <span class="tech-badge">Microservices</span>
-            </div>
-          </div>
-        </div>
-        
-        <div class="portfolio-item animate-fade-in" style="animation-delay: 0.4s;">
-          <div class="portfolio-image"></div>
-          <div class="portfolio-info">
-            <h3>Personal Expense Tracker</h3>
-            <p>Developing a cross-platform Flutter app with a local sync engine to manage finances, track spending, and visualize trends offline. Launching August 2025 for Android and iOS with AI-assisted budget analysis.</p>
-            <div class="tech-stack">
-              <span class="tech-badge">Flutter</span>
-              <span class="tech-badge">Dart</span>
-              <span class="tech-badge">AI Integration</span>
-              <span class="tech-badge">SQLite</span>
-            </div>
-          </div>
-        </div>
-        
-        <div class="portfolio-item animate-fade-in" style="animation-delay: 0.6s;">
-          <div class="portfolio-image"></div>
-          <div class="portfolio-info">
-            <h3>OCT Disease Classifier</h3>
-            <p>Final year project: Built a CNN-based model (99.69% accuracy) using TensorFlow to classify retinal diseases from OCT scans. Optimized for on-device inference and deployed in a Flutter mobile app with minimal latency.</p>
-            <div class="tech-stack">
-              <span class="tech-badge">Flutter</span>
-              <span class="tech-badge">TensorFlow</span>
-              <span class="tech-badge">CNN</span>
-              <span class="tech-badge">Mobile ML</span>
-            </div>
-          </div>
-        </div>
+    </section>
+
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee-track">
+        <span>Java</span><span>Spring Boot</span><span>Apache Kafka</span><span>Kafka Streams</span>
+        <span>Microservices</span><span>Oracle JET</span><span>Python</span><span>NIT Calicut</span>
+        <span>Java</span><span>Spring Boot</span><span>Apache Kafka</span><span>Kafka Streams</span>
+        <span>Microservices</span><span>Oracle JET</span><span>Python</span><span>NIT Calicut</span>
       </div>
     </div>
-  </section>
-  
-  <!-- Timeline Section -->
-  <section id="timeline">
-    <div class="container">
-      <h2 class="section-title">My Journey</h2>
-      <div class="timeline">
-        <div class="timeline-item animate-fade-in">
-          <div class="timeline-content">
-            <div class="timeline-date">2018 - 2022</div>
-            <div class="timeline-title">B.Tech Computer Science & Engineering</div>
-            <div class="timeline-description">Graduated from NIT Calicut with a CGPA of 7.55, building a strong foundation in computer science, algorithms, and software engineering principles.</div>
+
+    <section class="section" id="work">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <p class="section-label">Selected Work</p>
+            <h2>Production first. Side projects after.</h2>
           </div>
+          <a class="btn" href="#contact">Hire me</a>
         </div>
-        
-        <div class="timeline-item animate-fade-in" style="animation-delay: 0.2s;">
-          <div class="timeline-content">
-            <div class="timeline-date">July 2022 - Present</div>
-            <div class="timeline-title">Associate Software Developer at Oracle</div>
-            <div class="timeline-description">Working at Oracle Financial Services in Bengaluru, building scalable enterprise apps with Spring Boot, Kafka, and Oracle JET. Leading high-impact features used by major banks.</div>
-          </div>
-        </div>
-        
-        <div class="timeline-item animate-fade-in" style="animation-delay: 0.4s;">
-          <div class="timeline-content">
-            <div class="timeline-date">August 2025 - Present</div>
-            <div class="timeline-title">Personal Expense Tracker App</div>
-            <div class="timeline-description">Started developing a cross-platform Flutter app with local sync engine for offline finance management. Planning AI-assisted budget analysis and insights.</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  
-  <!-- Contact Section -->
-  <section id="contact">
-    <div class="container">
-      <h2 class="section-title">Get In Touch</h2>
-      <div class="contact-section">
-        <div class="contact-grid">
-          <div class="contact-info">
-            <h3>Let's Talk About Your Project</h3>
-            <p>Have a project in mind? I'd love to hear about it. Drop me a message and I'll get back to you as soon as possible.</p>
-            <div class="contact-details">
-              <div class="contact-item">
-                <div class="contact-icon">
-                  <i class="fas fa-envelope"></i>
-                </div>
-                <div class="contact-text">ashraf61242@gmail.com</div>
-              </div>
-              <div class="contact-item">
-                <div class="contact-icon">
-                  <i class="fas fa-map-marker-alt"></i>
-                </div>
-                <div class="contact-text">Hyderabad, India</div>
+
+        <div class="work-list">
+          <article class="work-item reveal">
+            <div>
+              <h3>Kafka Integration — Oracle MMG</h3>
+              <p>
+                Owned end-to-end Kafka support in Model Management and Governance: connect existing
+                clusters (SSL / SASL / OAuth), discover and register topics with logical names,
+                inspect live records, profile streaming fields, and feed Kafka-specific nodes into
+                the product’s pipeline framework — including windowing and real-time ML workflows.
+                Built the full Oracle JET UI. Redesigned topic registration from ~10 manual steps
+                to about 2 clicks (~80% less operational effort). Worked with banking clients on
+                requirements. After ~1.5 years, became the primary developer on Kafka, reporting to my manager.
+              </p>
+              <div class="tech">
+                <span>Java</span><span>Spring Boot</span><span>Kafka Consumer API</span><span>Kafka Streams</span><span>Oracle JET</span>
               </div>
             </div>
-            <div class="social-links">
-              <a href="https://linkedin.com/in/ashraf-mohiuddin" class="social-link" target="_blank" rel="noopener">
-                <i class="fab fa-linkedin-in"></i>
-              </a>
-              <a href="https://github.com/ashraf-mohiuddin" class="social-link" target="_blank" rel="noopener">
-                <i class="fab fa-github"></i>
-              </a>
-              <a href="mailto:ashraf61242@gmail.com" class="social-link">
-                <i class="fas fa-envelope"></i>
-              </a>
+            <div class="work-meta">
+              <span class="work-metric">10 steps → 2 clicks</span>
+              Enterprise · Banking
             </div>
+          </article>
+
+          <article class="work-item reveal">
+            <div>
+              <h3>Database Recommendation Engine</h3>
+              <p>
+                Applied sentence-transformers to map a workspace objective against available
+                databases and tables — so users find the right data source without hunting.
+                Manual lookup dropped from over 2 minutes to under 10 seconds.
+              </p>
+              <div class="tech">
+                <span>Python</span><span>Sentence-Transformers</span><span>Hugging Face</span><span>Embeddings</span>
+              </div>
+            </div>
+            <div class="work-meta">
+              <span class="work-metric">2 min → 10 sec</span>
+              Applied ML
+            </div>
+          </article>
+
+          <article class="work-item reveal">
+            <div>
+              <h3>NOVA — Personal Evolution System</h3>
+              <p>
+                Flutter app that turns journal and voice notes into structured tasks, goals, memories,
+                and actions. Privacy-first: on-device LLMs, optional Gemini API key, optional Health Connect.
+                Five surfaces — Today, Capture, Coach, Focus, Life. Building it end-to-end; v1 aimed at Sep 2026.
+              </p>
+              <div class="tech">
+                <span>Flutter</span><span>On-device LLM</span><span>Local-first</span><span>Gemini API</span>
+              </div>
+            </div>
+            <div class="work-meta">
+              <span class="work-metric">In progress · v1 Sep ’26</span>
+              Product · Personal
+            </div>
+          </article>
+
+          <article class="work-item reveal">
+            <div>
+              <h3>Numeo — Personal Finance</h3>
+              <p>
+                Privacy-first, local-first expense tracker: offline capture, trip budgets, trends.
+                AI-assisted insights are on the roadmap. Target around Dec 2026 — paused between builds,
+                still finishing it.
+              </p>
+              <div class="tech">
+                <span>Flutter</span><span>Local storage</span><span>Offline-first</span>
+              </div>
+            </div>
+            <div class="work-meta">
+              <span class="work-metric">In progress · Dec ’26</span>
+              Product · Personal
+            </div>
+          </article>
+
+          <article class="work-item reveal">
+            <div>
+              <h3>OCT Retinal Disease Classifier</h3>
+              <p>
+                Final-year project (2021–22). CNN on OCT scans at 99.69% accuracy, optimized for
+                on-device inference and shipped in a Flutter app with low latency.
+              </p>
+              <div class="tech">
+                <span>TensorFlow</span><span>CNN</span><span>Flutter</span>
+              </div>
+            </div>
+            <div class="work-meta">
+              <span class="work-metric">99.69% accuracy</span>
+              Academic · Mobile ML
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="journey">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <p class="section-label">Path</p>
+            <h2>Where I’ve been</h2>
           </div>
-          <form class="contact-form">
-            <div class="form-group">
-              <input type="text" class="form-control" placeholder="Your Name" required>
-            </div>
-            <div class="form-group">
-              <input type="email" class="form-control" placeholder="Your Email" required>
-            </div>
-            <div class="form-group">
-              <input type="text" class="form-control" placeholder="Subject" required>
-            </div>
-            <div class="form-group">
-              <textarea class="form-control" placeholder="Your Message" required></textarea>
-            </div>
-            <button type="submit" class="button">
-              <i class="fas fa-paper-plane"></i>
-              Send Message
-            </button>
-          </form>
+        </div>
+
+        <div class="timeline">
+          <div class="tl-item reveal">
+            <div class="tl-date">2018 — 2022</div>
+            <h3>B.Tech CSE · NIT Calicut</h3>
+            <p>Graduated 2022. CS fundamentals, systems, and the OCT classifier as the capstone.</p>
+          </div>
+          <div class="tl-item reveal">
+            <div class="tl-date">July 2022 — August 2025</div>
+            <h3>Associate Software Developer · Oracle Financial Services</h3>
+            <p>
+              MMG — enterprise product for banking clients. Started Kafka under a mentor;
+              after about 1.5 years owned it as the primary developer. Also shipped the recommendation engine
+              and ran R&amp;D on lightweight LLMs for constrained environments (POC, not a production LLM platform).
+            </p>
+          </div>
+          <div class="tl-item reveal">
+            <div class="tl-date">August 2025 — Present</div>
+            <h3>Building · Traveling · Looking</h3>
+            <p>
+              NOVA and Numeo. Roads, photos, coffee. Actively looking for SDE-2 / backend roles
+              at product companies, large tech, and high-quality startups.
+            </p>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
-  
-  <!-- Footer -->
-  <footer>
-    <div class="container">
-      <div class="footer-content">
-        <div class="copyright">© 2025 Ashraf Mohiuddin Shaik. All rights reserved.</div>
-        <div class="footer-links">
-          <a href="creative-corner.html" class="footer-link">Creative Corner</a>
-          <a href="https://photography.sashraf.in" class="footer-link" target="_blank" rel="noopener noreferrer">Photography</a>
-          <a href="#portfolio" class="footer-link">Portfolio</a>
-          <a href="#contact" class="footer-link">Contact</a>
+    </section>
+
+    <section class="section" id="world">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <p class="section-label">Beyond code</p>
+            <h2>Other worlds I live in</h2>
+          </div>
+          <a class="btn" href="creative-corner.html">Enter Creative Corner</a>
+        </div>
+
+        <div class="portal-grid">
+          <a class="portal reveal" href="bike.html" style="--portal-img: linear-gradient(160deg,#1c1a16,#090909);">
+            <div class="portal-media"></div>
+            <div class="portal-body">
+              <h3>Bike</h3>
+              <p>2024 Triumph Speed 400 · 29,000 km · Maharashtra &amp; Kerala trips ahead.</p>
+              <span class="portal-link">Explore rides →</span>
+            </div>
+          </a>
+          <a class="portal reveal" href="https://photography.sashraf.in" target="_blank" rel="noopener noreferrer" style="--portal-img: url('./images/low-res/ASH02346.jpg');">
+            <div class="portal-media"></div>
+            <div class="portal-body">
+              <h3>Photography</h3>
+              <p>Wildlife, travel, light — a full gallery on its own domain.</p>
+              <span class="portal-link">Open gallery →</span>
+            </div>
+          </a>
+          <a class="portal reveal" href="coffee.html" style="--portal-img: linear-gradient(160deg,#221810,#0a0908);">
+            <div class="portal-media"></div>
+            <div class="portal-body">
+              <h3>Coffee</h3>
+              <p>Cold brew, cafe runs, and the discipline of a good morning ritual.</p>
+              <span class="portal-link">Brew notes →</span>
+            </div>
+          </a>
         </div>
       </div>
+    </section>
+
+    <section class="section" id="contact">
+      <div class="container contact-panel">
+        <div class="reveal">
+          <p class="section-label">Contact</p>
+          <h2 class="display" style="font-size: clamp(2.4rem, 5vw, 4rem); max-width: 14ch;">
+            Looking for SDE-2 backend roles in Bengaluru.
+          </h2>
+          <p class="lede" style="margin-top: 1rem;">
+            Currently in Hyderabad. Java, Spring Boot, Kafka, production ownership.
+            Applied ML as a bonus — not the headline.
+          </p>
+          <div class="contact-links">
+            <a href="mailto:ashraf61242@gmail.com">ashraf61242@gmail.com</a>
+            <a href="https://linkedin.com/in/ashraf-mohiuddin" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            <a href="https://github.com/ashraf-mohiuddin" target="_blank" rel="noopener noreferrer">GitHub</a>
+          </div>
+        </div>
+
+        <form class="contact-form reveal" id="contactForm">
+          <input type="text" name="name" placeholder="Your name" required />
+          <input type="email" name="email" placeholder="Your email" required />
+          <input type="text" name="subject" placeholder="Subject" value="SDE-2 / Backend opportunity" />
+          <textarea name="message" placeholder="Role, team, or idea…" required></textarea>
+          <button class="btn btn-fill" data-magnetic type="submit">Hire me</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="inner">
+      <span>© 2026 Ashraf Mohiuddin Shaik</span>
+      <span>
+        <a href="creative-corner.html">Creative</a> ·
+        <a href="https://photography.sashraf.in" target="_blank" rel="noopener noreferrer">Photography</a>
+      </span>
     </div>
   </footer>
-  
-  <script>
-    // Theme Toggle
-    const themeToggle = document.getElementById('themeToggle');
-    const body = document.body;
-    
-    // Check for saved theme preference or default to light
-    const savedTheme = localStorage.getItem('theme') || 'light';
-    body.setAttribute('data-theme', savedTheme);
-    updateThemeIcon(savedTheme);
-    
-    themeToggle.addEventListener('click', () => {
-      const currentTheme = body.getAttribute('data-theme');
-      const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-      
-      body.setAttribute('data-theme', newTheme);
-      localStorage.setItem('theme', newTheme);
-      updateThemeIcon(newTheme);
-    });
-    
-    function updateThemeIcon(theme) {
-      const icon = themeToggle.querySelector('i');
-      icon.className = theme === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
-    }
-    
-    // Mobile Menu Toggle
-    const mobileMenuToggle = document.getElementById('mobileMenuToggle');
-    const navbar = document.querySelector('.navbar');
-    
-    mobileMenuToggle.addEventListener('click', () => {
-      navbar.classList.toggle('show');
-      const icon = mobileMenuToggle.querySelector('i');
-      icon.className = navbar.classList.contains('show') ? 'fas fa-times' : 'fas fa-bars';
-    });
-    
-    // Smooth scrolling for navigation links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-          target.scrollIntoView({
-            behavior: 'smooth',
-            block: 'start'
-          });
-        }
-      });
-    });
-    
-    // Navigation active state
-    const navItems = document.querySelectorAll('.nav-item');
-    const sections = document.querySelectorAll('section[id]');
-    
-    function updateActiveNav() {
-      const scrollPos = window.scrollY + 100;
-      
-      sections.forEach(section => {
-        const sectionTop = section.offsetTop;
-        const sectionHeight = section.offsetHeight;
-        const sectionId = section.getAttribute('id');
-        
-        if (scrollPos >= sectionTop && scrollPos < sectionTop + sectionHeight) {
-          navItems.forEach(item => {
-            item.classList.remove('active');
-            if (item.getAttribute('href') === `#${sectionId}`) {
-              item.classList.add('active');
-            }
-          });
-        }
-      });
-    }
-    
-    window.addEventListener('scroll', updateActiveNav);
-    
-    // Form submission
-    const contactForm = document.querySelector('.contact-form');
-    contactForm.addEventListener('submit', function(e) {
-      e.preventDefault();
-      
-      // Add loading state
-      const submitBtn = this.querySelector('button[type="submit"]');
-      const originalText = submitBtn.innerHTML;
-      submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
-      submitBtn.disabled = true;
-      
-      // Simulate form submission
-      setTimeout(() => {
-        submitBtn.innerHTML = '<i class="fas fa-check"></i> Message Sent!';
-        submitBtn.style.backgroundColor = '#10b981';
-        
-        setTimeout(() => {
-          submitBtn.innerHTML = originalText;
-          submitBtn.disabled = false;
-          submitBtn.style.backgroundColor = '';
-          this.reset();
-        }, 2000);
-      }, 1500);
-    });
-  </script>
+
+  <script src="./js/site.js"></script>
 </body>
 </html>

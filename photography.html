@@ -181,18 +181,23 @@
     }
 
     .masonry {
-      columns: 4;
-      column-gap: var(--gap);
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-auto-flow: dense;
+      gap: var(--gap);
+      align-items: start;
     }
 
     .photo {
-      break-inside: avoid;
-      margin-bottom: var(--gap);
       position: relative;
       cursor: pointer;
       overflow: hidden;
       line-height: 0;
       border-radius: 2px;
+    }
+
+    .photo.wide {
+      grid-column: span 2;
     }
 
     .photo img {
@@ -349,12 +354,15 @@
     }
 
     /* ── Responsive ── */
-    @media (max-width: 1200px) { .masonry { columns: 3; } }
+    @media (max-width: 1200px) { .masonry { grid-template-columns: repeat(3, 1fr); } }
     @media (max-width: 768px) {
-      .masonry { columns: 2; }
+      .masonry { grid-template-columns: repeat(2, 1fr); }
       .lb-nav { font-size: 1.2rem; padding: 0.5rem; }
     }
-    @media (max-width: 480px) { .masonry { columns: 1; } }
+    @media (max-width: 480px) {
+      .masonry { grid-template-columns: 1fr; }
+      .photo.wide { grid-column: span 1; }
+    }
   </style>
 </head>
 <body>
@@ -555,7 +563,12 @@
       img.alt = photo.alt || photo.title || "";
       img.loading = "lazy";
       img.decoding = "async";
-      setImageWithFallback(img, photoSources(photo));
+      setImageWithFallback(img, photoSources(photo), (ok) => {
+        if (!ok) return;
+        const w = img.naturalWidth;
+        const h = img.naturalHeight;
+        if (w && h && w / h >= 1.25) el.classList.add("wide");
+      });
 
       const caption = document.createElement("div");
       caption.className = "photo-caption";

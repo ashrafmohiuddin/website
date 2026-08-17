@@ -3,1016 +3,117 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Discover the creative side of Ashraf Mohiuddin: Bike riding adventures, photography, and coffee brewing." />
-  <meta name="keywords" content="Ashraf Mohiuddin, Creative, Photography, Triumph Speed 400, Coffee" />
-  <meta name="author" content="Ashraf Mohiuddin Shaik" />
+  <meta name="description" content="Creative Corner — bike, photography, coffee, cycling, badminton, and gadgets by Ashraf Mohiuddin." />
   <title>Creative Corner | Ashraf Mohiuddin</title>
-  <link rel="canonical" href="https://ashraf-mohiuddin.com/creative-corner.html" />
-  
-  <!-- Open Graph / Social Media Meta Tags -->
+  <link rel="canonical" href="https://sashraf.in/creative-corner.html" />
   <meta property="og:title" content="Creative Corner | Ashraf Mohiuddin" />
-  <meta property="og:description" content="Discover the creative side of Ashraf Mohiuddin: Bike riding adventures, photography, and coffee brewing." />
+  <meta property="og:description" content="Off the clock — roads, light, coffee, and whatever keeps me curious." />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://ashraf-mohiuddin.com/creative-corner.html" />
-  <meta property="og:image" content="https://ashraf-mohiuddin.com/images/ASH03655-crop.JPG" />
+  <meta property="og:url" content="https://sashraf.in/creative-corner.html" />
 
-  <style>
-    :root {
-      /* Light Theme - Pastel Colors */
-      --primary-color: #ff6b6b;
-      --primary-light: #ffadad;
-      --primary-dark: #c74848;
-      
-      /* Pastel Background Colors */
-      --bg-primary: #fafafa;
-      --bg-secondary: #f3f4f6;
-      --bg-card: #ffffff;
-      --bg-accent: #fff5f5;
-      
-      /* Text Colors */
-      --text-primary: #1f2937;
-      --text-secondary: #6b7280;
-      --text-muted: #9ca3af;
-      
-      /* Border & Shadow */
-      --border-color: #e5e7eb;
-      --border-radius: 16px;
-      --border-radius-sm: 8px;
-      --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-      --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-      --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-      --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-      
-      /* Transitions */
-      --transition-fast: 0.15s ease;
-      --transition-normal: 0.3s ease;
-      --transition-slow: 0.5s ease;
-      
-      /* Spacing */
-      --space-xs: 0.5rem;
-      --space-sm: 1rem;
-      --space-md: 1.5rem;
-      --space-lg: 2rem;
-      --space-xl: 3rem;
-      --space-2xl: 4rem;
-    }
-    
-    /* Dark Theme */
-    [data-theme="dark"] {
-      --bg-primary: #0a0a0a;
-      --bg-secondary: #1a1a1a;
-      --bg-card: #1f1f1f;
-      --bg-accent: #2d1b1b;
-      
-      --text-primary: #f9fafb;
-      --text-secondary: #d1d5db;
-      --text-muted: #9ca3af;
-      
-      --border-color: #374151;
-    }
-    
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-    
-    html {
-      scroll-behavior: smooth;
-    }
-    
-    body {
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-      background-color: var(--bg-primary);
-      color: var(--text-primary);
-      line-height: 1.6;
-      transition: background-color var(--transition-normal), color var(--transition-normal);
-    }
-    
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 var(--space-md);
-    }
-    
-    /* Header */
-    header {
-      background-color: var(--bg-primary);
-      backdrop-filter: blur(10px);
-      border-bottom: 1px solid var(--border-color);
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      transition: all var(--transition-normal);
-    }
-    
-    .header-content {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: var(--space-md) 0;
-    }
-    
-    .logo {
-      font-size: 1.5rem;
-      font-weight: 700;
-      color: var(--text-primary);
-      text-decoration: none;
-    }
-    
-    .logo span {
-      color: var(--primary-color);
-    }
-    
-    .navbar {
-      display: flex;
-      gap: var(--space-sm);
-    }
-    
-    .nav-item {
-      padding: var(--space-xs) var(--space-md);
-      border-radius: 30px;
-      color: var(--text-secondary);
-      text-decoration: none;
-      font-weight: 500;
-      transition: all var(--transition-normal);
-      cursor: pointer;
-    }
-    
-    .nav-item:hover {
-      background-color: var(--bg-secondary);
-      color: var(--text-primary);
-      transform: translateY(-1px);
-    }
-    
-    .nav-item.active {
-      background-color: var(--primary-color);
-      color: white;
-    }
-    
-    /* Theme Toggle */
-    .theme-toggle {
-      background: none;
-      border: none;
-      color: var(--text-secondary);
-      font-size: 1.2rem;
-      cursor: pointer;
-      padding: var(--space-xs);
-      border-radius: 50%;
-      transition: all var(--transition-normal);
-    }
-    
-    .theme-toggle:hover {
-      background-color: var(--bg-secondary);
-      color: var(--text-primary);
-    }
-    
-    /* Mobile Menu Toggle */
-    .mobile-menu-toggle {
-      display: none;
-      background: none;
-      border: none;
-      color: var(--text-secondary);
-      font-size: 1.2rem;
-      cursor: pointer;
-      padding: var(--space-xs);
-      border-radius: 50%;
-      transition: all var(--transition-normal);
-    }
-    
-    .mobile-menu-toggle:hover {
-      background-color: var(--bg-secondary);
-      color: var(--text-primary);
-    }
-    
-    /* Hero Section */
-    .hero {
-      padding: var(--space-2xl) 0;
-      text-align: center;
-      background: linear-gradient(135deg, var(--bg-accent) 0%, var(--bg-secondary) 100%);
-      position: relative;
-      overflow: hidden;
-    }
-    
-    .hero h1 {
-      font-size: clamp(2.5rem, 5vw, 4rem);
-      font-weight: 700;
-      margin-bottom: var(--space-md);
-      background: linear-gradient(135deg, var(--text-primary) 0%, var(--primary-color) 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-    
-    .hero p {
-      font-size: 1.25rem;
-      max-width: 600px;
-      margin: 0 auto var(--space-xl);
-      color: var(--text-secondary);
-    }
-    
-    .button {
-      display: inline-flex;
-      align-items: center;
-      gap: var(--space-xs);
-      padding: var(--space-md) var(--space-xl);
-      background-color: var(--primary-color);
-      color: white;
-      border-radius: var(--border-radius);
-      text-decoration: none;
-      font-weight: 600;
-      transition: all var(--transition-normal);
-      border: none;
-      cursor: pointer;
-    }
-    
-    .button:hover {
-      background-color: var(--primary-dark);
-      transform: translateY(-2px);
-      box-shadow: var(--shadow-lg);
-    }
-    
-    .button-outline {
-      background-color: transparent;
-      border: 2px solid var(--primary-color);
-      color: var(--primary-color);
-    }
-    
-    .button-outline:hover {
-      background-color: var(--primary-color);
-      color: white;
-    }
-    
-    /* Sections */
-    section {
-      padding: var(--space-2xl) 0;
-      scroll-margin-top: 80px;
-    }
-    
-    .section-title {
-      font-size: clamp(2rem, 4vw, 2.5rem);
-      margin-bottom: var(--space-xl);
-      text-align: center;
-      position: relative;
-      font-weight: 700;
-    }
-    
-    .section-title::after {
-      content: '';
-      position: absolute;
-      bottom: -10px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 60px;
-      height: 4px;
-      background: linear-gradient(90deg, var(--primary-color), var(--primary-light));
-      border-radius: 2px;
-    }
-    
-    /* Creative Activities Section */
-    .activities-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-      gap: var(--space-xl);
-      margin-bottom: var(--space-2xl);
-    }
-    
-    .activity-card {
-      background-color: var(--bg-card);
-      border-radius: var(--border-radius);
-      overflow: hidden;
-      box-shadow: var(--shadow-md);
-      transition: all var(--transition-normal);
-      border: 1px solid var(--border-color);
-    }
-    
-    .activity-card:hover {
-      transform: translateY(-8px);
-      box-shadow: var(--shadow-xl);
-    }
-    
-    .activity-image {
-      height: 250px;
-      background-size: cover;
-      background-position: center;
-      position: relative;
-    }
-    
-    .activity-image.bike-riding {
-      background-image: url('./images/ASH03655-crop.JPG');
-    }
-    
-    .activity-image.photography {
-      background-image: url('./images/ASH02346.jpg');
-    }
-    
-    .activity-overlay {
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.7) 100%);
-      display: flex;
-      align-items: flex-end;
-      padding: var(--space-lg);
-    }
-    
-    .activity-title {
-      color: white;
-      font-size: 1.5rem;
-      font-weight: 600;
-      margin: 0;
-    }
-    
-    .activity-content {
-      padding: var(--space-lg);
-    }
-    
-    .activity-description {
-      color: var(--text-secondary);
-      margin-bottom: var(--space-md);
-      font-size: 1.1rem;
-      line-height: 1.6;
-    }
-    
-    .activity-features {
-      display: flex;
-      flex-wrap: wrap;
-      gap: var(--space-sm);
-    }
-    
-    .feature-tag {
-      padding: var(--space-xs) var(--space-md);
-      background-color: var(--bg-accent);
-      color: var(--primary-color);
-      border-radius: 30px;
-      font-size: 0.9rem;
-      font-weight: 500;
-      border: 1px solid var(--primary-light);
-    }
-    
-    .bike-stats {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: var(--space-sm);
-      margin: var(--space-md) 0;
-      padding: var(--space-md);
-      background-color: var(--bg-accent);
-      border-radius: var(--border-radius-sm);
-      border: 1px solid var(--primary-light);
-    }
-    
-    .stat-item {
-      display: flex;
-      align-items: center;
-      gap: var(--space-xs);
-      color: var(--primary-color);
-    }
-    
-    .stat-item i {
-      font-size: 1.2rem;
-      width: 20px;
-    }
-    
-    .stat-label {
-      font-weight: 600;
-      font-size: 0.9rem;
-    }
-    
-    .stat-value {
-      font-weight: 500;
-      color: var(--text-primary);
-    }
-    
-    /* New Layout Structure */
-    .activity-content-wrapper {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: var(--space-xl);
-      align-items: start;
-    }
-    
-    .activity-description-section {
-      display: flex;
-      flex-direction: column;
-      gap: var(--space-md);
-    }
-    
-    .activity-images {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-      gap: var(--space-md);
-    }
-    
-    .image-placeholder {
-      aspect-ratio: 1;
-      background-color: var(--bg-accent);
-      border: 2px dashed var(--primary-light);
-      border-radius: var(--border-radius-sm);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      color: var(--primary-color);
-      transition: all var(--transition-normal);
-    }
-    
-    .image-placeholder:hover {
-      background-color: var(--primary-light);
-      color: white;
-      transform: translateY(-2px);
-    }
-    
-    .image-placeholder i {
-      font-size: 2rem;
-      margin-bottom: var(--space-xs);
-    }
-    
-    .image-placeholder span {
-      font-size: 0.8rem;
-      text-align: center;
-      font-weight: 500;
-    }
-    
-    /* Gallery Section */
-    .gallery-grid {
-      column-count: 3;
-      column-gap: var(--space-md);
-    }
-    
-    .gallery-item {
-      position: relative;
-      margin-bottom: var(--space-md);
-      break-inside: avoid;
-      display: inline-block;
-      width: 100%;
-      border-radius: var(--border-radius);
-      overflow: hidden;
-      background-color: var(--bg-secondary);
-      transition: var(--transition-normal);
-      cursor: pointer;
-      box-shadow: var(--shadow-md);
-    }
-    
-    .gallery-item:hover {
-      transform: scale(1.03);
-      box-shadow: var(--shadow-lg);
-    }
-    
-    .gallery-item img {
-      width: 100%;
-      height: auto;
-      display: block;
-      transition: transform 0.5s ease;
-    }
-    
-    .gallery-item:hover img {
-      transform: scale(1.05);
-    }
-    
-    .gallery-overlay {
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0.7) 100%);
-      opacity: 0;
-      transition: var(--transition-normal);
-      display: flex;
-      align-items: flex-end;
-      padding: var(--space-md);
-    }
-    
-    .gallery-item:hover .gallery-overlay {
-      opacity: 1;
-    }
-    
-    .gallery-title {
-      color: white;
-      font-size: 1.1rem;
-      font-weight: 600;
-      margin: 0;
-    }
-    
-    /* Fun Facts Section */
-    .fun-facts-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: var(--space-lg);
-    }
-    
-    .fun-fact-card {
-      background-color: var(--bg-card);
-      padding: var(--space-lg);
-      border-radius: var(--border-radius);
-      border-left: 4px solid var(--primary-color);
-      box-shadow: var(--shadow-md);
-      transition: var(--transition-normal);
-    }
-    
-    .fun-fact-card:hover {
-      transform: translateY(-5px);
-      box-shadow: var(--shadow-lg);
-    }
-    
-    .fun-fact-card h3 {
-      color: var(--primary-color);
-      margin-bottom: var(--space-sm);
-      font-size: 1.2rem;
-    }
-    
-    .fun-fact-card p {
-      color: var(--text-secondary);
-      font-size: 1rem;
-    }
-    
-    /* Shows Section */
-    .shows-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: var(--space-lg);
-    }
-    
-    .show-card {
-      background-color: var(--bg-card);
-      padding: var(--space-lg);
-      border-radius: var(--border-radius);
-      text-align: center;
-      box-shadow: var(--shadow-md);
-      transition: var(--transition-normal);
-      border: 1px solid var(--border-color);
-    }
-    
-    .show-card:hover {
-      transform: translateY(-5px);
-      box-shadow: var(--shadow-lg);
-    }
-    
-    .show-icon {
-      width: 60px;
-      height: 60px;
-      margin: 0 auto var(--space-md);
-      background: linear-gradient(135deg, var(--primary-color), var(--primary-light));
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: white;
-      font-size: 1.5rem;
-    }
-    
-    .show-card h4 {
-      color: var(--text-primary);
-      margin-bottom: var(--space-sm);
-      font-size: 1.2rem;
-    }
-    
-    .show-card p {
-      color: var(--text-secondary);
-      font-size: 0.95rem;
-      line-height: 1.6;
-    }
-    
-    /* Footer */
-    footer {
-      background-color: var(--bg-secondary);
-      padding: var(--space-xl) 0;
-      text-align: center;
-      margin-top: var(--space-2xl);
-      border-top: 1px solid var(--border-color);
-    }
-    
-    .footer-content {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    
-    .copyright {
-      color: var(--text-secondary);
-      font-size: 0.9rem;
-    }
-    
-    .footer-links {
-      display: flex;
-      gap: var(--space-md);
-    }
-    
-    .footer-link {
-      color: var(--text-secondary);
-      text-decoration: none;
-      transition: color var(--transition-normal);
-    }
-    
-    .footer-link:hover {
-      color: var(--primary-color);
-    }
-    
-    /* Animations */
-    @keyframes fadeInUp {
-      from {
-        opacity: 0;
-        transform: translateY(30px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-    
-    .animate-fade-in {
-      animation: fadeInUp 0.8s ease forwards;
-    }
-    
-    /* Responsive Design */
-    @media (max-width: 768px) {
-      .activity-content-wrapper {
-        grid-template-columns: 1fr;
-        gap: var(--space-lg);
-      }
-      
-      .activity-images {
-        grid-template-columns: repeat(3, 1fr);
-      }
-      
-      .fun-facts-grid {
-        grid-template-columns: 1fr;
-      }
-      
-      .footer-content {
-        flex-direction: column;
-        gap: var(--space-md);
-      }
-      
-      .navbar {
-        display: none;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        right: 0;
-        background-color: var(--bg-primary);
-        border-top: 1px solid var(--border-color);
-        padding: var(--space-md);
-        flex-direction: column;
-        box-shadow: var(--shadow-lg);
-      }
-      
-      .navbar.show {
-        display: flex;
-      }
-      
-      .mobile-menu-toggle {
-        display: block;
-      }
-    }
-    
-    @media (max-width: 480px) {
-      .container {
-        padding: 0 var(--space-sm);
-      }
-      
-      .hero {
-        padding: var(--space-xl) 0;
-      }
-      
-      section {
-        padding: var(--space-xl) 0;
-      }
-    }
-  </style>
-  
-  <!-- Font Awesome for icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./css/site.css" />
 </head>
 <body>
-  <!-- Header -->
-  <header>
-    <div class="container">
-      <div class="header-content">
-        <a href="index.html" class="logo">My <span>Creative</span> Corner</a>
-        <nav class="navbar">
-          <a href="index.html" class="nav-item">Home</a>
-          <a href="#bike-riding" class="nav-item active">Bike Riding</a>
-          <a href="#photography" class="nav-item">Photography</a>
-          <a href="#coffee-brewing" class="nav-item">Coffee Brewing</a>
-          <a href="#fun-facts" class="nav-item">Fun Facts</a>
-          <a href="photography.html" class="nav-item">Full Gallery</a>
-        </nav>
-        <button class="mobile-menu-toggle" id="mobileMenuToggle">
-          <i class="fas fa-bars"></i>
-        </button>
-        <button class="theme-toggle" id="themeToggle">
-          <i class="fas fa-moon"></i>
-        </button>
-      </div>
+  <div class="scroll-progress" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <div class="inner">
+      <a class="brand" href="index.html">Ashraf <span>Creative</span></a>
+      <nav class="nav" id="nav">
+        <a href="index.html">Home</a>
+        <a href="bike.html">Bike</a>
+        <a href="https://photography.sashraf.in" target="_blank" rel="noopener noreferrer">Photography</a>
+        <a href="coffee.html">Coffee</a>
+        <a href="creative-corner.html" class="active">Corner</a>
+      </nav>
+      <button class="menu-btn" id="menuBtn" aria-label="Menu" aria-expanded="false">☰</button>
     </div>
   </header>
-  
-  <!-- Hero Section -->
-  <section class="hero">
-    <div class="container">
-      <h1 class="animate-fade-in">My Creative Side</h1>
-      <p class="animate-fade-in" style="animation-delay: 0.2s;">Where I share my adventures, creative journey, and the things that make me smile when I'm not coding.</p>
-      <a href="index.html" class="button button-outline animate-fade-in" style="animation-delay: 0.4s;">
-        <i class="fas fa-arrow-left"></i>
-        View Professional Side
-      </a>
-    </div>
-  </section>
-  
-  <!-- Bike Riding Section -->
-  <section id="bike-riding">
-    <div class="container">
-      <h2 class="section-title">Bike Riding Adventures</h2>
-      <div class="activity-content-wrapper">
-        <div class="activity-description-section">
-          <p class="activity-description">
-            My Triumph Speed 400 is more than just a motorcycle—it's my escape to freedom and adventure. 
-            Whether it's exploring scenic routes around Hyderabad or taking weekend trips to nearby destinations, 
-            riding helps me clear my mind and find inspiration in the open road. The feeling of wind in my face 
-            and the open road ahead is pure therapy after a long day of coding.
-          </p>
-          <div class="bike-stats">
-            <div class="stat-item">
-              <i class="fas fa-motorcycle"></i>
-              <span class="stat-label">Bike:</span>
-              <span class="stat-value">Triumph Speed 400</span>
-            </div>
-            <div class="stat-item">
-              <i class="fas fa-calendar-alt"></i>
-              <span class="stat-label">Age:</span>
-              <span class="stat-value">1 year 1 month old</span>
-            </div>
-            <div class="stat-item">
-              <i class="fas fa-road"></i>
-              <span class="stat-label">Distance:</span>
-              <span class="stat-value">14,100 km done</span>
-            </div>
-          </div>
-          <div class="activity-features">
-            <span class="feature-tag">Scenic Routes</span>
-            <span class="feature-tag">Weekend Adventures</span>
-            <span class="feature-tag">Freedom & Exploration</span>
-          </div>
-        </div>
-        <div class="activity-images">
-          <div class="image-placeholder">
-            <i class="fas fa-motorcycle"></i>
-            <span>Bike Adventure 1</span>
-          </div>
-          <div class="image-placeholder">
-            <i class="fas fa-road"></i>
-            <span>Bike Adventure 2</span>
-          </div>
-          <div class="image-placeholder">
-            <i class="fas fa-mountain"></i>
-            <span>Bike Adventure 3</span>
-          </div>
-        </div>
+
+  <main>
+    <section class="page-intro">
+      <div class="container">
+        <p class="eyebrow reveal">Off the clock</p>
+        <h1 class="reveal">Roads, light, coffee — and whatever I’m getting into next.</h1>
+        <p class="reveal">
+          Since leaving Oracle, this season is travel, exploration, and hobbies with intent:
+          the bike, the camera, the cup — plus cycling, badminton, fitness, and a ridiculous number of gadgets.
+        </p>
       </div>
-    </div>
-  </section>
-  
-  <!-- Photography Section -->
-  <section id="photography">
-    <div class="container">
-      <h2 class="section-title">Photography Journey</h2>
-      <div class="activity-content-wrapper">
-        <div class="activity-description-section">
-          <p class="activity-description">
-            Photography is my way of capturing moments and telling stories through visuals. 
-            I love exploring different perspectives, from wildlife photography to landscape shots. 
-            Each photo represents a moment frozen in time, a memory preserved forever. My camera 
-            is always with me, ready to capture the beauty of nature and the moments that make life special.
-          </p>
-          <div class="activity-features">
-            <span class="feature-tag">Wildlife Photography</span>
-            <span class="feature-tag">Landscape Shots</span>
-            <span class="feature-tag">Storytelling</span>
-            <span class="feature-tag">Creative Expression</span>
-          </div>
-          <a href="photography.html" class="button">
-            <i class="fas fa-camera"></i>
-            View Full Gallery
+    </section>
+
+    <section class="section" style="border-top: 0; padding-top: 0;">
+      <div class="container">
+        <div class="portal-grid">
+          <a class="portal reveal" href="bike.html" style="--portal-img: linear-gradient(155deg,#2a2418,#0b0b0b 70%);">
+            <div class="portal-media"></div>
+            <div class="portal-body">
+              <h3>Bike Riding</h3>
+              <p>Triumph Speed 400 · 29k km · Maharashtra &amp; Kerala trips loading.</p>
+              <span class="portal-link">Enter rides →</span>
+            </div>
+          </a>
+
+          <a class="portal reveal" href="https://photography.sashraf.in" target="_blank" rel="noopener noreferrer" style="--portal-img: url('./images/low-res/ASH04929.jpg');">
+            <div class="portal-media"></div>
+            <div class="portal-body">
+              <h3>Photography</h3>
+              <p>A dedicated gallery site — wildlife, landscapes, travel stories.</p>
+              <span class="portal-link">Open photography.sashraf.in →</span>
+            </div>
+          </a>
+
+          <a class="portal reveal" href="coffee.html" style="--portal-img: linear-gradient(155deg,#3a2718,#0b0a09 72%);">
+            <div class="portal-media"></div>
+            <div class="portal-body">
+              <h3>Coffee</h3>
+              <p>Cold brew ritual, Kenya beans, cafe culture 3–4× a week.</p>
+              <span class="portal-link">Enter brew notes →</span>
+            </div>
           </a>
         </div>
-        <div class="activity-images">
-          <div class="image-placeholder">
-            <i class="fas fa-camera"></i>
-            <span>Photo 1</span>
-          </div>
-          <div class="image-placeholder">
-            <i class="fas fa-image"></i>
-            <span>Photo 2</span>
-          </div>
-          <div class="image-placeholder">
-            <i class="fas fa-photo-video"></i>
-            <span>Photo 3</span>
-          </div>
-        </div>
       </div>
-    </div>
-  </section>
-  
-  <!-- Coffee Brewing Section -->
-  <section id="coffee-brewing">
-    <div class="container">
-      <h2 class="section-title">Coffee Brewing</h2>
-      <div class="activity-content-wrapper">
-        <div class="activity-description-section">
-          <p class="activity-description">
-            There's something meditative about brewing the perfect cup of coffee. From grinding fresh beans 
-            to the aroma that fills the room, it's a ritual that helps me start my day with focus and clarity. 
-            I love experimenting with different brewing methods and discovering new flavors. A good cup of coffee 
-            is like a warm hug for the soul.
-          </p>
-          <div class="activity-features">
-            <span class="feature-tag">Fresh Ground Beans</span>
-            <span class="feature-tag">Multiple Brewing Methods</span>
-            <span class="feature-tag">Flavor Exploration</span>
-            <span class="feature-tag">Morning Ritual</span>
-          </div>
-        </div>
-        <div class="activity-images">
-          <div class="image-placeholder">
-            <i class="fas fa-coffee"></i>
-            <span>Coffee Setup 1</span>
-          </div>
-          <div class="image-placeholder">
-            <i class="fas fa-mug-hot"></i>
-            <span>Coffee Setup 2</span>
-          </div>
-          <div class="image-placeholder">
-            <i class="fas fa-seedling"></i>
-            <span>Coffee Setup 3</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  
+    </section>
 
-  
-  <!-- Fun Facts Section -->
-  <section id="fun-facts">
-    <div class="container">
-      <h2 class="section-title">Fun Facts About Me</h2>
-      <div class="fun-facts-grid">
-        <div class="fun-fact-card animate-fade-in">
-          <h3>Did you know?</h3>
-          <p>Ashraf means "Honorable person" - You should say if I am or not! 😄</p>
+    <section class="section">
+      <div class="container split">
+        <div class="reveal">
+          <p class="section-label">Also in motion</p>
+          <h2 class="display" style="font-size: clamp(2rem, 4vw, 3rem); margin-bottom: 1rem;">
+            Getting into more than one lane.
+          </h2>
+          <p class="lede">
+            Cycling is new. Badminton is regular. Fitness is becoming a habit.
+            Tech enthusiast energy: if it exists and it’s clever, I probably want to try it.
+          </p>
+          <div class="tech" style="margin-top: 1.5rem; gap: 1rem;">
+            <span>Cycling</span>
+            <span>Badminton</span>
+            <span>Fitness</span>
+            <span>Gadgets</span>
+          </div>
         </div>
-        <div class="fun-fact-card animate-fade-in" style="animation-delay: 0.2s;">
-          <h3>Unusual Talent</h3>
-          <p>I can solve a 3x3 Rubik's cube in "69" seconds - not the fastest, but I'm working on it!</p>
-        </div>
-        <div class="fun-fact-card animate-fade-in" style="animation-delay: 0.4s;">
-          <h3>Childhood Dream</h3>
-          <p>I want to be constantly learning and exploring new skills and technologies, always staying curious about what's next.</p>
-        </div>
-        <div class="fun-fact-card animate-fade-in" style="animation-delay: 0.6s;">
-          <h3>Creative Philosophy</h3>
-          <p>When I'm not coding, you'll find me riding my bike, taking photos, or brewing the perfect cup of coffee.</p>
+        <div class="reveal">
+          <div class="media-grid">
+            <div class="media-frame tall">cc-bike.jpg</div>
+            <div class="media-frame">cc-coffee.jpg</div>
+            <div class="media-frame wide">cc-wide.jpg / cc-fitness.jpg</div>
+          </div>
         </div>
       </div>
-      
-      <!-- Favorite Shows Section -->
-      <h3 style="text-align: center; margin-top: var(--space-2xl); margin-bottom: var(--space-lg); color: var(--text-secondary); font-size: 1.5rem;">My Favorite Shows & Movies</h3>
-      <div class="shows-grid">
-        <div class="show-card animate-fade-in">
-          <div class="show-icon">
-            <i class="fas fa-tv"></i>
-          </div>
-          <h4>How I Met Your Mother</h4>
-          <p>The perfect blend of humor, friendship, and life lessons. Barney's suits and Ted's romantic quests never get old!</p>
-        </div>
-        
-        <div class="show-card animate-fade-in" style="animation-delay: 0.2s;">
-          <div class="show-icon">
-            <i class="fas fa-coffee"></i>
-          </div>
-          <h4>Friends</h4>
-          <p>Could this BE any more iconic? The Central Perk gang taught me about friendship, love, and that "we were on a break!"</p>
-        </div>
-        
-        <div class="show-card animate-fade-in" style="animation-delay: 0.4s;">
-          <div class="show-icon">
-            <i class="fas fa-magic"></i>
-          </div>
-          <h4>Harry Potter</h4>
-          <p>You're a wizard, Ashraf! The magical world of Hogwarts has been my escape since childhood. Always waiting for my Hogwarts letter!</p>
-        </div>
-      </div>
-    </div>
-  </section>
-  
-  <!-- Footer -->
-  <footer>
-    <div class="container">
-      <div class="footer-content">
-        <div class="copyright">© 2025 Ashraf Mohiuddin Shaik - Made with ❤️ and a lot of coffee</div>
-        <div class="footer-links">
-          <a href="index.html" class="footer-link">Professional Side</a>
-          <a href="#bike-riding" class="footer-link">Activities</a>
-          <a href="#photography" class="footer-link">Gallery</a>
-        </div>
-      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="inner">
+      <span>© 2026 Ashraf Mohiuddin Shaik</span>
+      <a href="index.html">Back to portfolio</a>
     </div>
   </footer>
-  
-  <script>
-    // Theme Toggle
-    const themeToggle = document.getElementById('themeToggle');
-    const body = document.body;
-    
-    // Check for saved theme preference or default to light
-    const savedTheme = localStorage.getItem('theme') || 'light';
-    body.setAttribute('data-theme', savedTheme);
-    updateThemeIcon(savedTheme);
-    
-    themeToggle.addEventListener('click', () => {
-      const currentTheme = body.getAttribute('data-theme');
-      const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-      
-      body.setAttribute('data-theme', newTheme);
-      localStorage.setItem('theme', newTheme);
-      updateThemeIcon(newTheme);
-    });
-    
-    function updateThemeIcon(theme) {
-      const icon = themeToggle.querySelector('i');
-      icon.className = theme === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
-    }
-    
-    // Mobile Menu Toggle
-    const mobileMenuToggle = document.getElementById('mobileMenuToggle');
-    const navbar = document.querySelector('.navbar');
-    
-    mobileMenuToggle.addEventListener('click', () => {
-      navbar.classList.toggle('show');
-      const icon = mobileMenuToggle.querySelector('i');
-      icon.className = navbar.classList.contains('show') ? 'fas fa-times' : 'fas fa-bars';
-    });
-    
-    // Smooth scrolling for navigation links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-          target.scrollIntoView({
-            behavior: 'smooth',
-            block: 'start'
-          });
-        }
-      });
-    });
-    
-    // Navigation active state
-    const navItems = document.querySelectorAll('.nav-item');
-    const sections = document.querySelectorAll('section[id]');
-    
-    function updateActiveNav() {
-      const scrollPos = window.scrollY + 100;
-      
-      sections.forEach(section => {
-        const sectionTop = section.offsetTop;
-        const sectionHeight = section.offsetHeight;
-        const sectionId = section.getAttribute('id');
-        
-        if (scrollPos >= sectionTop && scrollPos < sectionTop + sectionHeight) {
-          navItems.forEach(item => {
-            item.classList.remove('active');
-            if (item.getAttribute('href') === `#${sectionId}`) {
-              item.classList.add('active');
-            }
-          });
-        }
-      });
-    }
-    
-    window.addEventListener('scroll', updateActiveNav);
-    
-    // Lazy loading for images
-    if ('IntersectionObserver' in window) {
-      const imageObserver = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            const img = entry.target;
-            img.src = img.dataset.src;
-            img.classList.remove('lazy');
-            imageObserver.unobserve(img);
-          }
-        });
-      });
-      
-      document.querySelectorAll('img[data-src]').forEach(img => {
-        imageObserver.observe(img);
-      });
-    }
-  </script>
+
+  <script src="./js/site.js"></script>
 </body>
 </html>
-
