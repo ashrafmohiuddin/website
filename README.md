@@ -1,5 +1,7 @@
 # Photography Workflow (Folder -> Website)
 
+**New photos:** drop Lightroom exports in `photos-inbox/`, then follow [PHOTOS.md](PHOTOS.md).
+
 This project supports a seamless photography pipeline:
 
 1. Export edited photos from Lightroom to one folder
