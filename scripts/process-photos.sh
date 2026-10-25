@@ -2,38 +2,57 @@
 set -euo pipefail
 
 # Seamless photo pipeline:
-# 1) Read edited originals from a single folder
+# 1) Read edited originals from photos-drop/ (or an explicit folder)
 # 2) Generate web previews (orientation-safe)
 # 3) Generate watermarked full-res copies (orientation-safe)
 # 4) Copy originals into images/ for local fallback
-# 5) Build data/photos.manifest.json
+# 5) Build data/photos.manifest.json from photos-drop/metadata.json
 # 6) Optional sync to Cloudflare R2 via AWS CLI
 
-if ! command -v magick >/dev/null 2>&1; then
-  echo "ImageMagick is required (magick). Install via: brew install imagemagick"
-  exit 1
-fi
-
-if [[ $# -lt 1 ]]; then
-  echo "Usage: scripts/process-photos.sh <edited-folder> [--sync-r2]"
-  exit 1
-fi
-
-SOURCE_DIR="$1"
-SYNC_R2="false"
-if [[ "${2:-}" == "--sync-r2" ]]; then
-  SYNC_R2="true"
-fi
-
 ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+SOURCE_DIR="$ROOT_DIR/photos-drop"
+SYNC_R2="false"
+
+for arg in "$@"; do
+  case "$arg" in
+    --sync-r2)
+      SYNC_R2="true"
+      ;;
+    --help|-h)
+      echo "Usage: scripts/process-photos.sh [edited-folder] [--sync-r2]"
+      echo "Default folder: photos-drop/"
+      exit 0
+      ;;
+    *)
+      SOURCE_DIR="$arg"
+      ;;
+  esac
+done
+
+if [[ "$SOURCE_DIR" != /* ]]; then
+  SOURCE_DIR="$ROOT_DIR/$SOURCE_DIR"
+fi
+
 IMAGES_DIR="$ROOT_DIR/images"
 PREVIEW_DIR="$IMAGES_DIR/low-res"
 WATERMARKED_DIR="$IMAGES_DIR/watermarked"
 MANIFEST_SCRIPT="$ROOT_DIR/scripts/build-photo-manifest.mjs"
+METADATA_FILE="$ROOT_DIR/photos-drop/metadata.json"
+
+if [[ ! -d "$SOURCE_DIR" ]]; then
+  echo "Drop folder not found: $SOURCE_DIR"
+  exit 1
+fi
+
+if [[ ! -f "$METADATA_FILE" ]]; then
+  echo "Metadata file not found: $METADATA_FILE"
+  exit 1
+fi
 
 mkdir -p "$IMAGES_DIR" "$PREVIEW_DIR" "$WATERMARKED_DIR"
 
 echo "Processing photos from: $SOURCE_DIR"
+echo "Metadata: $METADATA_FILE"
 
 watermark_with_fallback() {
   local input_file="$1"
@@ -67,14 +86,24 @@ watermark_with_fallback() {
   magick "$input_file" -auto-orient -strip "$output_file"
 }
 
+processed=0
 shopt -s nullglob
-for file in "$SOURCE_DIR"/*.{jpg,JPG,jpeg,JPEG,png,PNG,webp,WEBP}; do
+drop_files=("$SOURCE_DIR"/*.{jpg,JPG,jpeg,JPEG,png,PNG,webp,WEBP})
+if [[ ${#drop_files[@]} -gt 0 && ! -e "${drop_files[0]}" ]]; then
+  drop_files=()
+fi
+
+if [[ ${#drop_files[@]} -gt 0 ]] && ! command -v magick >/dev/null 2>&1; then
+  echo "ImageMagick is required (magick). Install via: brew install imagemagick"
+  exit 1
+fi
+
+for file in "${drop_files[@]}"; do
+  [[ -e "$file" ]] || continue
   name="$(basename "$file")"
 
-  # Copy full original export for local fallback / archive
   cp -f "$file" "$IMAGES_DIR/$name"
 
-  # Preview for gallery grid (fast load). -auto-orient preserves intended orientation.
   magick "$file" \
     -auto-orient \
     -resize "1800x1800>" \
@@ -83,12 +112,19 @@ for file in "$SOURCE_DIR"/*.{jpg,JPG,jpeg,JPEG,png,PNG,webp,WEBP}; do
     -quality 72 \
     "$PREVIEW_DIR/$name"
 
-  # Watermarked full-res for public downloads.
   watermark_with_fallback "$file" "$WATERMARKED_DIR/$name" "© Ashraf Mohiuddin"
+  processed=$((processed + 1))
 done
 
+if [[ "$processed" -eq 0 ]]; then
+  echo "No image files in drop folder. Manifest will be empty until you add photos."
+fi
+
 echo "Building manifest..."
-node "$MANIFEST_SCRIPT" --mode=hybrid --metadata=data/photos.metadata.json
+node "$MANIFEST_SCRIPT" \
+  --mode=hybrid \
+  --sourceDir="$SOURCE_DIR" \
+  --metadata="$METADATA_FILE"
 
 if [[ "$SYNC_R2" == "true" ]]; then
   if ! command -v aws >/dev/null 2>&1; then
@@ -101,7 +137,7 @@ if [[ "$SYNC_R2" == "true" ]]; then
 
   echo "Syncing originals to R2 photos/ ..."
   aws s3 sync "$IMAGES_DIR/" "s3://$R2_BUCKET/photos/" \
-    --exclude "low-res/*" --exclude "watermarked/*" --exclude ".DS_Store" \
+    --exclude "low-res/*" --exclude "watermarked/*" --exclude ".DS_Store" --exclude "other/*" \
     --endpoint-url "$R2_ENDPOINT"
 
   echo "Syncing previews to R2 photos-previews/ ..."
@@ -115,8 +151,12 @@ if [[ "$SYNC_R2" == "true" ]]; then
     --endpoint-url "$R2_ENDPOINT"
 
   echo "Rebuilding manifest for pure R2 delivery..."
-  node "$MANIFEST_SCRIPT" --mode=r2 --previewPrefix=photos-previews --metadata=data/photos.metadata.json
+  node "$MANIFEST_SCRIPT" \
+    --mode=r2 \
+    --sourceDir="$SOURCE_DIR" \
+    --previewPrefix=photos-previews \
+    --metadata="$METADATA_FILE"
 fi
 
-echo "Done."
-echo "Next: deploy to Netlify (and if --sync-r2 was used, R2 is already updated)."
+echo "Done. Photos processed: $processed"
+echo "Next: commit data/photos.manifest.json (and images/low-res/ if you want git-hosted previews), then deploy."

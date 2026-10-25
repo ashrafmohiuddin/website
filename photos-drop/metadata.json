@@ -1,0 +1,20 @@
+{
+  "photos": [
+    {
+      "skip": true,
+      "filename": "example-tiger.jpg",
+      "title": "White Bengal Tiger",
+      "alt": "White Bengal tiger looking ahead",
+      "category": "wildlife",
+      "tags": ["nature", "wildlife", "portraits"]
+    },
+    {
+      "skip": true,
+      "filename": "",
+      "title": "",
+      "alt": "",
+      "category": "",
+      "tags": []
+    }
+  ]
+}
