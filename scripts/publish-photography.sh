@@ -2,24 +2,18 @@
 set -euo pipefail
 
 # One-command publish:
-# - process photos
+# - process photos from photos-drop/ (or an explicit folder)
 # - (optional) sync to R2
 # - deploy site to Netlify
 #
 # Usage:
-# scripts/publish-photography.sh "/path/to/lightroom-exports" --site-id=<netlify-site-id> [--prod] [--sync-r2]
+# scripts/publish-photography.sh [edited-folder] --site-id=<netlify-site-id> [--prod] [--sync-r2]
 
-if [[ $# -lt 1 ]]; then
-  echo "Usage: scripts/publish-photography.sh <edited-folder> --site-id=<netlify-site-id> [--prod] [--sync-r2]"
-  exit 1
-fi
-
-SOURCE_DIR="$1"
+SOURCE_DIR=""
 SITE_ID=""
 PROD="false"
 SYNC_R2="false"
 
-shift || true
 for arg in "$@"; do
   case "$arg" in
     --site-id=*)
@@ -31,9 +25,18 @@ for arg in "$@"; do
     --sync-r2)
       SYNC_R2="true"
       ;;
+    --help|-h)
+      echo "Usage: scripts/publish-photography.sh [edited-folder] --site-id=<netlify-site-id> [--prod] [--sync-r2]"
+      echo "Default folder: photos-drop/"
+      exit 0
+      ;;
     *)
-      echo "Unknown option: $arg"
-      exit 1
+      if [[ -z "$SOURCE_DIR" ]]; then
+        SOURCE_DIR="$arg"
+      else
+        echo "Unknown option: $arg"
+        exit 1
+      fi
       ;;
   esac
 done
@@ -49,6 +52,9 @@ if ! command -v netlify >/dev/null 2>&1; then
 fi
 
 ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+if [[ -z "$SOURCE_DIR" ]]; then
+  SOURCE_DIR="$ROOT_DIR/photos-drop"
+fi
 
 echo "Step 1/3: Processing photos..."
 if [[ "$SYNC_R2" == "true" ]]; then

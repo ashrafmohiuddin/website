@@ -1,6 +1,7 @@
 # Media checklist (add these later)
 
-Drop files into `images/` (and low-res copies into `images/low-res/` if needed).  
+Gallery photos go in `photos-drop/` with a row in `photos-drop/metadata.json` (see `PHOTOS.md`).  
+Lifestyle stills below still drop into `images/` (and `images/low-res/` if needed).  
 Replace the matching placeholder on each page when ready.
 
 ## Main page (`index.html`)

@@ -12,52 +12,19 @@ const args = Object.fromEntries(
 
 const config = {
   mode: args.mode || "hybrid",
-  sourceDir: args.sourceDir || "images",
+  sourceDir: args.sourceDir || "photos-drop",
   outputFile: args.output || "data/photos.manifest.json",
   previewDir: args.previewDir || "images/low-res",
   r2Base: args.r2Base || "https://img.sashraf.in",
   originalsPrefix: args.originalsPrefix || "photos",
-  previewPrefix: args.previewPrefix || "photos",
+  previewPrefix: args.previewPrefix || "photos-previews",
   watermarkedPrefix: args.watermarkedPrefix || "photos-watermarked",
   useTransforms: args.useTransforms === "true"
 };
 
-const metadataFile = args.metadata || "data/photos.metadata.json";
+const metadataFile = args.metadata || "photos-drop/metadata.json";
 
 const IMAGE_EXTENSIONS = new Set([".jpg", ".jpeg", ".png", ".webp", ".JPG", ".JPEG", ".PNG", ".WEBP"]);
-
-const TITLE_MAP = {
-  "ASH02346.jpg": "White Bengal Tiger",
-  "ASH02373.jpg": "White Bengal Tiger and Bengal Tiger",
-  "ASH03655-crop.JPG": "Bike Riding Adventure",
-  "ASH04929.jpg": "Nature Photography",
-  "ASH05056.jpg": "Landscape Shot",
-  "20211212_180203.jpg": "Summer Beach Day at Goa",
-  "ASH03049.jpg": "Wildlife Photography",
-  "ASH03547-3.jpg": "Adventure Shot",
-  "ASH03620.jpg": "Scenic View",
-  "ASH03648.jpg": "Nature Scene",
-  "ASH03890.JPG": "Adventure Moment",
-  "ASH03963.JPG": "Scenic Landscape",
-  "ASH04012.JPG": "Wildlife Moment",
-  "ASH04151.JPG": "Nature Beauty",
-  "ASH04307.JPG": "Adventure Photography",
-  "ASH04692.jpg": "Landscape Photography",
-  "ASH04718.JPG": "Nature Photography",
-  "ASH04955.jpg": "Wildlife Shot",
-  "ASH04976.jpg": "Adventure Scene",
-  "ASH05075.jpg": "Nature Scene",
-  "ASH05621-2.jpg": "Landscape View",
-  "ASH05626.jpg": "Nature Photography",
-  "ASH05835.jpg": "Adventure Shot",
-  "ASH06363.jpg": "Wildlife Photography",
-  "ASH06431.jpg": "Nature Beauty",
-  "ASH06438-2.jpg": "Landscape Photography",
-  "ASH06840.jpg": "Adventure Photography",
-  "ASH06899.jpg": "Nature Scene",
-  "ASH06941.jpg": "Wildlife Photography",
-  "ASH06964.jpg": "Landscape Shot"
-};
 
 function toSlug(filename) {
   return path
@@ -68,28 +35,32 @@ function toSlug(filename) {
 }
 
 function toTitle(filename) {
-  if (TITLE_MAP[filename]) return TITLE_MAP[filename];
   const base = path.basename(filename, path.extname(filename)).replace(/[_-]+/g, " ");
   return base.replace(/\b\w/g, (char) => char.toUpperCase());
 }
 
-function inferTags(nameLower) {
-  const tags = [];
-  if (nameLower.includes("tiger") || nameLower.includes("wild") || nameLower.includes("ash0")) tags.push("wildlife");
-  if (nameLower.includes("bike") || nameLower.includes("crop")) tags.push("travel");
-  if (nameLower.includes("beach") || nameLower.includes("goa")) tags.push("travel");
-  if (nameLower.includes("landscape") || tags.length === 0) tags.push("landscape");
-  return [...new Set(tags)];
+function normalizeTags(tags) {
+  if (Array.isArray(tags)) {
+    return [...new Set(tags.map((tag) => String(tag).trim()).filter(Boolean))];
+  }
+  if (typeof tags === "string") {
+    return [...new Set(tags.split(",").map((tag) => tag.trim()).filter(Boolean))];
+  }
+  return [];
 }
 
-async function loadMetadataMap() {
-  try {
-    const raw = await fs.readFile(path.resolve(process.cwd(), metadataFile), "utf8");
-    const parsed = JSON.parse(raw);
-    return parsed && parsed.photos ? parsed.photos : {};
-  } catch {
-    return {};
+async function loadMetadataEntries() {
+  const raw = await fs.readFile(path.resolve(process.cwd(), metadataFile), "utf8");
+  const parsed = JSON.parse(raw);
+  const photos = parsed && parsed.photos;
+
+  if (Array.isArray(photos)) return photos;
+
+  if (photos && typeof photos === "object") {
+    return Object.entries(photos).map(([filename, meta]) => ({ filename, ...meta }));
   }
+
+  throw new Error(`${metadataFile} must contain a "photos" array`);
 }
 
 function buildUrls(filename) {
@@ -97,8 +68,8 @@ function buildUrls(filename) {
     return {
       filename,
       previewSrc: `./${config.previewDir}/${filename}`,
-      fullResSrc: `./${config.sourceDir}/${filename}`,
-      downloadSrc: `./${config.sourceDir}/${filename}`
+      fullResSrc: `./images/${filename}`,
+      downloadSrc: `./images/watermarked/${filename}`
     };
   }
 
@@ -142,25 +113,53 @@ function buildUrls(filename) {
   };
 }
 
-async function buildManifest() {
-  const metadataMap = await loadMetadataMap();
-  const sourceAbsolute = path.resolve(process.cwd(), config.sourceDir);
-  const files = await fs.readdir(sourceAbsolute);
-  const imageFiles = files.filter((file) => IMAGE_EXTENSIONS.has(path.extname(file)));
+async function listDropImages(sourceAbsolute) {
+  try {
+    const files = await fs.readdir(sourceAbsolute);
+    return new Set(files.filter((file) => IMAGE_EXTENSIONS.has(path.extname(file))));
+  } catch (error) {
+    if (error && error.code === "ENOENT") return new Set();
+    throw error;
+  }
+}
 
-  const photos = imageFiles.map((filename) => {
-    const custom = metadataMap[filename] || {};
-    const lowered = filename.toLowerCase();
-    const title = custom.title || toTitle(filename);
-    return {
+function isActiveEntry(entry) {
+  if (!entry || entry.skip === true) return false;
+  const filename = typeof entry.filename === "string" ? entry.filename.trim() : "";
+  return Boolean(filename);
+}
+
+async function buildManifest() {
+  const entries = await loadMetadataEntries();
+  const sourceAbsolute = path.resolve(process.cwd(), config.sourceDir);
+  const onDisk = await listDropImages(sourceAbsolute);
+
+  const photos = [];
+  const seen = new Set();
+
+  for (const entry of entries) {
+    if (!isActiveEntry(entry)) continue;
+    const filename = entry.filename.trim();
+    if (!onDisk.has(filename)) {
+      console.warn(`Skipping ${filename}: listed in metadata but not in ${config.sourceDir}/`);
+      continue;
+    }
+    seen.add(filename);
+    const title = (entry.title && String(entry.title).trim()) || toTitle(filename);
+    photos.push({
       slug: toSlug(filename),
       title,
-      alt: custom.alt || title,
-      category: custom.category || "uncategorized",
-      tags: Array.isArray(custom.tags) ? custom.tags : inferTags(lowered),
+      alt: (entry.alt && String(entry.alt).trim()) || title,
+      category: (entry.category && String(entry.category).trim()) || "uncategorized",
+      tags: normalizeTags(entry.tags),
       ...buildUrls(filename)
-    };
-  });
+    });
+  }
+
+  for (const filename of [...onDisk].sort()) {
+    if (seen.has(filename)) continue;
+    console.warn(`Skipping ${filename}: in ${config.sourceDir}/ but not listed in ${metadataFile}`);
+  }
 
   const manifest = {
     version: 1,

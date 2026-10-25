@@ -3,13 +3,15 @@
 **/.DS_Store
 Thumbs.db
 
-# Lightroom drop folder — keep the folder, ignore dropped exports
-photos-inbox/*
-!photos-inbox/.gitkeep
+# Edited Lightroom exports — keep the folder + metadata, ignore dropped files
+photos-drop/*
+!photos-drop/.gitkeep
+!photos-drop/metadata.json
 
-# Full-resolution originals copied into images/ by the pipeline.
-# Already-committed files stay tracked until a follow-up untracks them;
-# this only blocks *new* originals from being added.
+# Legacy inbox name (do not use)
+photos-inbox/*
+
+# Pipeline outputs: full-res originals (local fallback / R2 source)
 images/*.jpg
 images/*.jpeg
 images/*.png
@@ -20,11 +22,11 @@ images/*.webp
 images/*.WEBP
 
 # Watermarked full-res downloads — serve from R2 (img.sashraf.in)
-# Already-committed files stay tracked until a follow-up untracks them.
 images/watermarked/*
 !images/watermarked/.gitkeep
 
 # Keep in git (do not ignore):
-#   images/low-res/     gallery previews
-#   data/*.json         manifests + metadata
+#   images/low-res/     gallery previews (commit after processing)
+#   data/photos.manifest.json
+#   photos-drop/metadata.json
 #   images/other/       non-gallery assets

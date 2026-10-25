@@ -10,7 +10,7 @@
   <meta property="og:description" content="Wildlife, travel, and landscape photography." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://photography.sashraf.in/" />
-  <meta property="og:image" content="https://sashraf.in/images/ASH02346.jpg" />
+  <meta property="og:image" content="https://photography.sashraf.in/" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -255,6 +255,14 @@
       text-transform: uppercase;
     }
 
+    .empty-gallery {
+      padding: 3rem 0 1rem;
+      color: var(--muted);
+      font-size: 0.95rem;
+      font-weight: 300;
+      max-width: 28rem;
+    }
+
     /* ── Lightbox ── */
     .lightbox {
       position: fixed;
@@ -476,24 +484,34 @@
       }
     }
 
+    function labelize(value) {
+      return String(value)
+        .replace(/[-_]+/g, " ")
+        .replace(/\b\w/g, (char) => char.toUpperCase());
+    }
+
+    function uniqueSorted(values) {
+      return [...new Set(values.filter(Boolean))].sort((a, b) => a.localeCompare(b));
+    }
+
     function buildFilters() {
-      const categories = ["all", ...new Set(allPhotos.map((p) => p.category))];
+      const categories = ["all", ...uniqueSorted(allPhotos.map((p) => p.category))];
       categoryFilter.innerHTML = "";
       categories.forEach((category) => {
         const option = document.createElement("option");
         option.value = category;
-        option.textContent = category === "all" ? "All Categories" : category;
+        option.textContent = category === "all" ? "All Categories" : labelize(category);
         categoryFilter.appendChild(option);
       });
 
-      const tags = ["all", ...new Set(allPhotos.flatMap((p) => p.tags))];
+      const tags = ["all", ...uniqueSorted(allPhotos.flatMap((p) => p.tags))];
       tagList.innerHTML = "";
       tags.forEach((tag) => {
         const button = document.createElement("button");
         button.className = `tag-chip ${tag === "all" ? "active" : ""}`;
         button.type = "button";
         button.dataset.tag = tag;
-        button.textContent = tag;
+        button.textContent = tag === "all" ? "All" : labelize(tag);
         button.addEventListener("click", () => {
           activeTag = tag;
           [...tagList.querySelectorAll(".tag-chip")].forEach((chip) => chip.classList.remove("active"));
@@ -513,6 +531,19 @@
 
       rendered = 0;
       masonry.innerHTML = "";
+
+      if (allPhotos.length === 0) {
+        masonry.innerHTML = '<p class="empty-gallery">No photos yet. New work will appear here after it is added to the drop folder.</p>';
+        loader.hidden = true;
+        return;
+      }
+
+      if (filteredPhotos.length === 0) {
+        masonry.innerHTML = '<p class="empty-gallery">No photos match this category or tag.</p>';
+        loader.hidden = true;
+        return;
+      }
+
       renderBatch();
     }
 

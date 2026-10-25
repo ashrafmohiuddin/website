@@ -1,45 +1,64 @@
 # Adding photos (quick guide)
 
-## 1. Drop exports here
+Clean-slate intake. The old `ASH*` set is gone. The gallery stays empty until you add new edited files.
 
-Export from Lightroom into:
+## 1. Drop exports
+
+Put edited JPEGs (or PNG/WebP) in:
 
 ```text
-photos-inbox/
+photos-drop/
 ```
 
-Do not commit those files. Git ignores everything in this folder except the empty placeholder.
+On your Mac that is `/developer/website/photos-drop/`. Git ignores the image files.
 
-## 2. Run the pipeline
+## 2. Fill metadata
 
-From the repo root (`/developer/website` on your Mac):
+Edit `photos-drop/metadata.json`. One object per photo. **`skip: true`** entries (the example and the empty template) are ignored — copy the template, set `"skip": false` or delete that field, and fill real values.
+
+```json
+{
+  "filename": "goa-beach.jpg",
+  "title": "Summer Beach Day at Goa",
+  "alt": "Evening light on a Goa beach",
+  "category": "landscape",
+  "tags": ["nature", "landscape", "travel"]
+}
+```
+
+- `filename` must match the file in `photos-drop/` exactly (including `.jpg` vs `.JPG`)
+- `category` is the dropdown (one value: `nature`, `landscape`, `portraits`, `wildlife`, `travel`, or your own)
+- `tags` is an array (or a comma-separated string). Filter chips come from these.
+- Gallery order is the order of entries in this file
+
+## 3. Process
+
+From `/developer/website`:
 
 ```bash
-scripts/process-photos.sh photos-inbox
+scripts/process-photos.sh
 ```
 
-That writes:
+That reads **only** `photos-drop/` + `photos-drop/metadata.json` and writes:
 
-- `images/` — full originals (local copy)
+- `images/` — local full copies (gitignored)
 - `images/low-res/` — gallery previews (safe to commit)
-- `images/watermarked/` — download copies (prefer R2, not git)
+- `images/watermarked/` — download copies (gitignored; prefer R2)
 - `data/photos.manifest.json` — gallery data (commit this)
 
-Optional: add titles/categories in `data/photos.metadata.json` before or after processing, then re-run if needed.
+## 4. Optional R2 sync
 
-## 3. What R2 does
+```bash
+R2_BUCKET="your-bucket" \
+R2_ENDPOINT="https://<accountid>.r2.cloudflarestorage.com" \
+scripts/process-photos.sh --sync-r2
+```
 
-With `--sync-r2` (and `R2_BUCKET` / `R2_ENDPOINT` set), the same script uploads originals, previews, and watermarked files to Cloudflare R2. The live site loads full-res and downloads from `img.sashraf.in`.
+**First time after this rebuild:** wipe the old R2 prefixes before syncing. See [README.md](README.md#r2-clean-slate-wipe) or `scripts/wipe-r2-photos.sh`.
 
-## 4. What gets deployed
-
-Netlify deploys this repo (HTML, CSS, JS, manifest, and preferably `images/low-res/`). Full-res and watermarked images should come from R2, not from a huge git push.
-
-Process + sync + deploy in one go:
+## 5. Deploy
 
 ```bash
 R2_BUCKET="your-bucket" R2_ENDPOINT="https://<accountid>.r2.cloudflarestorage.com" \
-  scripts/publish-photography.sh photos-inbox --site-id=<netlify-site-id> --sync-r2 --prod
+  scripts/publish-photography.sh --site-id=<netlify-site-id> --sync-r2 --prod
 ```
-
-More detail: [README.md](README.md).
