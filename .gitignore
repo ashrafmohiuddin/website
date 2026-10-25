@@ -1,0 +1,30 @@
+# OS junk
+.DS_Store
+**/.DS_Store
+Thumbs.db
+
+# Lightroom drop folder — keep the folder, ignore dropped exports
+photos-inbox/*
+!photos-inbox/.gitkeep
+
+# Full-resolution originals copied into images/ by the pipeline.
+# Already-committed files stay tracked until a follow-up untracks them;
+# this only blocks *new* originals from being added.
+images/*.jpg
+images/*.jpeg
+images/*.png
+images/*.JPG
+images/*.JPEG
+images/*.PNG
+images/*.webp
+images/*.WEBP
+
+# Watermarked full-res downloads — serve from R2 (img.sashraf.in)
+# Already-committed files stay tracked until a follow-up untracks them.
+images/watermarked/*
+!images/watermarked/.gitkeep
+
+# Keep in git (do not ignore):
+#   images/low-res/     gallery previews
+#   data/*.json         manifests + metadata
+#   images/other/       non-gallery assets
